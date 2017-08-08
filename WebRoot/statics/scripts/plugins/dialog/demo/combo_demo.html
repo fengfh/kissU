@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Autocomplete Demos</title>
+	<link  href="../jquery.ui.autocomplete.css" class="view-source" type="text/css" rel="stylesheet" />
+	<link  href="../../../../themes/mobile/style-all.css"  class="view-source" rel="stylesheet">
+	<script src="../../../../scripts/jquery.js" class="view-source"  type="text/javascript"></script>
+	<script src="../../../../scripts/common.js" class="view-source"  type="text/javascript"></script>
+	<script src="../../../../scripts/browserfix.js" class="view-source"  type="text/javascript" ></script>
+	
+	<script src="../../../../scripts/plugins/jquery.bgiframe.js" class="view-source" type="text/javascript" ></script>
+	<script src="../../../../scripts/plugins/jquery.ui.js" type="text/javascript" class="view-source" ></script>
+	<script src="../../../../scripts/plugins/jquery.json.js" type="text/javascript"></script>
+	
+	
+	<script src="../jquery.ui.autocomplete.js" class="view-source" type="text/javascript"></script>
+	
+	<link  href="../../../../scripts/plugins/google-code-prettify/prettify.css" rel="stylesheet">
+	<script src="../../../../scripts/plugins/google-code-prettify/prettify.js"></script>
+	
+	<script src="../../demo.js"></script>
+	<link href="../../demo.css" rel="stylesheet">
+
+<script  class="view-source noparse">
+
+$( function(){
+	$('#getValue').click(function(){
+	  $('.value').removeClass('ui-helper-hidden').html( jQuery.json.encode($('#static_combo').comboBox().getValue()) ) ;
+	}) ;
+	$("#enable").click(function(){
+		$("#static_combo").comboBox().enable();
+	}) ;
+	$("#disable").click(function(){
+		$("#static_combo").comboBox().disable();
+	}) ;
+	$("#setValue").click(function(){
+		$("#static_combo").comboBox().setValue("g");
+	}) ;
+	$("#reload").click(function(){
+		$("#asyn_combo").comboBox().reload({CommandName:'sqlid:tag.field.test'}) ;
+	}) ;
+
+	//select id as ID , text as TEXT  from tree 
+	$('#asyn_combo').comboBox({
+		source : 'remote',
+		width  : 83,
+   		CommandName : 'sqlid:autocomplete.demo',
+   		variableName : 'INPUT_VALUE',
+   		params : {
+			daoBeanName:'dao',
+   		    catalogId : 'sale'
+       	},
+       	change:function(){
+			//alert(1234);
+        }
+	});
+} ) ;
+
+function getDropMenuHtml(){
+	alert( $(".dropdown-menu")[0].outerHTML ) ;
+}
+</script>
+
+</head>
+
+<body>
+	<form id="demoForm" action="#"  class="form-inline row-fluid container" >
+			<div class="row-fluid control-group">
+      			<a href='javascript:' id='getValue'  class="btn">getValue</a>
+				<a href='javascript:' id=setValue class="btn">setValue</a>
+				<a href='javascript:' id=enable class="btn">enable(静态数据)</a>
+				<a href='javascript:' id=disable class="btn">disable(静态数据)</a>
+	      	</div>
+	      	
+	      
+	      	
+	      	<div class="row-fluid control-group">
+	      		<div class='ui-state-highlight value ui-helper-hidden'></div>
+			</div>
+		<div class="row-fluid" >	
+	      	<div class="span4 control-group">
+      			<label class="control-label" for="agreement1">静态数据Combo：</label>
+	            <div class="controls">
+	             	<select id="static_combo" data-widget="combobox"  class="view-source" data-options="{editable:false}">
+						<option value="a">asp</option>
+				        <option value="c" selected>c</option>
+				        <option value="cpp">c++</option>
+				        <option value="cf">coldfusion eeeeeeeeeeee</option>
+				        <option value="g">groovy</option>
+				        <option value="h">haskell</option>
+				        <option value="j">java</option>
+				        <option value="js">javascript</option>
+				        <option value="p1">perl</option>
+				        <option value="p2">php</option>
+				        <option value="p3">python</option>
+				        <option value="r">ruby</option>
+				        <option value="s">scala</option>
+					</select>
+	            </div>
+	      	</div>
+	      	<div class="span4 control-group">
+		      	<label class="control-label" for="agreement1">异步数据Combo:</label>
+		      	<div class="controls">
+					<select id="asyn_combo" style="width:100px;">
+					</select>
+				</div>
+			</div>
+		 </div>		
+      </form>
+	
+	
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>llygrid demo</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="pragma" content="no-cache"/>
+	<meta http-equiv="cache-control" content="no-cache"/>
+  
+   <script src="../../../jquery.js" type="text/javascript" class="view-source"></script>
+   <script src="../../../common.js" type="text/javascript" class="view-source"></script>
+   <link   href="../../../../themes/mobile/style.css" class="view-source" type="text/css" rel="stylesheet" />
+   
+   <script src="../jquery.llygrid.js" class="view-source" type="text/javascript"></script>
+   <link   href="../jquery.llygrid.css" class="view-source" type="text/css" rel="stylesheet" />
+  
+    <script src="../../demo.js"></script>
+	<link href="../../demo.css" rel="stylesheet">
+  
+   <script type="text/javascript" class="view-source noparse" >
+	$(function(){
+		$(".grid-content").llygrid({
+			columns:[
+				{align:"center",key:"TECHTYPE",label:"技术类型",width:"70",format:{type:"checkbox"}},
+	           	{align:"center",key:"SERVICE_ID",label:"业务代码",width:"100"},
+	           	{align:"center",key:"NAME",label:"业务名称(带链接)",width:"150",align:"left",format:{type:"href",href:"http://developer.bingosoft.net/blog/?id={SERVICE_ID}",target:"_blank"}},
+	           	{align:"center",key:"STATUS",label:"业务状态(JSON格式化)",width:"150",align:"center",sort:true,format:{type:"json",content:{"1":"1=>上线","2":"2=>策划"}}},
+	           	{align:"center",key:"MANAGER",label:"负责人(自定义)",width:"150",format:function(val , record , col){
+					return "自定义内容："+val;	
+		         }},
+	           	{align:"center",key:"PUBLISHTIME",label:"上线时间",width:"100"}
+	         ],
+	         ds:{type:"data",records:[
+    				{"SERVICE_ID":"CODE1","NAME":"最佳实践1","TECHTYPE":"短信","MANAGER":"李斌","CREATETIME":"2010-01-01","PUBLISHTIME":"2010-01-02","STATUS":"1"}
+	           	,{"SERVICE_ID":"CODE2","NAME":"最佳实践2","TECHTYPE":"彩信","MANAGER":"李斌","CREATETIME":"2010-05-01","PUBLISHTIME":"2010-05-02","STATUS":"2"}
+	           	,{"SERVICE_ID":"CODE3","NAME":"最佳实践3","TECHTYPE":"短信","MANAGER":"李斌","CREATETIME":"2010-01-01","PUBLISHTIME":"2010-01-02","STATUS":"1"}
+	           	,{"SERVICE_ID":"STMP4","NAME":"最佳实践4","TECHTYPE":"彩信","MANAGER":"李斌","CREATETIME":"2010-05-01","PUBLISHTIME":"2010-05-02","STATUS":"2"}
+	           	,{"SERVICE_ID":"DHWX5","NAME":"最佳实践5","TECHTYPE":"短信","MANAGER":"李斌","CREATETIME":"2010-01-01","PUBLISHTIME":"2010-01-02","STATUS":"1"}
+	           	,{"SERVICE_ID":"STMP6","NAME":"最佳实践6","TECHTYPE":"彩信","MANAGER":"李斌","CREATETIME":"2010-05-01","PUBLISHTIME":"2010-05-02","STATUS":"2"}
+	           	,{"SERVICE_ID":"DHWX7","NAME":"最佳实践7","TECHTYPE":"短信","MANAGER":"李斌","CREATETIME":"2010-01-01","PUBLISHTIME":"2010-01-02","STATUS":"1"}
+	           	,{"SERVICE_ID":"STMP8","NAME":"最佳实践8","TECHTYPE":"彩信","MANAGER":"李斌","CREATETIME":"2010-05-01","PUBLISHTIME":"2010-05-02","STATUS":"1"}
+	           	,{"SERVICE_ID":"DHWX9","NAME":"最佳实践9","TECHTYPE":"短信","MANAGER":"李斌","CREATETIME":"2010-01-01","PUBLISHTIME":"2010-01-02","STATUS":"1"}
+	            ]},
+			 limit:10,
+			 pageSizes:[5,10,20,30,40],
+			 height:300,
+			 indexColumn:true,
+			 querys:{name:"hello",name2:"world"},
+			 loadMsg:"数据加载中，请稍候......"
+		}) ;
+  	 });
+  </script>
+   
+   <style>
+   		*{
+   			font:12px "微软雅黑";
+   		}
+   </style>
+
+</head>
+<body>
+
+<table>
+
+<tr><td rowspan="1" colspan="1"></td></tr>
+	</table>
+	<button onclick="alert( $('.grid-content').llygrid('getSelectedValue','TECHTYPE') )"> getSelectedValue</button>
+
+	<div class="grid-content view-source" style="margin:5px;">
+	
+	</div>
+</body>
+</html>

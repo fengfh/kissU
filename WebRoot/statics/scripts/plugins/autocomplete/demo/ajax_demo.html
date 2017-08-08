@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Autocomplete Demos</title>
+
+	<link  href="../jquery.ui.autocomplete.css" class="view-source" type="text/css" rel="stylesheet" />
+	
+	<link  href="../../../../themes/default/style.css" class="view-source"  rel="stylesheet">
+	<script src="../../../../scripts/jquery.js" class="view-source"  type="text/javascript"></script>
+	<script src="../../../../scripts/common.js" class="view-source"  type="text/javascript"></script>
+	<script src="../../../../scripts/browserfix.js" class="view-source"  type="text/javascript" ></script>
+	
+	<script src="../../../../scripts/plugins/jquery.bgiframe.js" class="view-source" type="text/javascript" ></script>
+	<script src="../../../../scripts/plugins/jquery.ui.js" class="view-source" type="text/javascript" ></script>
+	
+	<script src="../jquery.ui.autocomplete.js" class="view-source" type="text/javascript"></script>
+	
+	<script src="../../demo.js"></script>
+	<link href="../../demo.css" rel="stylesheet">
+<script class="view-source noparse">
+$( function(){
+	$("#remote").autoComplete({
+		source : 'remote',
+	    CommandName : 'sqlid:autocomplete.demo',
+	    variableName : 'INPUT_VALUE',
+	    params : {
+			daoBeanName:'dao',
+	    	catalogId : 'sale'
+	    }
+	});
+} ) ;
+</script>
+	
+	<style>
+		input{
+			width:200px;
+		}
+		
+		
+	</style>
+</head>
+
+<body>
+	<div class="row-fluid control-group">
+    			<label class="control-label" for="agreement1">ajax数据源：</label>
+           <div class="controls">
+            	<input type='text' id='remote' value='' class="view-source">   (可输入"广东、广州.."进行测试)
+           </div>
+     	</div>
+	
+	
+</body>
+</html>

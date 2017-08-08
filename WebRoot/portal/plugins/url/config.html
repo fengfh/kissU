@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>配置来自于外部链接的菜单</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link type="text/css" rel="stylesheet" href="../../../statics/themes/mobile/style.css" />
+	<script src="../../../statics/scripts/jquery.js"></script>
+	<script src="../../../statics/scripts/common.js"></script>
+	<script src="../../../statics/scripts/plugins/dialog/jquery.dialog.js"></script>
+	
+	<script type="text/javascript">
+
+		var params = {} ;
+	
+		$(function(){
+			params = {
+				currentCode : window.location.href.getQueryString("currentCode") ,
+				code 	: window.location.href.getQueryString("code") ,
+				pageid  : window.location.href.getQueryString("pageid"),
+				url		: window.location.href.getQueryString("url")||window.location.href.getQueryString("content")
+			}
+			
+			$('#url_text').focus().keydown(function(event){ 
+				event.keyCode==13 && $('#saveButton').click(); 
+			})
+			
+			$('#closeButton').click( function(){
+				$(this).dialogClose() ;
+			} ) ;
+			
+			$('#saveButton').click( function(){
+				var url = $('#url_text').val() ;
+				if(!url || $.trim(url) == 'http://' || $.trim(url) == 'javascript:void(0)'){
+	    			alert("外部链接不能为空！") ;
+	    			return ;
+	    		}
+				params.url = $.trim(url) ;
+				//alert( params.url );
+				window.top.plugin.callback( params ) ; // params: (url , object_id)
+			} ) ;
+
+			var _url = params.url ;
+			if (params.currentCode == 'url') {
+				$('#url_text').val(_url) ;
+			}
+		}) ;
+		
+	</script>
+</head>
+
+<body  style="width:99%;" >
+		<div  style="height:195px; text-align: center;margin:0px;padding:0px;">
+		<table width="100%" height="100%" border="0" style="margin:0px;padding:0px;" cellspacing="0" cellpadding="0">
+			<tr>
+				<td align=left valign=bottom id=d_c_title>
+					<b>&nbsp;&nbsp;&nbsp;&nbsp;请输入URL链接名称：</b>
+				</td>
+			</tr>
+			<tr>
+				<td valign=top style="padding-top:5px;" id=d_c_content>
+					<input name="textfield" id="url_text" maxlength="150" type="text" style="width:250px;height:22px;font:11pt;padding-top:3px;"/>
+				</td>
+			</tr>
+			<tr>
+				<td align="right">
+					<a href="#" id="saveButton"  class="combtn btn btn-primary" >确定</a>
+					<a href="#" id="closeButton" class="combtn btn">关闭</a>
+				</td>
+			</tr>
+		</table>
+	   </div>
+</body>
+</html>

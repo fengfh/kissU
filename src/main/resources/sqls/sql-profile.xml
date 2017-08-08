@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>系统参数维护相关的sql</comment>
+	
+	<!-- 获取到所有有效的系统参数 -->
+    <entry key="profile.getValidParams">
+    <![CDATA[
+        SELECT SP.GLOBAL,
+		       SPP.NAME,
+		       SPP.VALUE
+		FROM   SYS_PROFILE           SP,
+		       SYS_PROFILE_PARAMETER SPP
+		WHERE  SP.ID = SPP.PROFILE_ID
+		AND    ((SP.GLOBAL = 0 AND SP.ACTIVATE = 1) OR
+		      (SP.GLOBAL = 1 AND SP.ACTIVATE = 1))
+		ORDER  BY SP.GLOBAL DESC
+    ]]>
+    </entry>
+</properties>

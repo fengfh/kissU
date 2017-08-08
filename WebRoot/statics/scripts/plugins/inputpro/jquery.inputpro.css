@@ -1,0 +1,15 @@
+span.inputpro-img span.add-on i{
+	font-style: normal;
+}
+
+span.inputpro-img-span ,.inputpro-img-span-bg{
+	margin-left:0px;
+}
+
+.inputpro-img input{
+	margin-bottom:0px;
+}
+
+*html .inputpro-img .btn{
+	_margin-bottom:-1px;
+}

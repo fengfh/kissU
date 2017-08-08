@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>数据库链接配置信息</comment>
+	
+	<!--oracle-->
+	<entry key="jdbc.driverClassName">oracle.jdbc.driver.OracleDriver</entry>
+	<entry key="jdbc.url">jdbc:oracle:thin:@10.201.76.133:1521:OracleDB</entry>
+	<entry key="jdbc.username">kissu.java.1.5</entry>
+	<entry key="jdbc.password">kissu.java.1.5</entry>
+	<entry key="jdbc.initialSize">2</entry>
+	<entry key="jdbc.maxActive">5</entry>
+	<entry key="jdbc.maxIdle">5</entry>
+	<entry key="jdbc.minIdle">1</entry>
+	<entry key="jdbc.validationQuery">select 1 from dual</entry>
+	
+	<!--本地oracle-->
+	<!--
+	<entry key="jdbc.driverClassName">oracle.jdbc.driver.OracleDriver</entry>
+	<entry key="jdbc.url">jdbc:oracle:thin:@localhost:1521:OracleDB</entry>
+	<entry key="jdbc.username">kissu.java</entry>
+	<entry key="jdbc.password">kissu.java</entry>
+	<entry key="jdbc.initialSize">2</entry>
+	<entry key="jdbc.maxActive">5</entry>
+	<entry key="jdbc.maxIdle">5</entry>
+	<entry key="jdbc.minIdle">1</entry>
+	<entry key="jdbc.validationQuery">select 1 from dual</entry>
+	-->
+	
+	<!--mysql-->
+	<!--
+	<entry key="jdbc.driverClassName">com.mysql.jdbc.Driver</entry>
+	<entry key="jdbc.url">jdbc:mysql://10.201.76.133:3306/kissu.java?characterEncoding=utf-8</entry>
+	<entry key="jdbc.username">kissu.java.1.0-SNAPSHOT</entry>
+	<entry key="jdbc.password">kissu.java.1.0-SNAPSHOT</entry>
+	<entry key="jdbc.initialSize">2</entry>
+	<entry key="jdbc.maxActive">5</entry>
+	<entry key="jdbc.maxIdle">5</entry>
+	<entry key="jdbc.minIdle">1</entry>
+	<entry key="jdbc.validationQuery">select 1</entry>
+	-->
+	
+	<!--本地mysql-->
+	<!--
+	<entry key="jdbc.driverClassName">com.mysql.jdbc.Driver</entry>
+	<entry key="jdbc.url">jdbc:mysql://localhost:3306/kissu?characterEncoding=utf-8</entry>
+	<entry key="jdbc.username">kissu.java.1.0-SNAPSHOT</entry>
+	<entry key="jdbc.password">kissu.java.1.0-SNAPSHOT</entry>
+	<entry key="jdbc.initialSize">2</entry>
+	<entry key="jdbc.maxActive">5</entry>
+	<entry key="jdbc.maxIdle">5</entry>
+	<entry key="jdbc.minIdle">1</entry>
+	<entry key="jdbc.validationQuery">select 1</entry>
+	-->
+	
+	<!--数据库连接For Sql Server-->
+	<!--
+	<entry key="jdbc.driverClassName">com.microsoft.sqlserver.jdbc.SQLServerDriver</entry>
+	<entry key="jdbc.url">jdbc:sqlserver://10.201.76.133:1433; DatabaseName=KissU.Java.1.5.X</entry>
+	<entry key="jdbc.username">KissU.Java.1.5.X</entry>
+	<entry key="jdbc.password">KissU.Java.1.5.X</entry>
+	<entry key="jdbc.initialSize">2</entry>
+	<entry key="jdbc.maxActive">5</entry>
+	<entry key="jdbc.maxIdle">5</entry>
+	<entry key="jdbc.minIdle">1</entry>
+	<entry key="jdbc.validationQuery">select 1</entry>
+	-->
+</properties>

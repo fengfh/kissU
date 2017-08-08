@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Calendar Demos</title>
+	<link  href="../../../../themes/default/style.css" class="view-source" rel="stylesheet">
+	<script src="../../../../scripts/jquery.js" class="view-source"  type="text/javascript"></script>
+	<script src="../../../../scripts/common.js" class="view-source"  type="text/javascript"></script>
+	<script src="../../../../scripts/browserfix.js" class="view-source"  type="text/javascript" ></script>
+	
+	<script src="../../../../scripts/plugins/jquery.ui.js" class="view-source"  type="text/javascript" ></script>
+	
+	<script language="javascript" type="text/javascript" src="../WdatePicker.js" class="view-source"></script>
+	
+	<script src="../../demo.js"></script>
+	<link href="../../demo.css" rel="stylesheet">
+
+<script class="view-source noparse">
+$(function(){
+	$("#calendar").calendar({
+		isShowWeek:true,
+		dateFmt:$('#calendar_format_id').val(),
+		firstDayOfWeek:1,
+		disabledDates:['5$'],//以5结尾的禁用
+		specialDates:['....-..-01','....-..-15'],
+		eCont:'calendar_div'
+	});
+	$('#tz').click(function(){
+		if(!$('#calendar_div').hasClass('hello')){
+			$('#calendar_div').css({'left':'100px','position':'relative','overflow':'hidden'}).addClass('hello');
+		}else{
+			$('#calendar_div').css({'left':'0px'}).removeClass('hello');
+		}
+	});
+});
+</script>
+	
+</head>
+
+<body scroll='no'>
+	
+		<div>
+			定义年月日返回格式：<input type="text" id="calendar_format_id" style="width:120px" value="yyyy-MM-dd"/>（yyyy:年份,MM:月份,dd:天数）
+			<br/><br/>
+			日历文本框：<input class="Wdate" type="text" id="calendar" class="view-source">
+			<div id="calendar_div"  class="view-source"></div>
+			<br/><br/>
+			<input id="tz" type="button" value="调整日历出现位置"/>
+			<h5><b>提示：</b>您可以定制您想禁用或高亮的天或日期</h5>
+			
+	  </div>
+</body>
+</html>

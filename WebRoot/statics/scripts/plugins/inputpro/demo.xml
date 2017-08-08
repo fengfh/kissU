@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Root>
+	<!--  分类 -->
+	<category>
+		<demo name="数字输入框" url="demo/number_box.html"/>
+		<demo name="特殊字符过滤" url="demo/exclude_char.html"/>
+		<demo name="图标按钮" url="demo/input_img.html"/>
+	</category>
+
+</Root>

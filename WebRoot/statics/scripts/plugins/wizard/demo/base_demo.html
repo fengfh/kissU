@@ -1,0 +1,77 @@
+﻿<html>
+	<head>
+		<title>创建项目</title>
+		<base target="_self">
+		<meta http-equiv="cache-control" content="no-cache">
+		<meta http-equiv="pragma" content="no-cache">
+		
+		<link type="text/css" href="../../../plugins/dialog/jquery.dialog.css" rel="stylesheet" class="view-source"/>  
+		<link type="text/css" href="../../../../themes/mobile/style.css" rel="stylesheet"  class="view-source"/>  
+		
+		<script src="../../../jquery.js" type="text/javascript" class="view-source"></script>
+		<script src="../../../common.js" type="text/javascript" class="view-source"></script>
+		
+		<script type="text/javascript" src="../../../plugins/dialog/jquery.dialog.js" class="view-source"></script> 
+		
+		<script src="../jquery.wizard.js" type="text/javascript" class="view-source"></script> 
+		
+		<script src="../../demo.js"></script>
+		<link href="../../demo.css" rel="stylesheet">
+<script type="text/javascript" class="view-source noparse">
+   $(function(){
+	    var rootPath = "demo/step/" ;
+	    var wizardParams = {
+			title:"创建项目",
+			width: 800,
+			height: 600,
+		    params:{projectName:'测试项目名称',projectCode:"Test"},
+		    steps:[//steps
+				{
+					name:'project_base',
+					title:'项目基本信息',
+					url:rootPath + 'step1.html',
+					buttons:[
+						{id:'self_op', text:'隐藏下一步', action:'hideStep'},
+						{id:'self_op2', text:'显示下一步', action:'displayStep'}
+					],
+					onleave:'saveProjectInfo'//leaveAction onleave
+				},
+				{
+					name:'add_project_member',
+					title:'添加项目成员',
+					url:rootPath + 'step2.html',
+					cache:false,
+					onleave:'saveStep'
+				},
+				{
+					name:'add_project_module',
+					title:'添加项目模块',
+					url:rootPath + 'step3.html',
+					cache:false,
+					onleave:'saveStep'
+				},
+				{
+					name:'add_project_version',
+					title:'添加项目版本',
+					url:rootPath + 'step4.html',
+					cache:false,
+					onleave:'saveStep'
+				}
+			  ]
+		};
+	   
+		$(".wizard-demo").wizard( wizardParams ) ;
+
+		$(".wizard-btn").click(function(){
+			$.wizard(wizardParams) ;
+		}) ;
+	}) ;
+</script>
+	</head>
+
+	<body>
+		<a href="#" class="wizard-demo">添加项目($(".wizard-demo").wizard( wizardParams ))</a>
+		<br/><br/>
+		<a href="#" class="wizard-btn">添加项目($.wizard(wizardParams))</a>
+	</body>
+</html>

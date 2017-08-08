@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>首页框架</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<!-- plugin styles -->
+<link  href="../../../../../statics/scripts/plugins/validator/jquery.validation.css" type="text/css" rel="stylesheet"/>
+<link  href="../../../../../statics/scripts/plugins/upload/plupload.queue.css" type="text/css" rel="stylesheet"  media="screen" />
+<link  href="../../../../../statics/scripts/plugins/blockui/jquery.blockui.css" type="text/css" rel="stylesheet" />
+<link  href="../../../../../statics/scripts/plugins/dialog/jquery.dialog.css" type="text/css" rel="stylesheet"/>
+<link  href="../../../../../statics/scripts/plugins/combotree/jquery.combotree.css" rel="stylesheet" type="text/css" >
+<link  href="../../../../../statics/scripts/plugins/autocomplete/jquery.ui.autocomplete.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../statics/scripts/plugins/inputpro/jquery.inputpro.css" class="view-source" rel="stylesheet">
+<link href="../../../../../statics/scripts/plugins/settings/settings.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../statics/themes/mobile/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="container-body">		
+	<div class="container-fluid">
+    	<div class="page-title">
+            <!-- 当前位置 -->
+            <ul class="breadcrumb">
+                <li><a href="#">首页</a> <span class="divider">/</span></li>
+                <li class="active">表单页</li>
+            </ul>
+        </div>	
+        		
+		<!-- panel内容开始 -->
+		<div class="panel form-panel">
+			<div class="panel-head">
+				<div class="row-fluid">
+					<div class="span6 first">							
+						用户创建表单--常规表单分组
+					</div>
+					<div class="span6">
+					</div>
+				</div>
+				<a href="#" class="toggle"></a>
+			</div>
+			<div class="panel-content">
+				<form id="personForm" action="#" data-widget="validator" class="form-horizontal" >
+					<fieldset>
+						<legend>基本信息</legend>
+						<div class="control-group">
+							<label class="control-label" for="name1">姓名：</label>
+							<div class="controls">
+								<input type="text" id="name1" class="input-large" data-validator="required,length[6,10]" />
+								<span class="help-inline">请输入真实姓名</span>
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label">性别：</label>
+							<div class="controls">
+								<label class="radio inline">
+									<input id="male1" name="sex" type="radio" data-validator="required">男
+								</label>
+								<label class="radio inline">
+								   <input id="female1" name="sex" type="radio" data-validator="required">女
+								</label>
+							</div>
+						</div>     
+						<div class="control-group">
+							<label class="control-label" for="agreement1">年龄：</label>
+							<div class="controls">
+								<input type="text" id="agreement1" class="input-large" data-validator="pattern[integer],range[1,100]" />
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="city1">籍贯：</label>
+							<div class="controls">
+							   <select id="city" data-validator="required" class="input-large">
+                                    <option value=""></option>
+                                    <option value="1">北京</option>
+                                    <option value="2">河北</option>
+                                    <option value="3">上海</option>
+                                </select>
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="birthday1">出生日期：</label>
+							<div class="controls">
+								<input type="text" id="birthday" class="input-large" 
+								data-validator="date"  data-widget="calendar" 
+								data-options="{'isShowWeek':'true','dateFmt':'yyyy-MM-dd'}"
+								value=""  >
+							</div>
+						</div>
+					</fieldset>
+					
+					<fieldset>
+						<legend>联系信息</legend>
+						<div class="control-group">
+							<label class="control-label" for="email1">电子邮件：</label>
+							<div class="controls">
+								<input type="text" id="email1" class="input-large" data-validator="required,pattern[letter]" />
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="password1">密码：</label>
+							<div class="controls">
+							  <input type="password" id="password1" class="input-large" data-validator="equalToField[repassword]"/>
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="repassword1">密码(确认)：</label>
+							<div class="controls">
+							  <input type="password" id="repassword1" class="input-large" data-validator="equalToField[password]"/>
+							</div>
+						</div>
+					</fieldset>
+					
+					<fieldset>
+						<legend>详细信息</legend>
+						<div class="control-group">
+							<label class="control-label" for="cc1">自动完成：</label>
+							<div class="controls">
+								<input type="text" class="input-large" data-widget="autocomplete" data-options="{minLength:1,source:'array',data:['c++','java','php','c1','c2']}" id="default" value="">
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label">兴趣爱好：</label>
+							<div class="controls">
+								 <label class="checkbox inline">
+								   <input type="checkbox" name="interest1" data-validator="range[2,4]" id="interest1">篮球
+								 </label>
+								 <label class="checkbox inline">     
+									<input type="checkbox" name="interest1" data-validator="range[2,4]" id="interest2">爬山
+								 </label>
+								 <label class="checkbox inline">      
+									<input type="checkbox" name="interest1" data-validator="range[2,4]" id="interest2">听歌
+								 </label>
+								 <label class="checkbox inline">     
+									<input type="checkbox" name="interest1" data-validator="range[2,4]" id="interest2">读书
+								 </label>
+								 <label class="checkbox inline">     
+									<input type="checkbox" name="interest1" data-validator="range[2,4]" id="interest2">旅游
+								 </label>
+								 <br/>
+								 <label class="checkbox inline">     
+									<input type="checkbox" name="interest1" data-validator="range[2,4]" id="interest2">象棋
+								 </label>
+								 <label class="checkbox inline">     
+									<input type="checkbox" name="interest1" data-validator="range[2,4]" id="interest2">围棋
+								 </label>
+								 <label class="checkbox inline">      
+									<input type="checkbox" name="interest1" data-validator="range[2,4]" id="interest2">游戏
+								 </label>  
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="remark1">备注：</label>
+							<div class="controls">
+							    <textarea id="remark1" class="input-large" data-validator="required"></textarea>
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="appendedPrependedInput1">用户组织：</label>
+							<div class="controls">
+							  <div class="input-append">
+								<input type='text' class="input-large"  data-widget="inputimg" data-options="{type:'text',src:'选择',event:{click:function(val){alert(val);}}}">	
+							  </div>
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="appendedPrependedInput1">多文件上传：</label>
+							<div class="controls">
+								<input type="text" name="upload1" id="upload1" class="input-large" 
+									data-widget="upload"
+									data-options="{url:'~/component/upload.do',max_file_size:'500mb',max_file_num:5}"/> 
+							
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label">单文件上传：</label>
+							<div class="controls">           
+								<input type="text" name="upload2" id="upload2" class="input-large" 
+									data-widget="upload"
+									data-options="{url:'~/component/upload.do',max_file_size:'500mb'}"/> 
+							</div>
+						</div>
+					</fieldset>			  
+				</form>
+			</div>
+            
+            <div class="panel-foot">
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary" onclick="$(this).dialogClose();">提交</button>
+                    <button class="btn"  onclick="$(this).dialogClose();">关闭</button>
+                  </div>
+        	</div>
+		</div>
+		<!-- panel 内容结束 -->
+	</div>	
+			
+	
+<!------------------------------------------------------script-------------------------------------------------------->
+<script src="../../../../../statics/scripts/jquery.js" type="text/javascript"></script>
+	<script src="../../../../../statics/scripts/plugins/jquery.cookie.js"></script>
+    <script src="../../../../../statics/scripts/plugins/settings/settings.js" type="text/javascript"></script>
+    <script src="../../../../../statics/scripts/common.js" type="text/javascript"></script>
+    <script src="../../../../../statics/scripts/browserfix.js" type="text/javascript" ></script>
+    
+    <script src="../../../../../statics/scripts/plugins/jquery.json.js" type="text/javascript" ></script>
+    <script src="../../../../../statics/scripts/plugins/jquery.ui.js" type="text/javascript" ></script>
+    <script src="../../../../../statics/scripts/plugins/jquery.bgiframe.js" type="text/javascript" ></script>
+    
+    <!-- calendar -->
+    <script src="../../../../../statics/scripts/plugins/calendar/WdatePicker.js" language="javascript" type="text/javascript"></script>
+    
+    <!-- validator -->
+    <script src="../../../../../statics/scripts/plugins/validator/jquery.validation.js" type="text/javascript"></script>
+    
+    <!-- upload -->
+    <script src="../../../../../statics/scripts/plugins/upload/plupload.js" type="text/javascript"></script>
+    <script src="../../../../../statics/scripts/plugins/upload/jquery.plupload.queue.js" type="text/javascript"></script>
+    <script src="../../../../../statics/scripts/plugins/upload/plupload.flash.js" type="text/javascript"></script>
+    
+    <script src="../../../../../statics/scripts/plugins/blockui/jquery.blockui.js" type="text/javascript" ></script>
+        
+    
+    <!-- dialog -->
+    <script src="../../../../../statics/scripts/plugins/dialog/jquery.dialog.js" type="text/javascript"></script>
+    
+    <!-- combotree -->
+    <script src="../../../../../statics/scripts/plugins/combotree/jquery.combotree.js" type="text/javascript" ></script>
+    
+    <!-- selectmulti -->
+    <script src="../../../../../statics/scripts/plugins/multiselect/jquery.multiselect.js" type="text/javascript"></script>
+    
+    <!-- autocomplete -->
+	<script src="../../../../../statics/scripts/plugins/autocomplete/jquery.ui.autocomplete.js" type="text/javascript"></script>
+	
+	<!-- inputpro -->
+	<script src="../../../../../statics/scripts/plugins/inputpro/jquery.inputpro.js" class="view-source" type="text/javascript"></script>
+
+	<script>
+	$(document).ready(function() {
+		//$("#personForm").validation()
+
+		$(".select-org").click(function(){
+			var dialog = $.open("test_dialog.html",660,500,{
+				title:"选择组织",
+				iframe:false,
+				ShowButtonRow:true,
+				OKEvent:function(){
+					var json = $(dialog.container).toJson() ;
+					for(var o in json){
+						alert(o+"      "+json[o]) ;
+					}
+					dialog.close(true);
+				}
+			},function(win){
+				alert(win.location);
+			}) ;
+		}) ;
+
+		$(".test").click(function(){
+			var json = $("#personForm").toJson();
+			for(var o in json){
+				alert(o+"   "+json[o]);
+			}
+		}) ;
+	});
+	</script>
+</body>
+</html>

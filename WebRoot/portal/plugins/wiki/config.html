@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link type="text/css" rel="stylesheet" href="../../layouts/default/styles/style.css" />
+	
+		<link type="text/css" rel="stylesheet" href="../../../statics/themes/mobile/style.css" />
+	<script src="../../../statics/scripts/jquery.js"></script>
+	<script src="../../../statics/scripts/common.js"></script>
+	<script src="../../../statics/scripts/plugins/dialog/jquery.dialog.js"></script>
+	
+	<script type="text/javascript">
+		var params = {} ;
+		//portalCode
+		//window.top.Config.portalCode
+	
+		$(function(){
+			params = {
+			    currentCode : window.location.href.getQueryString("currentCode") ,
+				code 	: window.location.href.getQueryString("code") ,
+				pageid  : window.location.href.getQueryString("pageid"),
+				url		: window.location.href.getQueryString("url")||window.location.href.getQueryString("content")
+			}
+
+			$('#commonDoc').change(function() {
+				$('#wiki_name').val($('#commonDoc').val());
+			});
+			
+			$('#wiki_name').focus().keydown(function(){ 
+				event.keyCode==13 && $('#saveButton').click(); 
+			})
+			
+			$('#closeButton').click( function(){
+				$(this).dialogClose() ;
+			} ) ;
+			
+			$('#saveButton').click( function(){
+				var wiki_name = $('#wiki_name').val() ;
+				if(!wiki_name){
+	    			alert("WIKI页面名称不能为空！") ;
+	    			return ;
+	    		}
+
+	    		//生成Wiki URL
+	    		params.url = "http://{host}:{port}/wiki/developers/" + window.top.Config.portalCode + ":" + wiki_name + "?embed=true";
+
+				window.top.plugin.callback( params ) ; // params: (url , object_id)
+			} ) ;
+
+			if (params.currentCode == 'wiki') {
+				$('#wiki_name').val(parseWikiName(params.url));
+			}
+		}) ;
+
+		function parseWikiName(url){
+			if (null != url) {
+				return url.replace("http://{host}:{port}/wiki/developers/" + window.top.Config.portalCode + ":","").replace("?embed=true","");
+			}
+			return url;
+		}
+	</script>
+</head>
+
+<body  style="width:99%;" >
+		<div  style="height:195px; text-align: center;margin:0px;padding:0px;padding-left:20px;">
+		<table width="100%" height="100%" border="0" style="margin:0px;padding:0px;margin-top:20px;" cellspacing="0" cellpadding="0">
+			<tr>
+				<td align=left valign=bottom id=d_c_title>
+					<b>请输入WIKI文章名字（建议用英文）：</b>
+				</td>
+			</tr>
+			<tr>
+				<td align=left valign=top id=d_c_content>
+					<select id="commonDoc" style="height:26px;font:11pt;padding-top:3px;">
+					    <option value="">--常见文章选择--</option>
+						<option value="quickStart">快速入门</option>
+						<option value="userGuide">使用指南</option>
+						<option value="devGuide">开发指南</option>
+						<option value="faq">FAQ</option>
+					</select>
+					<br/><br/>
+					<input name="wiki_name" id="wiki_name" maxlength="150" type="text" />
+				</td>
+			</tr>
+			<tr>
+				<td align="right">
+					<a href="#" id="saveButton"  class="combtn btn btn-primary" >确定</a>
+					<a href="#" id="closeButton" class="combtn btn">关闭</a>
+				</td>
+			</tr>
+		</table>
+	   </div>
+</body>
+</html>

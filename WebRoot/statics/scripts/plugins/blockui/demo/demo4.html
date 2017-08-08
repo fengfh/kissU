@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+ <title>Farbtastic</title>
+ <meta charset="UTF-8" />
+	<link  href="../jquery.blockui.css" type="text/css" class="view-source" rel="stylesheet" />
+	<link  href="../../../../themes/default/style.css" class="view-source"  rel="stylesheet">
+	<script src="../../../../scripts/jquery.js" class="view-source"  type="text/javascript"></script>
+	<script src="../../../../scripts/common.js" class="view-source"  type="text/javascript"></script>
+	<script src="../../../../scripts/browserfix.js" class="view-source"  type="text/javascript" ></script>
+	
+	<script type="text/javascript" class="view-source"  src="../jquery.blockui.js"></script>
+	
+	<link  href="../../../../scripts/plugins/google-code-prettify/prettify.css" rel="stylesheet">
+	<script src="../../../../scripts/plugins/google-code-prettify/prettify.js"></script>
+	
+	<script src="../../demo.js"></script>
+	<link href="../../demo.css" rel="stylesheet">
+ <script type="text/javascript" class="view-source" > 
+ 
+    $(document).ready(function() { 
+        $('#pageDemo31').click(function() { 
+            $.block({timeout: 2000}); 
+        }); 
+        
+        $('#pageDemo32').click(function() { 
+            $.block({timeout: 5000});
+        }); 
+        
+        $('#pageDemo33').click(function() { 
+            $.block(); 
+        }); 
+    }); 
+ 
+</script> 
+ 
+ <body>
+<div id='content-time' class='demo view-source noparse' >
+	<input id="pageDemo31" class="btn" type="submit" value="遮罩2秒钟"></input>
+	<input id="pageDemo32" class="btn" type="submit" value="遮罩5秒钟"></input>
+	<input id="pageDemo33" class="btn" type="submit" value="一直遮罩"></input>
+</div>
+</body>
+</html>

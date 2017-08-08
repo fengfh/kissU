@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<title>表单验证类 Validator v3.0 beta 内测</title>
+	<link  href="../jquery.validation.css" type="text/css" rel="stylesheet" class="view-source"/>
+	<link  href="../../../../themes/default/style.css" rel="stylesheet" class="view-source">
+	<script src="../../../../scripts/jquery.js" type="text/javascript" class="view-source"></script>
+	<script src="../../../../scripts/common.js" type="text/javascript" class="view-source"></script>
+	<script src="../../../../scripts/browserfix.js" type="text/javascript"  class="view-source"></script>
+	<script src="../../../../scripts/plugins/jquery.json.js" type="text/javascript"></script>
+
+	<script src="../jquery.validation.js" type="text/javascript" class="view-source"></script>
+	
+	<script src="../../demo.js"></script>
+	<link href="../../demo.css" rel="stylesheet">
+	
+<script type="text/javascript">
+Validator.Setup(
+{
+	Name : 'demo',//formId
+	Summary : 'demo_Summary'//output divid
+}
+);
+-->
+</script>
+<style type="text/css">
+ <!--
+ body,td{font:normal 12px Verdana;color:#333333}
+ input,textarea,select,td{font:normal 12px Verdana;color:#333333;border:1px solid #999999;background:#ffffff}
+ table{border-collapse:collapse;width:100%}
+ td{padding:3px}
+ input{height:20px;}
+ textarea{width:80%;height:50px;overflow:auto;}
+ form{display:inline}
+ img {border:0}
+-->
+ </style>
+</head>
+<body>
+<div id="demo_Summary" class="Validator_Summary" style="display:none"></div>
+<form id="demo" method="get" action="" onsubmit="return Validator.Validate(this)">
+  <table>
+    <tr>
+      <td>身份证：</td>
+      <td><input name="Card" type="text" DataType="IdCard" Message="身份证号错误" /></td>
+    </tr>
+    <tr>
+      <td>昵称：</td>
+      <td><input name="Name" type="text" value="wfsr" DataType="Require" Message="昵称必须填写" /></td>
+    </tr>
+    <tr>
+      <td>密码：</td>
+      <td><input name="Password" type="text" value="abcdEfG123" DataType="Password" Message="密码不符合安全规则" /></td>
+    </tr>
+    <tr>
+      <td>确认：</td>
+      <td><input name="Password1" type="text" value="abcdEfG123" DataType="Repeat" To="Password" Message="两次输入的密码不一致" /></td>
+    </tr>
+    <tr>
+      <td>确认：</td>
+      <td><input name="Password2" type="text" value="abcdEfG123" DataType="Compare" ToElement="Password" ParseType="String" Message="两次输入的密码不一致" /></td>
+    </tr>
+    <tr>
+      <td>信箱：</td>
+      <td><input name="Email" type="text" value="abc@msn.com" DataType="Email" Message="Email格式不正确" /></td>
+    </tr>
+    <tr>
+      <td>IP：</td>
+      <td><input name="IPAddress" type="text" value="192.168.128.254" DataType="Range" Message="非法的IP地址范围" ParseType="IPAddress" Min="192.168.128.0" Max="192.168.128.255"  /></td>
+    </tr>
+    <tr>
+      <td>生日：</td>
+      <td><input name="Birthday" type="text" value="2005-12-01" Require="0" DataType="DateTime" Format="yyyy-MM-dd" Message="生日日期格式不正确或不存在" /></td>
+    </tr>
+    <tr>
+      <td>年龄：</td>
+      <td><input name="Year" type="text" value="21" DataType="Range" Message="年龄必须在20~28之间" Min="20" Max="28" /></td>
+    </tr>
+    <tr>
+      <td>QQ：</td>
+      <td><input name="QQ" type="text" value="88888" DataType="Custom" Message="QQ号码不存在" ParseType="Script"/></td>
+    </tr>
+    <tr>
+      <td>电话：</td>
+      <td><input name="Telephone" type="text" value="13777777777" DataType="Custom" Message="电话必须为固定电话或手提电话号码" ParseType="Elements" Elements="Phone || Mobile"/></td>
+    </tr>
+	<tr>
+	   <td>相片上传：</td><td><input name="Photo" type="file"  Require="false" DataType="Filter" Message="非法的文件格式" ParseType="File" Accept="jpg, gif, png" /></td>
+	</tr>
+	<tr>
+	   <td>注册用户名：</td><td><input name="UserName" type="text" value="管理员" DataType="Filter" Message="不允许注册的用户名" ParseType="Badword" Accept="管理员, Admin, Administrator" /></td>
+	</tr>
+   <tr>
+   <td>邮政编码：</td><td><input name="Zip" value="524433"/></td>
+  </tr>
+   <tr>
+   <td>邮政编码：</td><td><input name="Zip1" value="524433" DataType="Zip" Message="邮政编码格式不正确"/></td>
+  </tr>
+    <tr>
+      <td colspan="2"><input name="Submit" type="submit" value="确定提交" /><input name="Reset" type="reset" value="重置" /></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

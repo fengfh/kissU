@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Tab Demos</title>
+	
+	<link  href="../jquery.ui.tabs.css" rel="stylesheet" type="text/css"  class="view-source"/>
+	<link  href="../../../../themes/default/style.css" rel="stylesheet" class="view-source">
+	<script src="../../../../scripts/jquery.js" type="text/javascript" class="view-source"></script>
+	<script src="../../../../scripts/common.js" type="text/javascript" class="view-source"></script>
+	<script src="../../../../scripts/browserfix.js" type="text/javascript"  class="view-source"></script>
+	<script src="../../../../scripts/plugins/jquery.json.js" type="text/javascript" class="view-source"></script>
+	
+	<script src="../../../../scripts/plugins/jquery.ui.js" type="text/javascript" ></script>
+		
+	<script src="../jquery.ui.tabs.js" type="text/javascript" class="view-source"></script>
+	
+	<script src="../../demo.js"></script>
+	<link href="../../demo.css" rel="stylesheet">
+	
+<script  class="view-source noparse">
+		$( function(){
+			$('#tabs-default').tabs( {
+				tabs:[
+					{label:'tab1',content:'tabs-1'},
+					{label:'tab2',content:'tabs-2'},
+					{label:'tab3 ',content:'tabs-3'}
+				] ,
+				height:'100px'
+			} ) ;
+		} );
+	</script>
+</head>
+
+<body>
+	<div id="tabs-default">
+		<div id="tabs-1">
+			<p>tab1 content ..............................</p>
+		</div>
+		<div id="tabs-2">
+			<p>tab2 content ..............................</p>
+		</div>
+		<div id="tabs-3">
+			<p>tab3 content ..............................</p>
+		</div>
+	</div>
+</body>
+</html>

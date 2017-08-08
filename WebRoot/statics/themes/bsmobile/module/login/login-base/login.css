@@ -1,0 +1,46 @@
+@charset "utf-8";
+
+/*登陆页面*/
+body {
+	background:#fcfdfe url(login.gif) repeat-x;
+}
+.wrapper-login{	
+}
+.login{
+	position:absolute;
+	width:503px;
+	height:352px;
+	background: url(loginPanel.png) no-repeat;
+	left:50%;
+	top:290px;
+	margin:-105px 0 0 -250px;
+}
+.login-form h1{
+	height:50px;
+	margin-top:25px;
+	padding-left:160px;
+	color:#36c;
+	font-size:30px;
+	margin-bottom:5px
+}
+.login-form  .errormsg{
+	height:20px;
+	line-height:20px;
+	margin-left:160px;
+	color:red;
+	margin-bottom:10px
+}
+.login-form  .input-group{
+	margin-bottom:20px;
+}
+.login-form  .input-group label{
+	display:inline-block;
+	width:160px;
+	text-align:right;
+}
+.login-form  .input-group input{
+	width:240px;
+}
+.login-form  .input-group button{
+	margin-right:20px;
+}

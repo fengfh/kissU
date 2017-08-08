@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>下拉树控件</title>
+
+	<link rel="stylesheet" type="text/css" href="../jquery.cascadeselect.css" class="view-source">
+	<link  href="../../../../themes/default/style.css" class="view-source" rel="stylesheet">
+	<script src="../../../../scripts/jquery.js"  class="view-source" type="text/javascript"></script>
+	<script src="../../../../scripts/common.js"  class="view-source" type="text/javascript"></script>
+	<script src="../../../../scripts/browserfix.js"  type="text/javascript" ></script>
+	
+	<script type="text/javascript" src="../jquery.cascadeselect.js" class="view-source"></script>
+<script src="../../demo.js"></script>
+	<link href="../../demo.css" rel="stylesheet">
+</head>
+
+<body>
+
+	
+	<div style="padding:10px;" class="form-horizontal view-source noparse">
+		
+		<select class="first" defaultValue="3"
+				data-widget="cascadeselect" 
+				data-options="{root:true,target:[{selector:'.two'},{selector:'.two1'}]}">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+		</select>
+		<br/><br/><br/>
+		<select class="two" 
+				data-widget="cascadeselect" 
+				data-options="{CommandName:'java.tree.command',params:{daoBeanName:'dao',sqlId:'combotree.demo'},target:{selector:'.three'}}">
+		</select>
+		<select class="two1">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+		</select>
+		<br/><br/><br/>
+		<select class="three"
+				data-widget="cascadeselect" 
+				data-options='{data:function(id,text){var data= [];data.push({id:"two10_"+id,text:"two10_"+text}) ;data.push({id:"two11_"+id,text:"two11_"+text,selected:true}) ;data.push({id:"two12_"+id,text:"two12_"+text});return data ;}}'>
+		</select>
+
+	</div>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title></title>
+    
+    <link href="../../../../../statics/scripts/plugins/dialog/jquery.dialog.css" rel="stylesheet" type="text/css"></link>
+    <link href="../../../../../statics/scripts/plugins/blockui/jquery.blockui.css" rel="stylesheet" type="text/css"></link>
+    <link href="../../../../../statics/scripts/plugins/calendar/skin/WdatePicker.css" rel="stylesheet" type="text/css"></link>
+    <link href="../../../../../statics/scripts/plugins/validator/jquery.validation.css" rel="stylesheet" type="text/css"></link>
+    <link href="../../../../../statics/scripts/plugins/tree/jquery.tree.css" rel="stylesheet" type="text/css"></link>
+    <link href="../../../../../statics/scripts/plugins/contextmenu/jquery.contextmenu.css" rel="stylesheet" type="text/css"></link>
+
+    <link href="../../../../../statics/scripts/plugins/layout/jquery.layout.css" rel="stylesheet" type="text/css"></link>
+    <link href="../../../../../statics/themes/mobile/style.css" rel="stylesheet" type="text/css"></link>
+
+	<script src="../../../../scripts/jquery.js"  class="view-source" type="text/javascript"></script>
+		<script src="../../../../scripts/common.js"  class="view-source" type="text/javascript"></script>
+		<script src="../../../../scripts/browserfix.js"  class="view-source" type="text/javascript" ></script>
+		<script type="text/javascript" src="../jquery.dialog.js" class="view-source"></script>
+		
+
+</head>
+
+<body class="container-body">
+    <div class="container-fluid">
+        <!-- form-content 场景 -->
+<div class="form-content">
+    <form method="post">
+    <div class="page-title">
+        <h2>
+            添加角色</h2>
+    </div>
+    <!-- 表单panel -->
+    <div class="panel form-panel">
+        <div class="panel-head">
+            <div class="row-fluid">
+                <div class="span6 first">
+                    添加角色
+                </div>
+                <div class="span6">
+                </div>
+            </div>
+            <a href="http://kissumvc.vin/SecurityConsole/Common/ListSelect?title=%E6%B7%BB%E5%8A%A0%E8%A7%92%E8%89%B2&saveService=OrganizationAddManageRole&groupLabel=&groupDataSource=&groupDataSourceType=&defaultOption=&searchLabel=%E8%A7%92%E8%89%B2%E5%90%8D%E7%A7%B0&selectListDataSourceType=sql&selectListDataSource=organization.role.searchManageRoleByName&selectedListDataSourceType=&selectedListDataSource=&multiple=true&params=%7B'ORG_ID':'63ebb5fb-f5d0-4a73-8ac6-0a27c476ae09'%7D&time=1339405675958&isSave=false&fromJs=true#" class="toggle"></a>
+        </div>
+        <div class="panel-content">
+            <!-- 列表框 -->
+                <div class="toolbar">
+                    <!-- 查询信息 -->
+                    
+                    <table cellpadding="0" cellspacing="0" width="520">
+                        <tbody><tr>
+                                <td>
+                                    角色名称
+                                </td>
+                                <td>
+                                    <input type="text" size="15" maxlength="90" onkeydown="javascript:void(0);" id="propertyName">
+                                </td>
+                                <td class="button">
+                                    <button type="button" class="btn" onclick="searchProperty()">
+                                      <i class="icon-search"></i>  查询</button>
+                                    <button type="reset" class="btn">
+                                        重置</button>
+                                </td> 
+                        </tr>
+                    </tbody></table>
+                    
+                </div>
+                <!-- search结束 -->
+            <div style="height: 345px;">
+                <table width="100%" cellpadding="0" cellspacing="0" class="selectuserform" border="0" style="position: relative; top: -3px;">
+                    <tbody><tr height="23px;" style="background-color: #F1F6FF;">
+                        <td width="2%">
+                            &nbsp;
+                        </td>
+                        <td width="40%" align="center" style="background-color: #F1F6FF; font-size: 13px;">
+                            可 选 项
+                        </td>
+                        <td width="20%">
+                            &nbsp;
+                        </td>
+                        <td width="40%" align="center" style="background-color: #F1F6FF;">
+                            已 选 项
+                        </td>
+                        <td width="2%">
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="2%">
+                            &nbsp;
+                        </td>
+                        <td>
+                            <select id="properties" name="properties" multiple="multiple" style="width: 230px; height: 310px;border: solid 1px #a8cfeb;" ondblclick="cutTo(&#39;properties&#39;,&#39;results&#39;,&#39;true&#39;)">
+                            <option value="743C8695-FF54-4CE4-A6CC-37E8F8402A30">测试角色</option><option value="1A74519A-3EBC-4502-A3D2-ECC050592777">程序员</option><option value="53BE121E-843A-4F20-A63F-C5E11661A683">豆腐干豆腐干</option><option value="AD6754E3-B4D8-412D-9CD9-DC19DC42EBEA">系统管理员</option></select>
+                        </td>
+                        <td align="center">
+                            <table cellpadding="10px" cellspacing="0" border="0">
+                                    <tbody><tr>
+                                        <td align="center">
+                                            <a href="javascript:void(0);" class="btn" onclick="cutAllTo(&#39;properties&#39;,&#39;results&#39;,&#39;true&#39;)">
+                                                &gt;&gt; </a>
+                                        </td>
+                                    </tr>
+                                <tr>
+                                    <td align="center">
+                                        <a href="javascript:void(0);" class="btn" onclick="cutTo(&#39;properties&#39;,&#39;results&#39;,&#39;true&#39;)">
+                                            &nbsp;&gt; </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center">
+                                        <a href="javascript:void(0);" class="btn" onclick="cutTo(&#39;results&#39;,&#39;properties&#39;,&#39;true&#39;)">
+                                            &nbsp;&lt; </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center">
+                                        <a href="javascript:void(0);" class="btn" onclick="cutAllTo(&#39;results&#39;,&#39;properties&#39;,&#39;true&#39;)">
+                                            &lt;&lt; </a>
+                                    </td>
+                                </tr>
+                            </tbody></table>
+                        </td>
+                        <td>
+                            <select id="results" name="results" multiple="multiple" style="width: 230px; height: 310px;
+                                border: solid 1px #a8cfeb;" ondblclick="cutTo(&#39;results&#39;,&#39;properties&#39;,&#39;true&#39;)">
+                            </select>
+                        </td>
+                    </tr>
+                </tbody></table>
+            </div>
+        </div>
+        <div class="panel-foot">
+            <div class="form-actions col4-fluid pull-right">
+                <!------------------ 按钮 ------------------>
+                    <button type="submit" class="btn" onclick="onSave(&#39;results&#39;)">
+                        保&nbsp;存
+                    </button>
+
+                <button onclick="$(this).dialogClose();" class="btn">关闭</button>
+                <!------------------END 按钮 --------------->
+            </div>
+        </div>
+        <!-- panel 内容结束 -->
+    </div></form>
+    
+</div>
+
+
+
+    </div>
+
+
+</body></html>

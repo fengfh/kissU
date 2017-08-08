@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jso xmlns="http://schemas.bingosoft.net/javaframework/jso">
+	<!--框架JS和CSS-->
+	<group name="framework-common" minimize="true">
+		<js>/statics/scripts/jquery.js</js>
+		<js>/statics/scripts/plugins/jquery.ui.js</js>
+		<js>/statics/scripts/common.js</js>
+		<js>/statics/scripts/browserfix.js</js>
+		<js>/statics/scripts/plugins/jquery.json.js</js>
+	</group>
+	
+	<group name="autocomplete" minimize="true">
+		<js>/statics/scripts/plugins/jquery.cookie.js</js>
+		<js>/statics/scripts/plugins/autocomplete/jquery.ui.autocomplete.js</js>
+		<css>/statics/scripts/plugins/autocomplete/jquery.ui.autocomplete.css</css>
+	</group>
+	
+	<group name="blockui" minimize="true">
+		<js>/statics/scripts/plugins/blockui/jquery.blockui.js</js>
+		<css>/statics/scripts/plugins/blockui/jquery.blockui.css</css>
+	</group>
+	
+	<group name="calendar" minimize="true">
+		<js>/statics/scripts/plugins/calendar/WdatePicker.js</js>
+	</group>
+	
+	<group name="combotree" minimize="true">
+		<js>/statics/scripts/plugins/combotree/jquery.combotree.js</js>
+		<css>/statics/scripts/plugins/combotree/jquery.combotree.css</css>
+	</group>
+	
+	<group name="contextmenu" minimize="true">
+		<js>/statics/scripts/plugins/contextmenu/jquery.contextmenu.js</js>
+		<css>/statics/scripts/plugins/contextmenu/jquery.contextmenu.css</css>
+	</group>
+	
+	<group name="dialog" minimize="true">
+		<js>/statics/scripts/plugins/dialog/jquery.dialog.js</js>
+		<css>/statics/scripts/plugins/dialog/jquery.dialog.css</css>
+	</group>
+	
+	<group name="inputpro" minimize="true">
+		<js>/statics/scripts/plugins/inputpro/jquery.inputpro.js</js>
+		<css>/statics/scripts/plugins/inputpro/jquery.inputpro.css</css>
+	</group>
+	
+	<group name="layout" minimize="true">
+		<js>/statics/scripts/plugins/layout/jquery.layout.js</js>
+		<css>/statics/scripts/plugins/layout/jquery.layout.css</css>
+	</group>
+	
+	<group name="messagebox" minimize="true">
+		<js>/statics/scripts/plugins/messagebox/jquery.messagebox.js</js>
+		<css>/statics/scripts/plugins/messagebox/jquery.messagebox.css</css>
+	</group>
+	
+	<group name="multiselect" minimize="true">
+		<js>/statics/scripts/plugins/multiselect/jquery.multiselect.js</js>
+		<css>/statics/scripts/plugins/multiselect/jquery.multiselect.css</css>
+	</group>
+	
+	<group name="tab" minimize="true">
+		<js>/statics/scripts/plugins/tab/jquery.ui.tabs.js</js>
+		<css>/statics/scripts/plugins/tab/jquery.ui.tabs.css</css>
+	</group>
+	
+	<group name="tree" minimize="true">
+		<js>/statics/scripts/plugins/tree/jquery.tree.js</js>
+		<css>/statics/scripts/plugins/tree/jquery.tree.css</css>
+	</group>
+	
+	<group name="validator" minimize="true">
+		<js>/statics/scripts/plugins/validator/jquery.validation.js</js>
+		<css>/statics/scripts/plugins/validator/jquery.validation.css</css>
+	</group>
+	
+	<group name="upload" minimize="true">
+		<js>/statics/scripts/plugins/upload/plupload.js</js>
+		<js>/statics/scripts/plugins/upload/plupload.flash.js</js>
+		<js>/statics/scripts/plugins/upload/jquery.plupload.queue.js</js>
+		<css>/statics/scripts/plugins/upload/plupload.queue.css</css>
+	</group>
+	
+	<group name="wizard" minimize="true">
+		<js>/statics/scripts/plugins/wizard/jquery.wizard.js</js>
+	</group>
+	
+	<group name="listselectdialog" minimize="true">
+		<js>/statics/scripts/plugins/listselectdialog/jquery.listselectdialog.js</js>
+		<js>/statics/scripts/plugins/listselectdialog/jquery.listselectdialog.css</js>
+	</group>
+	
+	<group name="dhtmlxgrid" minimize="true">
+		<css>/statics/scripts/plugins/dhtmlxGrid/dhtmlxgrid.css</css>
+		<css>/statics/scripts/plugins/dhtmlxGrid/dhtmlxgrid_dhx_skyblue.css</css>
+		<css>/statics/scripts/plugins/dhtmlxGrid/dhtmlxtoolbar_dhx_skyblue.css</css>
+		<css>/statics/scripts/plugins/dhtmlxGrid/bingo-extend/bingo-extend.css</css>
+		<js>/statics/scripts/plugins/dhtmlxGrid/dhtmlxcommon.js</js>
+		<js>/statics/scripts/plugins/dhtmlxGrid/dhtmlxgrid.js</js>
+		<js>/statics/scripts/plugins/dhtmlxGrid/ext/dhtmlxgrid_srnd.js</js>
+		<js>/statics/scripts/plugins/dhtmlxGrid/ext/dhtmlxgrid_splt.js</js>
+		<js>/statics/scripts/plugins/dhtmlxGrid/ext/dhtmlxgrid_pgn.js</js>
+		<js>/statics/scripts/plugins/dhtmlxGrid/ext/dhtmlxgrid_hmenu.js</js>
+		<js>/statics/scripts/plugins/dhtmlxGrid/ext/dhtmlxgrid_mcol.js</js>
+		<js>/statics/scripts/plugins/dhtmlxGrid/ext/dhtmlxgrid_filter.js</js>
+		<js>/statics/scripts/plugins/dhtmlxGrid/ext/json.js</js>
+		<js>/statics/scripts/plugins/dhtmlxGrid/ext/dhtmlxgrid_nxml.js</js>
+		<js>/statics/scripts/plugins/dhtmlxGrid/ext/dhtmlxgrid_ssc.js</js>
+		<js>/statics/scripts/plugins/dhtmlxGrid/ext/dhtmlxgrid_selection.js</js>
+		<js>/statics/scripts/plugins/dhtmlxGrid/dhtmlxgridcell.js</js>
+		<js>/statics/scripts/plugins/dhtmlxGrid/dhtmlxdataprocessor.js</js>
+		<js>/statics/scripts/plugins/dhtmlxGrid/dhtmlxtoolbar.js</js>
+		<js>/statics/scripts/plugins/dhtmlxGrid/excells/dhtmlxgrid_excell_cntr.js</js>
+		<js>/statics/scripts/plugins/dhtmlxGrid/excells/dhtmlxgrid_excell_link.js</js>
+		<js>/statics/scripts/plugins/dhtmlxGrid/bingo-extend/dhtmlxgrid_ext.js</js>
+		<js>/statics/scripts/plugins/dhtmlxGrid/bingo-extend/dhtmlxgrid_cell_ext.js</js>
+		<js>/statics/scripts/plugins/dhtmlxGrid/bingo-extend/dhtmlxgrid_dhx_skyblue_pgn.js</js>
+	</group>
+
+</jso>

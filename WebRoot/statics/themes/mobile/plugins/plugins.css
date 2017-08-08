@@ -1,0 +1,106 @@
+﻿@charset "utf-8";
+
+/* tipsy插件
+------------------------------------------------------- */
+@import url(tab/tab.css);
+
+
+
+
+/* 弹出窗插件
+------------------------------------------------------- */
+.ui-dialog{
+	padding:0;
+}
+.ui-widget-content{
+	position: relative;
+	zoom:1;
+}
+.ui-dialog .ui-dialog-titlebar {
+	position: absolute;
+	top:0;
+	right:0;
+	z-index:100;
+	width:100%;
+}
+.ui-dialog .ui-dialog-titlebar-close{
+	right:1em;
+	top:0.7em;
+	padding:0;
+}
+.ui-dialog .ui-dialog-titlebar{
+	border-bottom:0;
+	padding:0;
+}
+.ui-dialog .ui-dialog-content{
+	overflow: hidden;
+	padding: 0;
+}
+.ui-dialog .ui-dialog-buttonpane {
+	margin:0;
+}
+/* inputpro
+------------------------------------------------------- */
+.inputpro-img-span, .inputpro-img-span-bg{
+	margin-left:0;
+}
+
+
+
+/* 日期插件
+------------------------------------------------------- */
+.WdateDiv ,.ui-corner-all {
+	background:#fff;
+	border:1px solid #ccc;
+}  
+
+.ui-helper-reset{
+	background:#fff;
+	border:1px solid #ccc;
+}
+
+
+
+/* layout
+------------------------------------------------------- */
+.ui-layout{
+	height:100%;
+}
+.panel-header{
+	font-size:14px;
+	border:1px solid #C0DCF1;
+	border-bottom:0;
+	color:#074E81;
+	padding-left:10px;
+}
+.layout .panel-body, .layout .ui-widget-header, .layout .panel-header {
+	border-color:#C0DCF1;
+}
+.layout .panel-header {
+	background:none;
+	border-bottom:1px solid #C0DCF1;
+}
+
+/* west */
+.layout-split-west{
+	border-right-color: #fff;
+}
+.layout-split-west .panel-body{
+    border:1px solid #C0DCF1;
+    border-top:0; 
+}
+.ui-helper-reset{
+	border-top:0;
+	padding:10px;
+}
+.layout-split-west ,.layout-panel-center ,.layout-split-east ,.layout-split-north ,.layout-split-south{
+	position:absolute;
+}
+.layout-expand{
+	position: absolute;
+}
+
+/* east */
+.layout-split-east{
+	border-left-color: #fff;
+}

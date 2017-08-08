@@ -1,0 +1,150 @@
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+<title>Plupload - Queue widget example</title>
+
+	<link rel="stylesheet" href="../plupload.queue.css" type="text/css" media="screen" class="view-source"/>
+	<link type="text/css" href="../../dialog/jquery.dialog.css" rel="stylesheet"  class="view-source"/>
+	<link  href="../../../../themes/default/style.css" rel="stylesheet" class="view-source">
+	<script src="../../../../scripts/jquery.js" type="text/javascript" class="view-source"></script>
+	<script src="../../../../scripts/common.js" type="text/javascript" class="view-source"></script>
+	<script src="../../../../scripts/browserfix.js" type="text/javascript"  class="view-source"></script>
+	<script src="../../../../scripts/plugins/jquery.json.js" type="text/javascript"></script>
+	
+	<script type="text/javascript" src="../../dialog/jquery.dialog.js" class="view-source"></script>
+	
+	<script type="text/javascript" src="../plupload.js" class="view-source"></script>
+	<script type="text/javascript" src="../jquery.plupload.queue.js" class="view-source"></script>
+	<script type="text/javascript" src="../plupload.flash.js" class="view-source"></script>
+	
+		<script src="../../demo.js"></script>
+		<link href="../../demo.css" rel="stylesheet">
+
+<script  class="view-source noparse">
+$(function() {
+
+	/*$('#upload').upload( {
+		url : '~/component/upload.do',
+		max_file_size : '500mb',
+		filters : [//文件类型过滤
+			{title : "图片文件", extensions : "jpg,gif,png"},
+			{title : "压缩文件", extensions : "zip"}
+		]
+	} ) ;*/
+
+	$('#upload2').upload( {
+		url : serviceContext+'/component/upload.do',
+		load_url:serviceContext+"/component/upload.do?action=load",
+		load_params:{refType:"default1",refId:"default1"},
+		del_url:serviceContext+"/component/upload.do?action=delete",
+		download_url:serviceContext+"/component/upload.do?action=download",
+		max_file_size : '100mb',
+		render_container:'#single_upload_container' ,
+		upload_folder : '{uploadContextPath}/test_folder/',
+		uploadBefore:function(fileNum){
+			if(fileNum>=2) return "文件数不对";
+			return false ;
+		}
+	} ) ;
+
+	//多文件上传
+	$('#upload3').upload( {
+		url : serviceContext+'/component/upload.do',
+		/*load_url:"~/component/upload.do?action=load",
+		load_params:{refType:"default",refId:"default"},
+		del_url:"~/component/upload.do?action=delete",
+		download_url:"~/component/upload.do?action=download",*/
+		max_file_size : '100mb',
+		height:130,
+		max_file_num:5 ,
+		multi_selection:true,
+		render_container:'#multi_upload_container' //,
+		/*render:function(responses , uploader){
+			//渲染在这里
+		}*/
+	} ) ;
+});
+</script>
+
+<style>
+	#multi_upload_container{
+		background: #e2eff9;
+		width:350px;
+		height:auto;
+		overflow:hidden;
+		padding:5px;
+	}
+	
+	#single_upload_container{
+		background: #e2eff9;
+		width:350px;
+		height:auto;
+		overflow:hidden;
+		padding:5px;
+	}
+</style>
+
+</head>
+<body>
+	单文件上传（文件类型过滤：jpg,gif,png,zip）：
+	<input type="text" name="upload" id="upload"  class="view-source"
+		data-widget="upload"
+		data-options="{url:'http://{host}:{port}/bingo-ui-demo/component/upload.do',max_file_size:'500mb'}"
+		style="margin-right: 10px;top:0px;position:relative;"/>
+		
+	<div> &nbsp;</div>
+	单文件上传：
+	<input type="text" id="upload2" class="view-source" style="margin-right: 10px;top:0px;position:relative;width:200px;"/>
+	<br/><br/>
+	<div id="single_upload_container"></div>
+	<div> &nbsp;</div>
+	多文件上传：
+	<input type="text" name="upload3" class="view-source" id="upload3" style="margin-right: 10px;top:0px;position:relative;"/>
+	<br/><br/>
+	<div id="multi_upload_container"></div>
+	
+      		<script type="code-pretty" class="demo1 view-source noparse inner-code">
+HTML声明式调用：
+	<input type="text" name="upload" id="upload" 
+		data-widget="upload"
+		data-options="{url:'~/component/upload.do',max_file_size:'500mb'}"
+		style="margin-right: 10px;top:0px;position:relative;"/>
+
+脚本调用：
+   单文件上传：
+	<input type="text" id="upload2" style="margin-right: 10px;top:0px;position:relative;width:200px;"/>
+   多文件上传：
+	<input type="text" name="upload3" id="upload3" style="margin-right: 10px;top:0px;position:relative;"/>
+   
+   初始化脚本：
+       $('#upload2').upload( {
+			url : '~/component/upload.do',
+			/*load_url:"~/component/upload.do?action=load",
+			load_params:{refType:"default1",refId:"default1"},
+			del_url:"~/component/upload.do?action=delete",
+			download_url:"~/component/upload.do?action=download",*/
+			max_file_size : '100mb',
+			render_container:'#single_upload_container' ,
+			upload_folder : '{uploadContextPath}/test_folder/'
+		} ) ;
+
+		//多文件上传
+		$('#upload3').upload( {
+			url : '~/component/upload.do',
+			/*load_url:"~/component/upload.do?action=load",
+			load_params:{refType:"default",refId:"default"},
+			del_url:"~/component/upload.do?action=delete",
+			download_url:"~/component/upload.do?action=download",*/
+			max_file_size : '100mb',
+			height:130,
+			max_file_num:5 ,
+			multi_selection:true,
+			render_container:'#multi_upload_container' //,
+			/*render:function(responses , uploader){
+				//渲染在这里
+			}*/
+		} ) ;
+      		</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Root>
+	<!--  分类 -->
+	<category>
+		<demo name="HTML声明式" url="demo/base.html"/>
+		<demo name="内容延迟加载" url="demo/delay.html"/>
+		<demo name="多种内容来源" url="demo/multi_source.html"/>
+		<demo name="多标签Tab" url="demo/more.html"/>
+		<demo name="动态添加tab" url="demo/dyn.html"/>
+		<demo name="API操作tab" url="demo/api.html"/>
+		<!--
+		<demo name="简单标签声明" url="demo/declarative.html"/>
+		<demo name="多数据源标签声明" url="demo/declarative_mutil.html"/>
+		-->
+	</category>
+</Root>

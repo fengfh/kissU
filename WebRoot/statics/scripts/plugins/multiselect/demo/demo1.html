@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>MultiSelect Demos</title>
+	<link  href="../jquery.multiselect.css" rel="stylesheet" type="text/css"  class="view-source"/>	
+	<link  href="../../../../themes/default/style.css" class="view-source" rel="stylesheet">
+		<script src="../../../../scripts/jquery.js" class="view-source"  type="text/javascript"></script>
+		<script src="../../../../scripts/common.js" class="view-source"  type="text/javascript"></script>
+		<script src="../../../../scripts/browserfix.js" class="view-source"  type="text/javascript" ></script>
+		<script src="../../../../scripts/plugins/jquery.json.js" class="view-source"  type="text/javascript"></script>
+		
+		<script src="../../../../scripts/plugins/jquery.ui.js" class="view-source"  type="text/javascript" ></script>
+		
+		<script src="../jquery.multiselect.js" type="text/javascript" class="view-source"></script>
+		
+	
+		<script src="../../demo.js"></script>
+		<link href="../../demo.css" rel="stylesheet">
+
+<script class="view-source noparse">
+	//初始化事件
+	$(function() {
+		$('#getValue').click( function(){
+			var obj = jQuery("#multiSelect").multiSelect().getValue()  ;
+			$('.value').removeClass('ui-helper-hidden').html( jQuery.json.encode(obj) ) ;
+		} ) ;
+	}) ;
+</script>
+	
+</head>
+
+<body>
+
+	
+	<div class='' style="padding:20px;">
+		<div>
+			<a href='javascript:' id='getValue' class="btn">getValue</a> &nbsp;&nbsp;
+			<br/><br/>
+			<span class='ui-state-highlight value ui-helper-hidden'></span>
+		</div>
+		<br />
+		<select multiple="multiple" id="multiSelect"  data-widget="multiselect" data-options="{}"  class="view-source" name="multiSelect" >
+			<option value="01">
+				湖南
+			</option>
+			<option value="02" selected>
+				湖北
+			</option>
+			<option value="03">
+				江西
+			</option>
+			<option value="04">
+				海南
+			</option>
+			<option value="05" selected>
+				广西
+			</option>
+			<option value="06" selected>
+				广东
+			</option>
+			<option value="07">
+				北京
+			</option>
+		</select>
+
+	</div>
+</body>
+</html>

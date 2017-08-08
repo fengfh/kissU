@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Calendar Demos</title>
+	<link  href="../../../../themes/default/style.css" class="view-source" rel="stylesheet">
+	<script src="../../../../scripts/jquery.js" class="view-source"  type="text/javascript"></script>
+	<script src="../../../../scripts/common.js" class="view-source"  type="text/javascript"></script>
+	<script src="../../../../scripts/browserfix.js" class="view-source"  type="text/javascript" ></script>
+	
+	<script src="../../../../scripts/plugins/jquery.ui.js" class="view-source"  type="text/javascript" ></script>
+	
+	<script language="javascript" type="text/javascript" src="../WdatePicker.js" class="view-source"></script>
+	
+	<script src="../../demo.js"></script>
+	<link href="../../demo.css" rel="stylesheet">
+	<script class="view-source">
+		$(function(){
+			$("#content-date-time").calendar({isShowWeek:true,dateFmt:$('#calendar_format_datatime_id').val()});
+		});
+		
+	</script>
+	
+</head>
+
+<body>
+	
+		<div>
+			定义年月日时间返回格式：<input type="text" id="calendar_format_datatime_id" class="view-source" style="width:180px" value="yyyy-MM-dd HH:mm:ss"/>（yyyy:年份,MM:月份,dd:天数,HH:小时,mm:分钟,ss:秒钟）
+			<br/><br/>
+			日历文本框：<input type="text" id="content-date-time"  class="view-source">
+			<br/>
+			<h5><b>提示：</b>请先定义年月日时间返回的格式，再点击日历文本框验证日历控件是否按设定的格式返回日期。</h5>
+			<div class='ui-state-highlight'> 
+			<pre>
+ <b>说明：</b>
+ 1.用户能方便的单独修改年份、月份、小时、分钟和秒； 
+ 2.开发人员能自定义日期和时间返回的格式：可以以YYYY-MM-DD HH:MI:SS的格式
+   返回，其中年月日之间的分隔符可以自定义； 
+ 3.开发人员能初始化是否显示时间供用户选择； 
+ 4.开发人员能初始化时间的显示粒度，可以细到秒，也可以细到分钟
+			</pre>
+			</div>
+	</div>
+</body>
+</html>

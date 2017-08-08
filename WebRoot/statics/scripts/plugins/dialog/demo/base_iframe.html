@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Dialog</title>
+<link  href="../../blockui/jquery.blockui.css" type="text/css" rel="stylesheet"  class="view-source"/>
+	<link  type="text/css" href="../../../../scripts/plugins/layout/jquery.layout.css" rel="stylesheet"  class="view-source"/>
+	<link  type="text/css" href="../jquery.dialog.css" rel="stylesheet"  class="view-source"/>
+	<link  href="../../../../themes/mobile/style-all.css" class="view-source" rel="stylesheet">
+		<script src="../../../../scripts/jquery.js"  class="view-source" type="text/javascript"></script>
+		<script src="../../../../scripts/common.js"  class="view-source" type="text/javascript"></script>
+		<script src="../../../../scripts/browserfix.js"  class="view-source" type="text/javascript" ></script>
+		<script src="../../../../scripts/plugins/jquery.json.js" type="text/javascript"></script>
+		
+	<script src="../../../../scripts/plugins/jquery.ui.js" type="text/javascript"  class="view-source"></script>
+		
+		
+	<script type="text/javascript" src="../jquery.dialog.js" class="view-source"></script>
+	
+	
+	<script src="../../blockui/jquery.blockui.js" type="text/javascript"  class="view-source"></script>
+	
+
+<script type="text/javascript"  class="view-source noparse">
+
+$(function(){
+
+	$("#test").click(function(){
+		$.dialog({
+			width:800,
+			height:600,
+			url:"http://www.baidu.com",
+			iframe:true
+		})  ;
+	}) ;
+	
+}) ;
+
+</script>
+
+</head>
+<body>
+
+  <div class="item">
+	  <div id="test" class="btn">Iframe中打开对话框</div>
+  </div>
+
+</body>
+</html>
+		

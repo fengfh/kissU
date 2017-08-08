@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Root>
+	<!--  分类 -->
+	<category>
+		<demo name="静态树展现" url="demo/static_tree_demo.html"/>
+		<demo name="同步树展现" url="demo/syn_tree_demo.html"/>
+		<demo name="异步树展现" url="demo/asyn_tree_demo.html"/>
+		<demo name="带选择框的树" url="demo/checkbox_tree_demo.html"/>
+		<demo name="带选择框的三态树" url="demo/tri_checkbox_tree_demo.html"/>
+		<demo name="树的各种操作" url="demo/operation_of_tree_demo.html"/>
+		<demo name="树的各种事件" url="demo/event_demo.html"/>
+		<demo name="右键菜单" url="demo/contextmenu_tree_demo.html"/>
+	</category>
+
+</Root>

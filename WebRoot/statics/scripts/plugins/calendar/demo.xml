@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Root>
+	<!--  分类 -->
+	<category>
+		<demo name="支持年月日选择" url="demo/demo1.html"/>
+		<demo name="支持年月日时间选择" url="demo/demo2.html"/>
+		<demo name="支持年月选择" url="demo/demo3.html"/>
+		<demo name="支持时间选择" url="demo/demo4.html"/>
+		<demo name="嵌入页面" url="demo/demo5.html"/>
+		<demo name="显示位置的自动计算" url="demo/demo6.html"/>
+		<demo name="在无限级框架显示" url="demo/demo7.html"/>
+		<demo name="多语言日历框显示" url="demo/demo8.html"/>
+		<demo name="支持事件" url="demo/demo9.html"/>
+		<demo name="声明式标签" url="demo/demo10.html"/>
+		<demo name="特殊天和日期高亮" url="demo/specialDay.html"/>
+	</category>
+
+</Root>

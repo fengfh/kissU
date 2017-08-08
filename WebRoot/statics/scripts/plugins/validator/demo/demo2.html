@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<title>表单验证－支持多种校验提示</title>
+	<link  href="../jquery.validation.css" type="text/css" rel="stylesheet" class="view-source"/>
+	<link  href="../../../../themes/default/style.css" rel="stylesheet" class="view-source">
+	<script src="../../../../scripts/jquery.js" type="text/javascript" class="view-source"></script>
+	<script src="../../../../scripts/common.js" type="text/javascript" class="view-source"></script>
+	<script src="../../../../scripts/browserfix.js" type="text/javascript"  class="view-source"></script>
+	<script src="../../../../scripts/plugins/jquery.json.js" type="text/javascript"></script>
+
+	<script src="../jquery.validation.js" type="text/javascript" class="view-source"></script>
+	
+	<script src="../../demo.js"></script>
+	<link href="../../demo.css" rel="stylesheet">
+	
+</head>
+<body>
+
+<form id="personForm" action="#" data-widget="validator" class="form-inline row-fluid " >
+      <fieldset>
+          <legend>用户创建表单</legend>
+	      	<div class="row-fluid">
+	      		  <div class="span6 control-group">
+		            <label class="control-label" for="name">姓名：</label>
+		            <div class="controls">
+		              <input type="text" id="name" data-validator="required,length[6,10]" />
+		            </div>
+		          </div>
+		          <div class="span6 control-group">
+		            <label class="control-label">性别：</label>
+		            <div class="controls">
+		            	<label class="radio inline">
+			                <input id="male" name="sex" type="radio" data-validator="required">男
+			            </label>
+			            <label class="radio inline">
+			               <input id="female" name="sex" type="radio" data-validator="required">女
+			            </label>
+		            </div>
+		          </div>
+	      	</div>
+		    <div class="row-fluid">      
+		          <div class="span6 control-group">
+		            <label class="control-label" for="disabledInput">年龄：</label>
+		            <div class="controls">
+		             	<input type="text" id="agreement" data-validator="pattern[integer],range[1,100]" />
+		            </div>
+		          </div>
+		          <div class="span6 control-group">
+		            <label class="control-label" for="optionsCheckbox2">籍贯：</label>
+		            <div class="controls">
+		               <select id="city" data-validator="required">
+							<option value=""></option>
+							<option value="1">北京</option>
+							<option value="2">河北</option>
+							<option value="3">上海</option>
+						</select>
+		            </div>
+		          </div>
+	        </div>
+		    <div class="row-fluid "> 
+		          <div class="span6 control-group">
+		            <label class="control-label" for="birthday">出生日期：</label>
+		            <div class="controls">
+		              <input type="text" id="birthday" data-validator="date" />
+		            </div>
+		          </div>
+		          <div class="span6 control-group">
+		            <label class="control-label" for="email">电子邮件：</label>
+		            <div class="controls">
+		              <input type="text" id="email" data-validator="required,pattern[letter]" />
+		            </div>
+		          </div>
+		     </div>
+		    <div class="row-fluid "> 
+		          <div class="span6 control-group">
+		            <label class="control-label" for="password">密码：</label>
+		            <div class="controls">
+		              <input type="password" id="password" data-validator="equalToField[repassword]" />
+		            </div>
+		          </div>
+		          <div class="span6 control-group">
+		            <label class="control-label" for="repassword">密码(确认)：</label>
+		            <div class="controls">
+		              <input type="password" id="repassword" data-validator="equalToField[password]" />
+		            </div>
+		          </div>
+		    </div>
+		    <div class="row-fluid "> 
+		          <div class="span6 control-group">
+		            <label class="control-label">兴趣爱好：</label>
+		            <div class="controls">
+		            	<label class="checkbox inline">
+			               <input type="checkbox" name="interest" data-validator="range[2,4]" id="interest1">篮球
+			             </label>
+				         <label class="checkbox inline">     
+							<input type="checkbox" name="interest" data-validator="range[2,4]" id="interest2">爬山
+			             </label>
+				         <label class="checkbox inline">      
+							<input type="checkbox" name="interest" data-validator="range[2,4]" id="interest2">听歌
+			             </label>
+				         <label class="checkbox inline">     
+							<input type="checkbox" name="interest" data-validator="range[2,4]" id="interest2">读书
+			             </label>
+				         <label class="checkbox inline">     
+							<input type="checkbox" name="interest" data-validator="range[2,4]" id="interest2">旅游
+			             </label>
+				         <label class="checkbox inline">     
+							<input type="checkbox" name="interest" data-validator="range[2,4]" id="interest2">象棋
+			             </label>
+				         <label class="checkbox inline">     
+							<input type="checkbox" name="interest" data-validator="range[2,4]" id="interest2">围棋
+			             </label>
+				         <label class="checkbox inline">      
+							<input type="checkbox" name="interest" data-validator="range[2,4]" id="interest2">游戏
+			             </label>  
+		            </div>
+		          </div>
+		          <div class="span6 control-group">
+		            <label class="control-label" for="remark">备注：</label>
+		            <div class="controls">
+		              <textarea id="remark" data-validator="required"></textarea>
+		            </div>
+		          </div>
+		      </div>
+	          <div class="form-actions">
+	            <button type="button" class="btn btn-primary  view-source noparse"  onclick="javascript:alert($.validation.validate('#personForm').errorInfo);">提交</button>
+	            <button class="btn">关闭</button>
+	          </div>
+	       </fieldset>
+      </form>
+
+</body>
+</html>

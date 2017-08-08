@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Root>
+	<!--  分类 -->
+	<category>
+		<demo name="左右布局" url="demo/webpage.html"/>
+		<demo name="门户布局" url="demo/portal.html"/>
+		<demo name="全布局（HTML声明式）" url="demo/layout_all.html"/>
+		<demo name="布局操作" url="demo/layout_api.html"/>
+		<demo name="布局事件" url="demo/layout_event.html"/>
+		<!--
+		<demo name="声明式标签" url="demo/declarative.html"/>
+		-->
+	</category>
+
+</Root>

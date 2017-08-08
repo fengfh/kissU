@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Calendar Demos</title>
+	<link  href="../../../../themes/default/style.css" class="view-source" rel="stylesheet">
+	<script src="../../../../scripts/jquery.js" class="view-source"  type="text/javascript"></script>
+	<script src="../../../../scripts/common.js" class="view-source"  type="text/javascript"></script>
+	<script src="../../../../scripts/browserfix.js" class="view-source"  type="text/javascript" ></script>
+	
+	<script src="../../../../scripts/plugins/jquery.ui.js" class="view-source"  type="text/javascript" ></script>
+	
+	<script language="javascript" type="text/javascript" src="../WdatePicker.js" class="view-source" ></script>
+	
+	
+	<script src="../../demo.js"></script>
+	<link href="../../demo.css" rel="stylesheet">
+	<script>
+		$(function(){
+			//$("#date_zhtw").calendar({lang:'zh-tw'});
+			//$("#date_en").calendar({lang:'en'});
+			//$("#date_zhcn").calendar({lang:'zh-cn'});
+		});
+	</script>
+
+</head>
+
+<body>
+	
+		<div id='content-default' class='demo' style="position:relative;">
+			<div>
+				<div id="calendar_div">
+			<table>
+				<tr>
+					<td align="right">繁体中文：</td>
+					<td><input id="date_zhtw" data-widget="calendar" data-options="{lang:'zh-tw'}" type="text"  class="view-source" /></td>
+				</tr>
+				<tr>
+					<td align="right">英文：</td>
+					<td><input id="date_en" data-widget="calendar" data-options="{lang:'en'}" type="text"  class="view-source" /></td>
+				</tr>
+				<tr>
+					<td align="right">简体中文:</td>
+					<td><input id="date_zhcn" data-widget="calendar" data-options="{lang:'zh-cn'}" type="text"  class="view-source" /></td>
+				</tr>
+				<tr>
+				</tr>
+			</table>
+				<br/>
+				</div>
+		</div>
+</body>
+</html>

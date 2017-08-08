@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Root>
+	<!--  分类 -->
+	<category>
+		<demo name="树列表多选" url="demo/tree_grid_multi.html"/>
+		<demo name="树列表单选" url="demo/tree_grid_single.html"/>
+		<demo name="列表多选" url="demo/grid_multi.html"/>
+		<demo name="列表单选" url="demo/grid_single.html"/>
+		<demo name="树多选" url="demo/tree_multi.html"/> 
+		<demo name="树单选" url="demo/tree_single.html"/> 
+		<demo name="左右选择" url="demo/twoselectdialog.html"/>
+	</category>
+
+</Root>

@@ -1,0 +1,31 @@
+﻿body{ margin:0; padding:0;}
+
+.error
+{
+background: url(images/error_bg.gif) no-repeat;
+width: 468px;
+height: 153px;
+position: relative;
+margin: 0 auto;
+margin-top: 80px;
+padding:30px 0 0 10px;
+*padding:30px 0 0 0px;
+}
+.err_content{ padding-top:15px;}
+.err_content h1{ margin:0; padding:0; font-size:12px; color:#000; font-weight:normal;}
+.err_back{ position:absolute; right:30px; bottom:30px;}
+.err_back a{ color:#3976cf; text-decoration:underline; font-size:12px;}
+.err_back a:hover{ color:#ff3300;}
+.err_detail{ position:absolute; right:120px; bottom:30px;}
+.err_detail a{ color:#3976cf; text-decoration:underline; font-size:12px;}
+.err_detail a:hover{ color:#ff3300;}
+
+.err_1{ background:url(images/error_bg_03.gif) no-repeat; width:27px; height:26px;}
+.err_2{ background:url(images/error_bg_05.gif) repeat-x;height:26px;}
+.err_3{ background:url(images/error_bg_07.gif) no-repeat; width:27px; height:26px;}
+.err_4{ background:url(images/error_bg_12.gif) repeat-y; width:27px;}
+.err_5{ background:#e1f1fc;}
+.err_6{ background:url(images/error_bg_13.gif) repeat-y; width:27px;}
+.err_7{ background:url(images/error_bg_16.gif) no-repeat; width:27px; height:26px;}
+.err_8{ background:url(images/error_bg_18.gif) repeat-x; height:26px;}
+.err_9{ background:url(images/error_bg_20.gif) no-repeat; width:27px; height:26px;}

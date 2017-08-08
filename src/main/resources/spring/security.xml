@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"       
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd" default-lazy-init="true">
+	
+	<bean id="securityFilter" class="bingo.integration.security.SmartSecurityFilter" >
+		<property name="ignorePatternString" value="/openid*|/images/*|/themes/*|*.css|*.js|*.png|*.jpg|*.gif|*.bmp|/common/*|/modules/demo/Ajax401/Ajax401Demo.jsp"></property>
+		<property name="loginMode" value="${Profile.Security.Login_Mode}"></property>
+	</bean>
+	
+	<!-- 对接1.0-SNAPSHOT版本SSO-->
+	<bean id="ssoServlet" class="bingo.sso.client.openid.servlets.SingleSignOnServlet">
+		<property name="initParam">
+			<map>
+				<entry key="server_url" value="${Profile.SSO.Server_Url}"/>
+			</map>
+		</property>
+	</bean>
+	
+	<bean id="securityProvider" class="bingo.security.SecurityProvider"
+		p:authStore-ref="security.authStore"
+		p:userStore-ref="security.userStore"
+		p:authenticator-ref="security.authenticator"
+		p:authorizer-ref="security.authorizer"/>
+
+	<bean id="security.authorizer" class="bingo.security.authorization.SecurityAuthorizer"
+		p:authStore-ref="security.authStore"/>
+	
+	<bean id="security.authenticator" class="bingo.security.authentication.SecurityAuthenticator"
+		p:userStore-ref="security.userStore"/>
+
+	<bean id="security.authStore" class="bingo.security.store.DBAuthStore"
+		p:dao-ref="dao"/>
+	
+	<bean id="security.userStore" class="bingo.security.store.DBUserStore"
+		p:dao-ref="dao"/>
+</beans>

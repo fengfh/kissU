@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>通用配置信息</comment>
+
+<!--系统登录模式，local：本地登录-->
+<entry key="Profile.Security.Login_Mode">local</entry>
+
+<!--Jso处理资源的模式，true：调试模式，false：生产模式-->
+<entry key="Profile.Jso.Debug_Mode">true</entry>
+
+<!--DhtmlxGrid导出Excel文件的临时目录-->
+<entry key="Profile.DhtmlxGrid.Export_Excel_Path">c:\</entry>
+
+<!--SSO单点登录的地址-->
+<entry key="Profile.SSO.Server_Url">http://localhost:8080/sso/openid</entry>
+
+<!--默认主题样式-->
+<entry key="Profile.theme">mobile</entry>
+
+</properties>

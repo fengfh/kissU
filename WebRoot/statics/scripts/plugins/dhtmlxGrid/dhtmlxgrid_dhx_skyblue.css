@@ -1,0 +1,96 @@
+div.gridbox_dhx_skyblue .xhdr{
+	background-Color:#DFEAFB;	
+}
+
+div.gridbox_dhx_skyblue table.hdr tr{
+	background-Color:#DFEAFB;
+	background-position:0px -1px\9;
+}
+body:nth-of-type(1) div.gridbox_dhx_skyblue table.hdr tr{
+	background-Color:#DFEAFB;
+	background-position:0px -1px;
+}
+
+div.gridbox_dhx_skyblue table.obj tr td{
+	font-family:宋体;
+	font-size:12px;
+	border-width:0px 0px 0px 0px;
+	padding-right:4px;
+	padding-left:4px;
+}
+div.gridbox_dhx_skyblue table.hdr td div.hdrcell{
+	text-align: center;		
+	font-weight:bold;
+	width:auto;
+	padding-left:4px;
+	padding-right:4px;
+	width:100% !ie;
+}
+div.gridbox_dhx_skyblue table.hdr td {
+	height:25px;
+	border-width: 1px 1px 1px 1px;
+	border-color : #DFEAFB white #DFEAFB #DFEAFB;
+	background-color:transparent;
+	border-bottom: 1px solid white;
+	border-right: 1px solid white;
+	font-family:Verdana, Microsoft YaHei, Simsun, Arial Unicode MS, Mingliu, Arial, Helvetica, 宋体;
+	font-size:12px;
+	color:#1C568A;
+	vertical-align:middle;
+	text-align:center;
+}
+
+div.gridbox_dhx_skyblue {
+  border:1px solid  #DFEAFB;
+}
+div.gridbox table.obj tr  td{
+	border-bottom: 1px dotted #A8CFEB;
+	border-right: 1px solid white;
+    padding-top:3px;
+    padding-bottom:3px;
+    font-family:宋体;
+	font-size:12px;
+	vertical-align:middle;
+}
+div.gridbox table.obj.row20px tr  td{
+	height:25px;
+    padding-top:0px;
+    padding-bottom:0px;
+}
+
+div.gridbox table.obj tr  td.editable{
+    padding:0px;
+}
+div.gridbox table.obj tr  td.editable div.treegrid_cell{
+	padding-left:4px;
+	padding-top:1px;
+}
+div.gridbox_dhx_skyblue table.obj tr.rowselected{
+	background-color:#FFF1CC;
+}
+div.gridbox_dhx_skyblue table.obj tr.rowselected td{
+	background-color:#FFF1CC;
+	background-repeat:repeat-x;
+	background-position:0px 0px;	
+}
+div.gridbox_dhx_skyblue table.obj.row20px tr.rowselected td{
+	background-repeat:repeat-x;
+	background-position:0px 0px;	
+}
+
+div.gridbox_dhx_skyblue table.obj tr.rowselected td.cellselected {
+	background-color:#FFF1CC;
+}
+div.gridbox_dhx_skyblue .odd_dhx_skyblue{
+	background-color:#F1F6FF;
+}
+.dhx_combo_select, .gridbox_dhx_skyblue .dhx_combo_edit, .gridbox_dhx_skyblue .dhx_textarea{
+    font-family:宋体;
+    font-size:12px;
+}
+.gridbox_dhx_skyblue .dhx_combo_edit{
+	padding:1px 0px 1px 1px;
+}
+.gridbox_dhx_skyblue .dhx_sub_row {
+	background-color:transparent;
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+ <title>Farbtastic</title>
+ <meta charset="UTF-8" />
+
+	<link  href="../jquery.blockui.css" class="view-source" type="text/css" rel="stylesheet" />
+	<link  href="../../../../themes/default/style.css" class="view-source"  rel="stylesheet">
+	<script src="../../../../scripts/jquery.js" class="view-source"  type="text/javascript"></script>
+	<script src="../../../../scripts/common.js" class="view-source"  type="text/javascript"></script>
+	<script src="../../../../scripts/browserfix.js" class="view-source"  type="text/javascript" ></script>
+	
+	<script type="text/javascript" class="view-source" src="../jquery.blockui.js"></script>
+	
+	<script src="../../demo.js"></script>
+	<link href="../../demo.css" rel="stylesheet">
+
+ <body>
+	<div class="keyCode">
+ <script type="text/javascript"  class="view-source"> 
+	
+    $(document).ready(function() { 
+    	$('#pageDemo11').click(function() { 
+            $.block({onBlock:function(){alert('Page onBlock');},fadeIn:3000,onUnblock:function(element, options){alert('Page onUnblock');},fadeOut:3000,timeout:2000}); 
+        }); 
+        
+         $('#pageDemo12').click(function() { 
+        	$('#postmessage').block({onBlock:function(){alert('DIV onBlock');},fadeIn:3000,onUnblock:function(element, options){alert('DIV onUnblock');},fadeOut:3000,timeout:2000}); 
+        }); 
+    }); 
+    
+</script> 
+ </div>
+	<div class='demos-content'>
+		<div id='content-container' class='demo'>
+			<h1></h1>
+	 <div class="keyCode">
+    <input id="pageDemo11" class="btn" type="submit" value="遮罩整个窗口" />
+    <input id="pageDemo12" class="btn" type="submit" value="遮罩DIV区域" />
+    </div>
+    <br/> 
+    <br/>
+    <div style="width:440px;height:240px;border:1px solid red" id="postmessage">
+     <table cellpadding="0" cellspacing="0" border="1" bordercolor="" width="100%">
+    <tr>
+    <td>名称：</td>
+    <td>
+    <input type="text" style="width:160px"/>
+    </td>
+    </tr>
+     <tr>
+   		<td>性别：</td>
+	    <td>
+	    <input type="radio" value="0" name="sex"/>男<input type="radio" value="1" name="sex"/>女
+	    </td>
+    </tr>
+    <tr>
+    	<td>兴趣：</td>
+    	<td>
+    		<input type="checkbox" value="0" name="yumao"/>羽毛球<input type="checkbox" value="1" name="ball"/>棒球
+    	</td>
+    </tr>
+    <tr>
+    	<td>地区：</td>
+    	<td>
+    		<select style="width:160px">
+			    <option>天河区</option>
+			    <option>白云区</option>
+			    <option>越秀区</option>
+			    <option>荔湾区</option>
+			    <option>海珠区</option>
+			    <option>番禺区</option>
+		   </select>
+    	</td>
+    </tr>
+     <tr>
+    	<td>描述：</td>
+    	<td>
+    		<textarea rows="5" style="width:350px">test textarea</textarea>
+    	</td>
+    </tr>
+    </table>
+    </div>
+		
+</div>
+  
+</body>
+</html>

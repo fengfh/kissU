@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+ <title>Farbtastic</title>
+ <meta charset="UTF-8" />
+	<link  href="../jquery.blockui.css" type="text/css" class="view-source" class="view-source" rel="stylesheet" />
+	<link  href="../../../../themes/default/style.css" class="view-source"  rel="stylesheet">
+	<script src="../../../../scripts/jquery.js" class="view-source"  type="text/javascript"></script>
+	<script src="../../../../scripts/common.js" class="view-source"  type="text/javascript"></script>
+	<script src="../../../../scripts/browserfix.js" class="view-source"  type="text/javascript" ></script>
+	
+	<script type="text/javascript" class="view-source" class="view-source"  src="../jquery.blockui.js"></script>
+	
+	<link  href="../../../../scripts/plugins/google-code-prettify/prettify.css" rel="stylesheet">
+	<script src="../../../../scripts/plugins/google-code-prettify/prettify.js"></script>
+	
+	<script src="../../demo.js"></script>
+	<link href="../../demo.css" rel="stylesheet">
+	
+ <script type="text/javascript" class="view-source noparse" > 
+    $(document).ready(function() { 
+        
+        $('#pageDemo21').click(function() { 
+            $.block({ message:'<table><tr><td><img src="../images/processing.gif" /></td><td>&nbsp;</td><td><span class="ui-block-msg">页面加载中，请稍等...</span></td></tr><table>' ,timeout: 3000}); 
+        }); 
+        
+        $('#pageDemo22').click(function() { 
+            $.block({ css: { border: '3px solid #a00' },timeout: 3000}); 
+        });
+        
+        $('#pageDemo23').click(function() { 
+        	$.block({ message: null ,timeout: 3000}); 
+        }); 
+
+    }); 
+</script> 
+ 
+ <body>
+		<div id='content-custom' class='demo'>
+			<font color="red">提示：遮罩时间3秒钟</font><br/><br/>
+			<input id="pageDemo21" class="btn" type="submit" value="定制遮罩层的信息" />
+			<input id="pageDemo22" class="btn" type="submit" value="定制遮罩层的样式" />
+			<input id="pageDemo23" class="btn" type="submit" value="没有信息的遮罩" />
+		</div>
+
+		
+</body>
+</html>

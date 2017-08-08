@@ -1,0 +1,719 @@
+@charset "utf-8";
+
+/* 全局 字体大小 颜色 链接 */
+
+a,a:hover,a:focus{
+	outline: 0 ;
+}
+/* 修复布局 */
+
+*html .row {
+	margin: 0;
+	margin-left: -20px;
+}
+.span1,.span2,.span3,.span4,.span5,.span6,.span7,.span8,.span9,.span10,.span11,.span12
+	{
+	_float: left;
+	_display: inline;
+	_margin-left: 20px;
+}
+/*避免由于优先级被上面覆盖*/
+*html .offset12 {
+  margin-left: 980px;
+}
+*html .offset11 {
+  margin-left: 900px;
+}
+*html .offset10 {
+  margin-left: 820px;
+}
+*html .offset9 {
+  margin-left: 740px;
+}
+*html .offset8 {
+  margin-left: 660px;
+}
+*html .offset7 {
+  margin-left: 580px;
+}
+*html .offset6 {
+  margin-left: 500px;
+}
+*html .offset5 {
+  margin-left: 420px;
+}
+*html .offset4 {
+  margin-left: 340px;
+}
+*html .offset3 {
+  margin-left: 260px;
+}
+*html .offset2 {
+  margin-left: 180px;
+}
+*html .offset1 {
+  margin-left: 100px;
+}
+*html .last-child {
+	_margin-right: 0;
+}
+/*layout*/
+.row-fluid {
+	clear:both;
+}
+.row-fluid-span ,.row-fluid div.span12,.row-fluid div.span11,.row-fluid div.span10,
+	.row-fluid div.span9,.row-fluid div.span8,.row-fluid div.span7,.row-fluid div.span6
+	,.row-fluid div.span5,.row-fluid div.span4,.row-fluid div.span3,.row-fluid div.span2,.row-fluid div.span1 {
+	_float: left;
+	*margin-left: 2.119999999%;
+	_margin-left: 2.059999999%;
+}
+
+.row-fluid .row-fluid-span12 , .row-fluid div.span12 {
+	_width: 99.99999998999999%;
+}
+
+.row-fluid .row-fluid-span11 , .row-fluid div.span11 {
+	_width: 91.489361693%;
+}
+
+.row-fluid .row-fluid-span10 , .row-fluid div.span10 {
+	_width: 82.97872339599999%;
+}
+
+.row-fluid .row-fluid-span9 , .row-fluid div.span9 {
+	_width: 74.468085099%;
+}
+
+.row-fluid .row-fluid-span8 , .row-fluid div.span8 {
+	_width: 65.95744680199999%;
+}
+
+.row-fluid .row-fluid-span7 , .row-fluid div.span7 {
+	_width: 57.446808505%;
+}
+
+.row-fluid .row-fluid-span6 , .row-fluid div.span6 {
+	_width: 48.93617020799999%;
+}
+
+.row-fluid .row-fluid-span5 , .row-fluid div.span5 {
+	_width: 40.425531911%;
+}
+
+.row-fluid .row-fluid-span4 , .row-fluid div.span4 {
+	_width: 31.914893614%;
+}
+
+.row-fluid .row-fluid-span3 , .row-fluid div.span3 {
+	_width: 23.404255317%;
+}
+
+.row-fluid .row-fluid-span2 , .row-fluid div.span2 {
+	_width: 14.89361702%;
+}
+
+.row-fluid .row-fluid-span1 , .row-fluid div.span1 {
+	_width: 6.382978723%;
+}
+
+.row-fluid  .row-span-first,.row-fluid  div.row-span-first  {
+	_margin-left: 0;
+}
+
+.first,.row-fluid  div.first {
+	margin-left: 0px;
+}
+
+/*由于IE6不支持class连接，导致样式被覆盖，所以这里重写*/
+div.span12 {
+  width: 940px;
+}
+div.span11 {
+  width: 860px;
+}
+div.span10 {
+  width: 780px;
+}
+div.span9 {
+  width: 700px;
+}
+div.span8 {
+  width: 620px;
+}
+div.span7 {
+  width: 540px;
+}
+div.span6 {
+  width: 460px;
+}
+div.span5 {
+  width: 380px;
+}
+div.span4 {
+  width: 300px;
+}
+div.span3 {
+  width: 220px;
+}
+div.span2 {
+  width: 140px;
+}
+div.span1 {
+  width: 60px;
+}
+h4 {
+	_clear:both;
+}
+.responsive-utilities-test li {
+	margin-right:10px;
+}
+.responsive-utilities-test span {
+	_width:100%;
+}
+
+/* panel 的布局 */
+
+.panel .row-fluid-span ,.panel .row-fluid div.span12,.panel .row-fluid div.span11,.panel .row-fluid div.span10,
+	.panel .row-fluid div.span9,.panel .row-fluid div.span8,.panel .row-fluid div.span7,.panel .row-fluid div.span6
+	,.panel .row-fluid div.span5,.panel .row-fluid div.span4,.panel .row-fluid div.span3,.panel .row-fluid div.span2,.panel .row-fluid div.span1 {
+	_float: left;
+	*margin-left: 2.069%;
+	_margin-left: 2.089%;
+}
+
+.panel .row-fluid .row-fluid-span12 , .panel .row-fluid div.span12 {
+	_width: 99.99999998999999%;
+}
+
+.panel .row-fluid .row-fluid-span11 , .panel .row-fluid div.span11 {
+	_width: 91.489361693%;
+}
+
+.panel .row-fluid .row-fluid-span10 , .panel .row-fluid div.span10 {
+	_width: 82.97872339599999%;
+}
+
+.panel .row-fluid .row-fluid-span9 , .panel .row-fluid div.span9 {
+	_width: 74.468085099%;
+}
+
+.panel .row-fluid .row-fluid-span8 , .panel .row-fluid div.span8 {
+	_width: 65.95744680199999%;
+}
+
+.panel .row-fluid .row-fluid-span7 , .panel .row-fluid div.span7 {
+	_width: 57.446808505%;
+}
+
+.panel .row-fluid .row-fluid-span6 , .panel .row-fluid div.span6 {
+	_width: 48.93617020799999%;
+}
+
+.panel .row-fluid .row-fluid-span5 , .panel .row-fluid div.span5 {
+	_width: 40.425531911%;
+}
+
+.panel .row-fluid .row-fluid-span4 , .panel .row-fluid div.span4 {
+	_width: 31.914893614%;
+}
+
+.panel .row-fluid .row-fluid-span3 , .panel .row-fluid div.span3 {
+	_width: 23.404255317%;
+}
+
+.panel .row-fluid .row-fluid-span2 , .panel .row-fluid div.span2 {
+	_width: 14.89361702%;
+}
+
+.panel .row-fluid .row-fluid-span1 , .panel .row-fluid div.span1 {	
+	_width: 6.382978723%;
+}
+
+.panel .row-fluid  .row-span-first,.panel .row-fluid  div.row-span-first  {
+	_margin-left: 0;
+}
+.panel .first,.panel .row-fluid  div.first {
+	margin-left: 0px;
+	min-height:1px;
+	_height:1px;
+}
+/* panel */
+*.panel{
+	position:relative; 
+	_position:static;/* fix ie6 background */
+	_width:98%;
+}
+
+*.panel-body {
+	position:relative;/* 修复layout插件 */
+}
+.panel .panel-head {
+	_overflow:hidden;
+}
+.panel .panel-head .first {
+	_vertical-align: top;
+	_line-height:18px;
+}
+.panel table {
+	_width:100%;
+}
+.panel .pagination {
+	_width:100%;
+}
+/* 面板左上角隐藏按钮 */
+*html .panel .panel-head .toggle-hide{
+	left:auto;
+}
+
+/* 修复页面组件 */
+
+/* 修复图标 */
+.class-icon,.icon,.icon-glass,.icon-music,.icon-search,.icon-envelope,.icon-heart,.icon-star,
+.icon-star-empty,.icon-user,.icon-film,.icon-th-large,.icon-th,.icon-th-list,.icon-ok,
+.icon-remove,.icon-zoom-in,.icon-zoom-out,.icon-off,.icon-signal,.icon-cog,.icon-trash,
+.icon-home,.icon-file,.icon-time,.icon-road,.icon-download-alt,.icon-download,
+.icon-upload,.icon-inbox,.icon-play-circle,.icon-repeat,.icon-refresh,.icon-list-alt,
+.icon-lock,.icon-flag,.icon-headphones,.icon-volume-off,.icon-volume-down,.icon-volume-up,
+.icon-qrcode,.icon-barcode,.icon-tag,.icon-tags,.icon-book,.icon-bookmark,.icon-print,.icon-camera,
+.icon-font,.icon-bold,.icon-italic,.icon-text-height,.icon-text-width,.icon-align-left,
+.icon-align-center,.icon-align-right,.icon-align-justify,.icon-list,.icon-indent-left,
+.icon-indent-right,.icon-facetime-video,.icon-picture,.icon-pencil,.icon-map-marker,
+.icon-adjust,.icon-tint,.icon-edit,.icon-share,.icon-check,.icon-move,.icon-step-backward,
+.icon-fast-backward,.icon-backward,.icon-play,.icon-pause,.icon-stop,.icon-forward,
+.icon-fast-forward,.icon-step-forward,.icon-eject,.icon-chevron-left,.icon-chevron-right,
+.icon-plus-sign,.icon-minus-sign,.icon-remove-sign,.icon-ok-sign,.icon-question-sign,.icon-info-sign,
+.icon-screenshot,.icon-remove-circle,.icon-ok-circle,.icon-ban-circle,.icon-arrow-left,.icon-arrow-right,
+.icon-arrow-up,.icon-arrow-down,.icon-share-alt,.icon-resize-full,.icon-resize-small,.icon-plus,.icon-minus,
+.icon-asterisk,.icon-exclamation-sign,.icon-gift,.icon-leaf,.icon-fire,.icon-eye-open,.icon-eye-close,
+.icon-warning-sign,.icon-plane,.icon-calendar,.icon-random,.icon-comment,.icon-magnet,.icon-chevron-up,
+.icon-chevron-down,.icon-retweet,.icon-shopping-cart,.icon-folder-close,.icon-folder-open,.icon-resize-vertical,
+.icon-resize-horizontal {
+	_display: inline-block;
+	_width: 14px;
+	_height: 14px;
+	_line-height: 14px;
+	_vertical-align: text-top;
+	_background-image: url("images/bootstrap/glyphicons-halflings.png");
+	_background-repeat: no-repeat;
+}
+.icon-white {
+	_background-image:url("images/bootstrap/glyphicons-halflings-white.png");
+}
+.the-icons {
+	margin:0;
+	list-style:none;
+}
+
+/* 分页条 */
+.pagination ul {
+	*float:left;
+	*margin-top:7px;
+}
+.pagination .btn-toolbar .pagesize {
+	*display:inline;
+}
+.pagination .btn-toolbar .btn-group {
+	*float:left;
+}
+.pagination .btn-toolbar input {
+	_margin:0;
+}
+.pagination .pagination-first a{
+	_border-left-width: 1px;
+}
+
+/* 缩略图 */
+.thumbnails .span2 {
+	_margin-bottom:10px;
+}
+.thumbnails .span3 {
+	_margin-bottom:18px;
+}
+
+/* 修复当前位置 */
+.breadcrumb .active{
+	_background:none;
+}
+
+/* 修复表单 */
+
+/* 修复图标跟input对齐 */
+.input-prepend span {
+	float:left;
+}
+/* fix chrome */
+.form-horizontal fieldset legend {
+	float:left;
+	margin-bottom:15px;
+}
+/* fix checkbox */
+label.checkbox {
+	_padding-left:0;
+}
+.btn .icon-plus {
+	_height:18px;
+	_line-height:18px;
+}
+.disabled {
+	_color:#ccc;
+}
+.disabled:hover {
+	_color:#ccc;
+	_cursor:text;
+}
+
+.checkbox input,.radio input,.input-check,.input-checkbox {
+	_width: auto;
+	_float: left;
+	_display: inline-block;
+	_padding: 0px;
+	_margin: 0px;
+	_height: auto;
+	_border: none
+}
+/*upload*/
+.plupload_prog_content {
+	_padding-left: 0px;
+	_padding-right: 0px;
+}
+/*IE6按钮点击以后背景颜色可能被覆盖*/
+.btn-primary:hover/*, .btn-primary.active, .btn-primary.disabled*/ {/*写发不支持IE6*/
+	_background-color: #05C;
+}
+
+
+/*下拉图标高度IE6bug*/
+*html .caret{
+	height:0px;
+	line-height: 0px;
+	width:0px;
+}
+
+*html .caret { 
+    border-style:solid dashed dashed dashed;
+}
+
+*html .btn-large .caret { 
+	margin-top: 6px;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 5px solid black;
+    border-style:solid dashed dashed dashed;
+}
+
+
+
+/*IE6带下拉图标按钮 Fix*/
+*html button.btn{
+	padding-top:2px;
+	padding-bottom:0px;
+	line-height:14px;
+}
+
+*html .btn-group .dropdown-toggle{
+	padding-top:3px;
+	padding-bottom:3px;
+}
+
+*html button.btn-large{
+	padding-top:7px;
+	padding-bottom:7px;
+}
+
+*html .btn-group .btn-large{
+	padding-top:7px;
+	padding-bottom:7px;
+}
+
+*html button.btn-mini{
+	padding-top:2px;
+	padding-bottom:2px;
+}
+
+*html .btn-group .btn-mini{
+	padding-top:2px;
+	padding-bottom:2px;
+}
+
+
+/*dropdown menu IE6 Fix*/
+*html .dropdown-menu{
+	width:160px;/*IE6不支持min-width*/
+}
+
+*html .dropdown-menu li{
+	display:block;
+	width:auto;
+	height:18px;
+	float:none;
+}
+
+*html .dropdown-menu li a{
+	display: block;
+	padding: 3px 15px;
+	float:none;
+	clear: both;
+	font-weight: normal;
+	line-height: 18px;
+	color: #333;
+	white-space: nowrap;
+}
+
+*html .dropdown-menu li.divider{
+	width:auto;
+	height:1px;
+}
+
+*html .dropdown-menu li  a:hover,
+*html .dropdown-menu .active  a,
+*html .dropdown-menu .active  a:hover {
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #0088cc;
+  outline:none;
+}
+/* btn group a 的bug*/
+a.dropdown-toggle {
+	*height:20px;
+	_height:18px;
+}
+/*button*/
+*html input.btn{
+	width:auto;
+	height:auto;
+	cursor:pointer;
+	padding:2px 10px;
+}
+.table input{
+	_width: auto;
+	_padding: 0px;
+	_margin: 0px;
+	_height: auto;
+	_border: none
+}
+
+/* table */
+* .table-striped-odd th,.table-striped-odd  td{
+	background-color:#F1F6FF ;
+}
+* .table-row-hover th,.table-row-hover  td{
+	background-color: #fff;
+}
+
+/* nav nav-list nav-tabs */
+
+.nav li{
+	_float:left;
+	_display:block;
+}
+.nav li a {
+	_padding:10px 10px 10px 11px;
+	_display:inline-block;
+}
+.nav .active a{
+	_background:#fff;
+}
+.nav li a:hover {
+	_text-decoration:none;
+	_color:#fff;
+}
+.nav-pills .active a, .nav-pills .active a:hover {
+	_background:#08C;
+	_color:#fff;
+}
+.nav-pills li a:hover {
+	_background:#eee;
+	_color:#005580;
+	
+}
+.nav-stacked {	
+	_width:100%;
+}
+.nav-stacked li,
+.nav-stacked li a{
+	_float:none;
+	_clear:both;
+	_display:block;
+}
+/* fix ie dropdown */
+.nav-stacked li {
+	height:30px;
+}
+.nav-stacked li a {
+	_padding:8px 12px;
+}
+
+.nav-list {
+	_width:100%;
+	_padding:0;
+}
+.nav-list li {	
+	_padding:0;
+	_margin:0;
+}
+.nav-list li,
+.nav-list li a {
+	_float:none;
+	_display:block;
+}
+.nav-list li a{	
+	_padding:3px 15px;
+}
+.nav-list li.active a,
+.nav-list li.active a:hover{
+	_margin-left:0;
+	_background:#08C;
+	_color:#fff;
+}
+.nav-list li a:hover {
+	_background:#eee;
+	_text-decoration:none;
+	_color:#005580;
+}
+.tabbable .tab-content .active {
+	_background:none;
+}
+/* 菜单tab在上 */
+.nav-tabs {
+}
+.nav-tabs li a:hover {
+	_background:#eee;
+	_text-decoration:none;
+	_color:#005580;
+}
+.nav-tabs .active a{
+	_background:#fff;
+	_border:1px solid #eee;
+	_border-bottom:1px solid #fff;
+}
+.tab-content .tab-pane {
+	_display:none;
+}
+.tab-content .tab-pane.active {
+	_display:block;
+}
+/* 菜单tab在下 */
+.tabs-below .nav-tabs li {
+	_margin-top:-1px;
+}
+.tabs-below .nav-tabs .active a {
+	_border:1px solid #ddd;
+	_border-top:none;
+}
+/* 菜单tab在左 */
+.tabs-left .nav-tabs li {
+	_float:none;
+}
+.tabs-left .nav-tabs .active a{
+	_border:1px solid #ddd;
+	_border-right:none;
+}
+/* 菜单tab在右 */
+.tabs-right .nav-tabs li {
+	_float:none;
+}
+.tabs-right .nav-tabs .active a{
+	_border:1px solid #ddd;
+	_border-left:none;
+}
+
+/* jquery-ui tab */
+.ui-tabs .ui-tabs-nav li a{
+}
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected a {
+	_display: block;
+	/*_margin-bottom: 1px;*/
+}
+
+.ui-tabs .ui-tabs-nav li a {
+	_border-color: tomato;
+	_filter: chroma(color = tomato);
+	height:34px;
+}
+
+.ui-tabs .ui-tabs-nav li a .ui-tab-close{
+	display:inline-block;
+	cursor: pointer;
+}
+
+/* tooltip */
+*html .top .tooltip-arrow {
+  line-height:0px;
+  position:absolute;;
+  width:0px; 
+  height:0px; 
+  border-style:solid dashed dashed dashed;
+  bottom:-4px;
+}
+
+*html .popover-inner {
+  background: #000000;
+}
+
+*html .popover .arrow{
+	height:0px;
+	line-height: 0px;
+	
+	line-height:0px;
+	position:absolute;;
+	width:0px; 
+	height:0px; 
+	border-style:dashed solid dashed dashed;
+	left:-4px;
+}
+
+/* carousel fix IE6(IE6下必须设置高度) */
+*html .carousel .item img{
+ 	margin-top:-1px;
+}
+ 	
+*html .carousel .right{
+ 	left:auto;
+ 	right:15px;
+}
+ 	
+*html .carousel .left{
+ 	left:15px;
+}
+
+/* 导航菜单 */
+.navbar .nav .open .caret{
+    _border-style:solid dashed dashed dashed;
+    _height:0px;
+	_line-height: 0px;
+	_width:0px;
+	_float:none;
+	_display:inline-table;
+}
+
+.navbar .nav .active a{
+	_background:#222;
+	_color:#fff;
+}
+.navbar .nav li a{
+	_color:#999;
+}
+
+/* 示例页面的修复 */
+*html .show-grid {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.show-grid .span1 ,.show-grid .span2,.show-grid .span3,.show-grid .span4,.show-grid .span5,.show-grid .span6,.show-grid .span7,.show-grid .span8,.show-grid .span9,.show-grid .span10,.show-grid .span11,.show-grid .span12{
+  background-color: #eee;
+  text-align: center;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
+  min-height: 30px;
+  line-height: 30px;
+}
+/*ie6下form table固定宽度修复*/
+.panel table.form-table-fix-col2,.panel table.form-table-fix-col4,.panel table.form-table-fix-col6{
+	_width:705px;
+}
+.panel table.form-table-fix-1280-col2,.panel table.form-table-fix-1280-col4,.panel table.form-table-fix-1280-col6,.panel table.form-table-fix-1280-col8{
+	_width:960px;
+}

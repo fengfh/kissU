@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Root>
+	<!--  分类 -->
+	<category>
+		<demo name="各种类型对话框" url="demo/demo1.html"/>
+		<demo name="设置对话框信息内容" url="demo/demo2.html"/>
+		<demo name="限时关闭对话框" url="demo/demo3.html"/>
+	</category>
+
+</Root>

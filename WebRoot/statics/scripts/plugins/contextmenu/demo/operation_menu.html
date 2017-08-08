@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0042)http://jscs.cloudapp.net/ControlsSample/CM -->
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+	<HEAD>
+	<META http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	    <TITLE></TITLE>
+	    <LINK href="../jquery.contextmenu.css" rel="stylesheet" type="text/css" />
+		<link  href="../../../../themes/default/style.css" class="view-source" rel="stylesheet">
+		<script src="../../../../scripts/jquery.js"  class="view-source" type="text/javascript"></script>
+		<script src="../../../../scripts/common.js"  class="view-source" type="text/javascript"></script>
+		<script src="../../../../scripts/browserfix.js"  class="view-source" type="text/javascript" ></script>
+		<script src="../../../../scripts/plugins/jquery.json.js" type="text/javascript"></script>
+		
+		<SCRIPT src="../jquery.contextmenu.js" type="text/javascript"></SCRIPT> 
+	
+	<script src="../../demo.js"></script>
+	<link href="../../demo.css" rel="stylesheet">
+	
+	    <STYLE type="text/css">
+	        .target
+	        {
+	            position:absolute;
+	            left:45%;
+	            top:10%;
+	            border:solid 1px #ffccee;   
+	            padding:5px;
+	            background-color:Blue;
+	            color:#fff;
+	         }
+	    </STYLE>
+	    
+<script type="text/javascript" class="view-source noparse">
+function menuAction() {
+    alert("alias: " + this.data.alias + ";text: " + this.data.text );
+}
+
+$(function(){
+	var option = { width: 150, items: [
+	    { text: "第一项", icon: "../images/ico1.gif", alias: "1-1", action: menuAction,disable: true },
+	    { text: "第二项", icon: "../images/ico2.gif", alias: "1-2", action: menuAction },
+	    { text: "第三项", icon: "../images/ico3.gif", alias: "1-3", action: menuAction },
+	    { type: "splitLine" },
+	    { text: "第四项", icon: "../images/ico5.gif", alias: "1-4", action: menuAction }
+	  ]
+	};
+	$("#target").contextmenu(option);
+	$("#target").bind("contextmenu",function(e){$(this).contextmenu().show(e);});
+	
+	$("#hideId").click(function(){
+		$(this).attr("disabled",true);
+		$("#showId").attr("disabled",false);
+		$("#target").contextmenu().hideMenuItems(['1-2']);
+	});
+	$("#showId").click(function(){
+		$(this).attr("disabled",true);
+		$("#hideId").attr("disabled",false);
+		$("#target").contextmenu().showMenuItems(['1-2']);
+	});
+	$("#disableId").click(function(){
+		$(this).attr("disabled",true);
+		$("#enableId").attr("disabled",false);
+		$("#target").contextmenu().disableMenuItems(['1-3']);
+	});
+	$("#enableId").click(function(){
+		$(this).attr("disabled",true);
+		$("#disableId").attr("disabled",false);
+		$("#target").contextmenu().enableMenuItems(['1-3']);
+	});
+	$("#disableMenuId").click(function(){
+		$(this).attr("disabled",true);
+		$("#enableMenuId").attr("disabled",false);
+		$("#target").contextmenu().disableMenu();
+	});
+	$("#enableMenuId").click(function(){
+		$(this).attr("disabled",true);
+		$("#disableMenuId").attr("disabled",false);
+		$("#target").contextmenu().enableMenu();
+	});
+});
+</script>
+	</HEAD>
+	<BODY>
+	        <DIV id="target" class="target view-source">在这里右击[所有菜单]</DIV>
+	        <div>
+		        <input type="button" value="HIDE第二项" class="btn view-source" id="hideId"/>
+		        <input type="button" value="SHOW第二项" class="btn view-source"  id="showId" disabled="true" /><br/>
+		        <input type="button" value="DISABLE第三项" class="btn view-source"  id="disableId"/>
+		        <input type="button" value="ENABLE第三项" class="btn view-source"  id="enableId" disabled="true" /><br/>
+		        <input type="button" value="禁止整个菜单弹出" class="btn view-source"  id="disableMenuId"/>
+		        <input type="button" value="允许整个菜单弹出" class="btn view-source"  id="enableMenuId" disabled="true" />
+	        </div>
+	        
+	    
+	</BODY>
+</HTML>

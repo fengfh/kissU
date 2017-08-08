@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<characterEncoding>UTF-8</characterEncoding>
+	<dataQuerier>KissU</dataQuerier>
+	<defaultGrid>dhtmlxGrid</defaultGrid>
+	<operationColumnType>opt</operationColumnType>
+	<operationColumnWidth>6</operationColumnWidth>
+	<home>/statics/scripts/plugins/dhtmlxGrid</home>
+	
+	<page>
+		<enabled>true</enabled>
+		<size>10</size>
+		<sizeList>10,20,30,40</sizeList>
+		<style>default</style>
+	</page>
+	<buildinGrid>
+		<grid>
+			<name>dhtmlxgrid</name>
+			<builder>dhtmlxgridBuilder</builder>
+			<render>dhtmlxgridRender</render>
+		</grid>
+	</buildinGrid>
+</config>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>Portal sql文件</comment>
+	
+	<!-- 根据portal code获取对应基本信息 -->
+	<entry key="portal.getBaseInfo">
+	<![CDATA[
+		SELECT * FROM SYS_PORTAL SP WHERE SP.CODE = #portalCode#
+	]]>
+	</entry>
+	
+    <entry key="portal.getSiteMap">
+	<![CDATA[
+	    SELECT STM.ID,
+		       STM.PORTAL_CODE SYSTEMCODE,
+		       STM.PLUGIN_CODE PLUGINCODE,
+		       CONCAT((SELECT SPP.CONTEXT
+		              FROM   SEC_PERMISSION SPP
+		              WHERE  SPP.PARENT IS NULL
+		              AND SPP.ID =  SUBSTR(SP.PATH,1,INSTR(SP.PATH,'.')-1)),
+		              (CASE
+		                WHEN (SP.URL IS NULL AND SP.TYPE = 'Page') THEN
+		                 STM.URL
+		                ELSE
+		                 SP.URL
+		              END)) URL,
+		       (CASE
+		                WHEN (SP.URL IS NULL AND SP.TYPE = 'Page') THEN
+		                 STM.URL
+		                ELSE
+		                 SP.URL
+		              END) RELATIVE_URL,
+		       STM.TITLE,
+		       STM.TARGET,
+		       STM.`ORDER`,
+		       STM.PARENT_ID PID,
+		       (SELECT COUNT(1)
+		        FROM   SYS_SITE_MAP T1,
+		               SYS_SITE_MAP T2
+		        WHERE  T1.ID = T2.PARENT_ID
+		        AND    T1.ID = STM.ID) CHILD_COUNT,
+		        THUMBNAIL_SMALL,
+		        THUMBNAIL_MIDDLE,
+		        THUMBNAIL_LARGE
+		FROM   SYS_SITE_MAP STM
+		LEFT   OUTER JOIN SEC_PERMISSION SP
+		ON     STM.URL = SP.ID
+		WHERE  PORTAL_CODE = #portalCode#
+		ORDER  BY STM.`ORDER`
+	]]>
+	</entry>
+	
+	<!-- 根据portal code获取对应的快捷键信息 -->
+	<entry key="portal.getShortcutKey">
+	<![CDATA[
+		SELECT *
+		FROM   SYS_SHORTCUT_KEY SSK
+		WHERE  SSK.PORTAL_CODE = #portalCode#
+		ORDER  BY SSK.DISPLAY_ORDER
+	]]>
+	</entry>
+	
+	<!-- 获取当前父亲节点下最大的Order -->
+	<entry key="portal.getMaxOrder">
+	<![CDATA[
+		SELECT IFNULL(MAX(SSM.`ORDER`), 0)
+		FROM   SYS_SITE_MAP SSM
+		WHERE  SSM.PORTAL_CODE = #portalCode#
+		AND    SSM.PARENT_ID = #parentId#
+	]]>
+	</entry>
+	
+	<!-- 获取当前父亲节点下最大的Order -->
+	<entry key="portal.updateMenuOrder">
+	<![CDATA[
+		UPDATE SYS_SITE_MAP SSM
+		SET    SSM.PARENT_ID = #parentId#, SSM.`ORDER` = #order#
+		WHERE  SSM.ID = #menuId#
+	]]>
+	</entry>
+</properties>

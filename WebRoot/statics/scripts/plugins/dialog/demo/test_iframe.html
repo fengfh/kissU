@@ -1,0 +1,78 @@
+<link  href="../../blockui/jquery.blockui.css" type="text/css" rel="stylesheet"  class="view-source"/>
+	<link  type="text/css" href="../../../../scripts/plugins/layout/jquery.layout.css" rel="stylesheet"  class="view-source"/>
+	<link  type="text/css" href="../jquery.dialog.css" rel="stylesheet"  class="view-source"/>
+	<link  href="../../../../themes/mobile/style-all.css" class="view-source" rel="stylesheet">
+		<script src="../../../../scripts/jquery.js"  class="view-source" type="text/javascript"></script>
+		<script src="../../../../scripts/common.js"  class="view-source" type="text/javascript"></script>
+		<script src="../../../../scripts/browserfix.js"  class="view-source" type="text/javascript" ></script>
+		<script src="../../../../scripts/plugins/jquery.json.js" type="text/javascript"></script>
+		
+		<script src="../../../../scripts/plugins/jquery.ui.js" type="text/javascript" ></script>
+		
+		
+		<script type="text/javascript" src="../jquery.dialog.js" class="view-source"></script>
+	
+	
+	<script src="../../blockui/jquery.blockui.js" type="text/javascript"  class="view-source"></script>
+	<script type="text/javascript">
+<!--
+	function fun3(){
+		$.open("ListSelect.htm", null, null,
+			{title:"",iframe:true,model:true,data:{name:"lixh",company:"bingo"}},
+			function(){
+				alert(window.returnValue);
+			}
+		) ;
+	}
+//-->
+</script>
+
+<div id="forlogin" style="width:800px;">
+      <form action="test.html" method="get" id="form1">
+      <table width="100%" border="0" align="center" cellpadding="4" cellspacing="4" bordercolor="#666666">
+        <tr>
+          <td colspan="2" bgcolor="#eeeeee">这儿是弹出窗口中的表单</td>
+        </tr>
+        <tr>
+          <td width="150" align="right">你的QQ：</td>
+          <td><input type="text" id="qq" /></td>
+        </tr>
+        
+        <tr>
+          <td colspan="2" align="center">
+          	<input onClick="jQuery.dialogReturnValue('我是返回值') ;$(this).dialogClose()" class="btn" type="button" value="关闭所在Dialog" /></td>
+        </tr>
+      </table></form>
+      
+      <script>
+      	window.setTimeout(function(){
+          	//return ;
+			$("table").append("<tr><td>AAAAAAAAAAAAAAAAAAAAAA</td></tr>");
+			$("table").append("<tr><td>AAAAAAAAAAAAAAAAAAAAAA</td></tr>");
+			$("table").append("<tr><td>AAAAAAAAAAAAAAAAAAAAAA</td></tr>");
+			$("table").append("<tr><td>AAAAAAAAAAAAAAAAAAAAAA</td></tr>");
+			$("table").append("<tr><td>AAAAAAAAAAAAAAAAAAAAAA</td></tr>");
+			$("table").append("<tr><td>AAAAAAAAAAAAAAAAAAAAAA</td></tr>");
+			$("table").append("<tr><td>AAAAAAAAAAAAAAAAAAAAAA</td></tr>");
+			$("table").append("<tr><td>AAAAAAAAAAAAAAAAAAAAAA</td></tr>");
+			$("table").append("<tr><td>AAAAAAAAAAAAAAAAAAAAAA</td></tr>");
+			$("table").append("<tr><td>AAAAAAAAAAAAAAAAAAAAAA</td></tr>");
+			$("table").append("<tr><td>AAAAAAAAAAAAAAAAAAAAAA</td></tr>");
+			$("table").append("<tr><td>AAAAAAAAAAAAAAAAAAAAAA</td></tr>");
+			$("table").append("<tr><td>AAAAAAAAAAAAAAAAAAAAAA</td></tr>");
+			$("table").append("<tr><td>AAAAAAAAAAAAAAAAAAAAAA</td></tr>");
+			$("table").append("<tr><td>AAAAAAAAAAAAAAAAAAAAAA</td></tr>");
+			$("table").append("<tr><td>AAAAAAAAAAAAAAAAAAAAAA</td></tr>");
+			$("table").append("<tr><td>AAAAAAAAAAAAAAAAAAAAAA</td></tr>");
+			$("table").append("<tr><td>AAAAAAAAAAAAAAAAAAAAAA</td></tr>");
+			$("table").append("<tr><td>AAAAAAAAAAAAAAAAAAAAAA</td></tr>");
+			$("table").append("<tr><td>AAAAAAAAAAAAAAAAAAAAAA</td></tr>");
+			$("table").append("<tr><td>AAAAAAAAAAAAAAAAAAAAAA</td></tr>");
+			$("table").append("<tr><td>AAAAAAAAAAAAAAAAAAAAAA</td></tr>");
+			$("table").append("<tr><td>AAAAAAAAAAAAAAAAAAAAAA</td></tr>");
+			$("table").append("<tr><td>AAAAAAAAAAAAAAAAAAAAAA</td></tr>");
+			$("table").dialogResize();
+			$.dialogReturnValue("返回值：设置方式$.dialogReturnValue(...)");
+        },1000);
+      </script>
+</div>

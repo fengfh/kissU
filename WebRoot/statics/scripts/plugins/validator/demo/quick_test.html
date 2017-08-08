@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta content="all" name="robots" />
+<title>����֤�� Validator v3.0 beta �ڲ�</title>
+<script type="text/javascript" src="Validator.js"></script>
+<script type="text/javascript" src="../common/prototype.js"></script>
+<script type="text/javascript">
+Validator.Setup(
+{
+	Name : 'demo'//formId
+}
+);
+-->
+</script>
+<style type="text/css">
+ <!--
+ body,td{font:normal 12px Verdana;color:#333333}
+ input,textarea,select,td{font:normal 12px Verdana;color:#333333;border:1px solid #999999;background:#ffffff}
+ table{border-collapse:collapse;width:100%}
+ td{padding:3px}
+ input{height:20px;}
+ textarea{width:80%;height:50px;overflow:auto;}
+ form{display:inline}
+ img {border:0}
+-->
+ </style>
+</head>
+<body>
+<form id="demo" method="get" action="" onsubmit="return Validator.Validate(this)">
+  <table>
+    <tr>
+      <td>���֤��</td>
+      <td><textarea name="Card" DataType="LengthLimit"  Max = "12" Min="3" Message="���ȱ������3��12֮��"></textarea></td>
+    </tr>  
+    <tr>
+      <td colspan="2"><input name="Submit" type="submit" value="ȷ���ύ" /><input name="Reset" type="reset" value="����" /></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

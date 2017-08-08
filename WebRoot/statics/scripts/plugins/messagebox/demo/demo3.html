@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ <meta charset="UTF-8" />
+<title></title>
+		
+		<link href="../jquery.messagebox.css" class="view-source" rel="stylesheet" type="text/css" media="screen" class="view-source"/>
+		<link  href="../../../../themes/default/style.css" class="view-source" rel="stylesheet">
+		<script src="../../../../scripts/jquery.js"  class="view-source" type="text/javascript"></script>
+		<script src="../../../../scripts/common.js"  class="view-source" type="text/javascript"></script>
+		<script src="../../../../scripts/browserfix.js"  class="view-source" type="text/javascript" ></script>
+		<script src="../../../../scripts/plugins/jquery.json.js" type="text/javascript"></script>
+		
+		<script src="../../../../scripts/plugins/jquery.ui.js" type="text/javascript" ></script>
+		
+		<!-- Core files -->
+		<script src="../jquery.messagebox.js" class="view-source"  type="text/javascript" class="view-source"></script>
+		
+		<script src="../../demo.js"></script>
+		<link href="../../demo.css" rel="stylesheet">
+		
+		<!-- Example script -->
+<script type="text/javascript" class="view-source noparse">
+	$(document).ready( function() {
+		
+		$("#info_button").click( function() {
+			$.messageBox.info({
+			   message:'This is a custom info box',
+			   timeout:$("#timeId").val()
+			});
+		});
+		
+		$("#warning_button").click( function() {
+			$.messageBox.warning({
+			   message:'This is a custom info box',
+			   timeout:$("#timeId").val()
+			});
+		});
+		
+		$("#error_button").click( function() {
+			$.messageBox.error({
+			   message:'This is a custom info box',
+			   timeout:$("#timeId").val()
+			});
+		});
+		
+		$("#success_button").click( function() {
+			$.messageBox.success({
+			   message:'This is a custom info box',
+			   timeout:$("#timeId").val()
+			});
+		});
+		
+		$("#confirm_button").click( function() {
+			$.messageBox.confirm({
+			   message:'This is a custom info box',
+			   callback:function(result){alert("result:" + result);},
+			   timeout:$("#timeId").val()
+			});
+		});
+		
+		$("#prompt_button").click( function() {
+			$.messageBox.prompt({
+			   message:'This is a custom info box',
+			   timeout:$("#timeId").val()
+			});
+		});
+	});
+</script>
+		
+	</head>
+	
+	<body>
+				请选择自动关闭提示对话框的时间，然后再点击下面的按钮：<br/><br/>
+				限时时间：<select id="timeId">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10" selected>10</option>
+				</select> 秒<br/><br/>
+				<input id="info_button" type="button" class="btn" value="Show Info" />
+		
+				<input id="warning_button" type="button" class="btn"  value="Show Warning" />
+		
+				<input id="error_button" type="button" class="btn"  value="Show Error" />
+		
+				<input id="success_button" type="button" class="btn"  value="Show Success" /><br/><br/>
+		
+				<input id="confirm_button" type="button" class="btn"  value="Show Confirm" />
+		
+				<input id="prompt_button" type="button" class="btn"  value="Show Prompt" />
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+﻿
+/**------------------------------ main.css end------------------------------**/
+
+.context-menu{
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+
+.context-menu .disabled{
+	background:none;
+}
+
+.context-menu li.context-menu-item,.context-menu li.context-menu-idisable{
+	border:none;
+	padding-top:0px;
+	padding-bottom:0px;
+	margin-top:0px;
+	margin-bottom:0px;
+	padding-left:0px;
+	padding-right:0px;
+}
+
+.context-menu .context-menu-idisable
+{
+    color:#808080;
+}
+
+.context-menu .context-menu-idisable a{
+	color:#808080;
+}
+
+
+.context-menu .context-menu-idisable .context-menu-arrow
+{
+    background:none;
+}
+
+.context-menu .context-menu-arrow{
+	width:20px;
+	float:right;
+	clear:right;
+}
+
+.context-menu .context-menu-span{
+	float:left;
+}
+
+.context-menu .context-menu-img{
+	float:left;
+	clear:left;
+}
+
+.context-menu .context-menu-idisable img {
+
+	width:16px;
+	height:16px;
+}
+
+.context-menu li.context-menu-item img {
+	width:16px;
+	height:16px;
+}
+
+.context-menu .icon-ibody-right{
+	display:none;
+}
+
+.context-menu .contextmenu-hover{
+	color: white;
+	text-decoration: none;
+	background-color: #08C;
+}
+
+.context-menu .contextmenu-hover a.contextmenu-a,.contextmenu li a{
+	text-decoration: none;
+}
+
+ul.context-menu .divider{
+	border:none;
+}

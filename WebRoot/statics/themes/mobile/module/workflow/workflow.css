@@ -1,0 +1,176 @@
+@charset "utf-8";
+.header{
+	background:url(images/bgTopImg01.gif) repeat-x;
+}
+/*tool 工具栏*/
+.top-menu {
+	background: url(images/bgTopImg.jpg) no-repeat;
+	height:100px;
+}
+.top-menu #logo{
+	display:block;
+	width:200px;
+	height:100px;
+	overflow:hidden;
+}
+.wel-tool{
+	margin-top:10px;
+	color:#fff;
+}
+.wel-tool span{
+	color:#333;
+	font-weight:bold;
+	font-size:14px;
+}
+.wel-tool a{
+	color:#00E;
+}
+/*主体内容*/
+.content{
+	margin-left:0;
+	background:#fff;
+	border::0;
+	top:0;
+}
+
+/*脚部*/
+#footer{
+	height:30px;
+	line-height:30px;
+	background:url(images/layout_bg.png) 0 -58px repeat-x;
+	border-top: 1px solid #DFEAFB;
+}
+
+/*申请表*/
+.workflow-page{
+	padding-top:35px;
+}
+.workflow-page .page-title{
+	background:url(images/layout_bg.png) repeat-x 0 -31px;
+} 
+.workflow-panel .form-table{
+	border-left:1px solid #A8CFEB;
+	border-top:0;
+	margin-bottom:15px;
+	font-size:14px;
+}
+.workflow-panel .form-table th,.workflow-panel .form-table td{
+	border-right:1px solid #A8CFEB;
+	border-bottom:1px solid #A8CFEB;
+}
+.workflow-panel .form-table th{
+	text-align:left;
+	padding-left:5px;
+}
+.workflow-panel .form-table th label{
+	text-align:left;
+	padding-right:0;
+	font-size:14px;
+	margin-bottom:0;
+}
+.workflow-panel .panel-head{
+	margin:20px 0 10px;
+	text-align:center;
+}
+.workflow-panel .panel-head h1{
+	color:#333;
+}
+.workflow-panel .panel-content .form-table{
+	margin-left:auto;
+	margin-right:auto;	
+}
+.panel-content .form-table td .input-medium{
+	width:200px;	
+}
+th.impinfo {
+	background:#FFF6C1;
+}
+/*.panel-content .form-table .impinfo th,.panel-content .form-table .impinfo td {
+	border-top:2px solid #FEA321;
+	border-bottom:2px solid #FEA321;
+}*/
+
+/*form扩展*/
+.form-table caption{
+	height:30px;
+	line-height:30px;
+	background:#DFEAFB;
+	border: 1px solid #A8CFEB;
+	text-align:left;
+	font-size:14px;
+	font-weight:bold;
+	color:#1C568A;
+	padding-left:5px;
+}
+.form-table caption a{
+	margin-right:5px;
+}
+
+/*分页扩展*/
+.pagination{
+	margin:0 0 20px 0;
+}
+
+
+input[type="text"], input[type="password"], .ui-autocomplete-input, textarea, .uneditable-input {
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+	border:1px solid #A4CEE8;
+}
+input[disabled], select[disabled], textarea[disabled], input[readonly], select[readonly], textarea[readonly] {
+	background:none;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+	border:1px solid #e0e0e0;
+	box-shadow:none;
+}
+input, textarea, select, .uneditable-input {
+	border: 1px solid #A4CEE8;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+}
+
+
+/*导航条*/
+* html,* html body /* 修正IE6振动bug */{
+	_background-image:url(about:blank);background-attachment:fixed;
+}
+.navbar-fixed-top{
+	_position:absolute;
+	_bottom:auto;
+	_top:expression(eval(document.documentElement.scrollTop));
+}
+.navbar-inner{
+	background: url(images/itemdetal_button.png) repeat-x;
+	height:35px;
+	line-height:35px;
+}
+.navbar .nav li a{
+	background:none;
+	width:auto;
+	padding:0 10px;
+	margin:0;
+	height:35px;
+	font-size:14px;
+	color:#fff;
+}
+.navbar .nav li{
+	_margin-top:-1px;/* ie6 */
+}
+.navbar .nav li a:hover{
+	background:none;
+}
+.navbar-fixed-top .container, .navbar-fixed-bottom .container {
+	width: auto;
+	padding:0 10px;
+}
+
+/*panel*/
+.panel .panel-head h2{
+	font-size:20px;
+}
+
+/*table*/

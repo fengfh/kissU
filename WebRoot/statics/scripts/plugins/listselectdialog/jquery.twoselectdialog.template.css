@@ -1,0 +1,64 @@
+.selected-container{
+			width:100%;
+			height:98px;
+			border:1px solid #CCC;
+			overflow:auto;
+			margin-bottom:2px;
+			padding:0px;
+		}
+		
+		.selected-container ul{
+			list-style: none;
+			display:block;
+			width:100%;
+			padding:0px;
+			margin:0px;
+		}
+		
+		.selected-container ul li{
+			float:left;
+			margin-right:3px;
+			cursor:pointer;
+		}
+		
+		.selected-container ul li.alert{
+			margin:2px 3px;
+			padding:2px 5px;
+		}
+		
+		body{
+			margin:1px;
+			padding:0px;
+		}
+		
+		.toolbar-container{
+			text-align:right;
+			padding-right:10px;
+		}
+		
+		div.search-panel .panel-content{
+			padding:0px;
+		}
+		
+		div.search-panel .panel-content button{
+			margin-left:3px;
+		}
+
+		div.layout-body{
+			overflow:hidden;
+		}
+		
+		.btn-groups{
+			diaplay:block;
+			margin-top:80px;
+		}
+		
+		.btn-groups .btn{
+			margin-left:20px;
+			margin-bottom:10px;
+			display:block;
+		}
+		
+		h2{
+			margin:0px;
+		}

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <!-- 返回用户所拥有的所有角色，参数：UserId，返回字段：Id,Name -->
+    <entry key="security.getAllUserRoles">
+    <![CDATA[
+    	SELECT UR.ROLE_ID AS ID,
+		       SR.NAME
+		FROM   SEC_USER_ROLE UR,
+		       SEC_ROLE      SR
+		WHERE  UR.ROLE_ID = SR.ID
+		AND    UR.USER_ID = #userId#
+		UNION
+		SELECT DISTINCT CHILD_ROLE_ID AS ID,
+		                SR.NAME
+		FROM   SEC_ROLE_INHERITANCE SRI,
+		       SEC_ROLE             SR
+		WHERE  SRI.CHILD_ROLE_ID = SR.ID
+		START  WITH SRI.PARENT_ROLE_ID IN
+		            (SELECT UR.ROLE_ID
+		             FROM   SEC_USER_ROLE UR
+		             WHERE  UR.USER_ID = #userId#)
+		CONNECT BY PRIOR SRI.CHILD_ROLE_ID = SRI.PARENT_ROLE_ID
+    ]]>
+    </entry>
+</properties>

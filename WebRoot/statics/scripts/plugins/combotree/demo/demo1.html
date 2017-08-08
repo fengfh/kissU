@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>下拉树控件</title>
+
+	<link rel="stylesheet" type="text/css" href="../jquery.combotree.css">
+	<link  href="../../../../themes/default/style.css" class="view-source" rel="stylesheet">
+	<script src="../../../../scripts/jquery.js"  class="view-source" type="text/javascript"></script>
+	<script src="../../../../scripts/common.js"  class="view-source" type="text/javascript"></script>
+	<script src="../../../../scripts/browserfix.js"  class="view-source" type="text/javascript" ></script>
+	<script src="../../../../scripts/plugins/jquery.json.js" type="text/javascript"></script>
+	
+	<script src="../../../../scripts/plugins/jquery.ui.js" class="view-source"  type="text/javascript" ></script>
+	
+
+	<script type="text/javascript" src="../jquery.combotree.js"></script>
+
+	<script>
+		$(function(){
+			/*$('#cc').comboTree({
+				url:'../tree_data.json'
+			}) ;*/
+			
+			$('#getValue').click( function(){
+				var obj = $('#cc').comboTree().getValue();
+				$('.value').removeClass('ui-helper-hidden').html( jQuery.json.encode(obj) ) ;
+			} ) ;
+			
+			$('#setValue').click( function(){
+				$('#cc').comboTree().setValue({
+					id:2,
+					text:'File1'
+				});
+			} ) ;
+			
+			$('#reload').click( function(){
+				$('#cc').comboTree().reload();
+			} ) ;
+		}) ;
+	</script>
+	
+</head>
+
+<body>
+
+	
+	<div style="padding:10px;" class="form-horizontal">
+		<h1></h1>
+		<span class="combotree input-append">
+            <input class="include-span input-span-uneditable" readonly="true" 
+            		style="width: 174px; "><a href="#" class="add-on btn button-reset"><i class="icon-chevron-down"></i></a>
+         </span>
+		<div>
+			<a href='javascript:' id='getValue'>getValue</a> &nbsp;&nbsp;
+			<a href='javascript:' id='setValue'>setValue</a> &nbsp;&nbsp;
+			<a href='javascript:' id='reload'>reload</a>     &nbsp;&nbsp;
+		</div>
+		<br>
+		<div class='ui-state-highlight value ui-helper-hidden'></div>
+		<br />
+		<select id="cc"   data-widget='combotree' data-options="{url:'../tree_data.json'}" style="width:200px;"></select>
+
+	</div>
+</body>
+</html>

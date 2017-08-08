@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"  
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans   
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd  
+	http://www.springframework.org/schema/context  
+	http://www.springframework.org/schema/context/spring-context-3.0.xsd
+	http://www.springframework.org/schema/aop  
+	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd  
+	http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/tx/spring-tx-3.0.xsd"
+	default-autowire="byName"> 
+       
+	<!-- 数据源定义,使用Apache DBCP 连接池 -->
+	<bean id ="dataSource" name="default_ds" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName" value="${jdbc.driverClassName}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+		<property name="initialSize" value="${jdbc.initialSize}"/>
+		<property name="maxActive" value="${jdbc.maxActive}"/>
+		<property name="maxIdle" value="${jdbc.maxIdle}"/>
+		<property name="minIdle" value="${jdbc.minIdle}"/>
+		<property name="validationQuery" value="${jdbc.validationQuery}"/>
+	</bean>
+	
+	<!-- 从容器中获取数据源 -->
+	<!--
+	<bean id="dataSource" name="default_ds" class="bingo.common.core.spring.SpringJndiObjectFactoryBean">
+		<property name="jndiName" value="JndiDataSource"></property>
+	</bean>
+	-->
+	
+	<bean id="dao" class="bingo.dao.Dao" lazy-init="true">
+		<property name="dataSource"  ref="dataSource" />
+		<property name="sqlParser" ref="sqlParser" />
+	</bean>
+	
+	<bean id="sqlParser" class="bingo.dao.sql.SqlParser">
+		<!--
+			定义动态sql中条件表达式的解析器，例如：{?(#loginType#=1) login_name = #loginName#}
+			-->
+		<property name="testExpressionResolver">
+			<bean class="bingo.dao.sql.MvelTestExpressionResolver"></bean>
+		</property>
+		
+		<!--设置客制化的参数解析器-->
+		<property name="sqlParameters">
+			<list>
+				<bean class="bingo.integration.environment.EnvironmentParameters"></bean>
+			</list>
+		</property>
+		
+		<!--定义sql文件所处的位置和支持的数据库类型，默认配置为oracle数据库-->
+		<property name="sqlSource">
+			<bean class="bingo.dao.sql.source.XmlSqlSource">
+				<property name="sqlLocation" value="classpath*:/sqls/**/*.xml"></property>
+			</bean>
+		</property>
+	</bean>
+	
+	<!--数据安全权限解析器-->
+	<bean id="security" class="bingo.security.dao.DataSecurityResolver">
+	</bean>
+	
+	<!-- annotation @Transactional-->
+	<tx:annotation-driven transaction-manager="dataSource.transactionManager"/>
+	
+	<!--事务配置-->
+	<bean id="dataSource.transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<!--<property name="nestedTransactionAllowed" value="true"></property>-->
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
+	
+	<tx:advice id="dataSource.txAdvice" transaction-manager="dataSource.transactionManager"> 
+		<tx:attributes>
+			<tx:method name="save*" propagation="REQUIRED" rollback-for="Throwable"/>
+			<tx:method name="update*" propagation="REQUIRED" rollback-for="Throwable"/>
+			<tx:method name="edit*" propagation="REQUIRED" rollback-for="Throwable"/>
+			<tx:method name="delete*" propagation="REQUIRED" rollback-for="Throwable"/>
+			<tx:method name="add*" propagation="REQUIRED" rollback-for="Throwable"/>
+			<tx:method name="insert*" propagation="REQUIRED" rollback-for="Throwable"/>
+			<tx:method name="change*" propagation="REQUIRED" rollback-for="Throwable"/>
+			<tx:method name="assign*" propagation="REQUIRED" rollback-for="Throwable"/>
+			<tx:method name="cancel*" propagation="REQUIRED" rollback-for="Throwable"/>
+			<tx:method name="change*" propagation="REQUIRED" rollback-for="Throwable"/>
+			<tx:method name="enable*" propagation="REQUIRED" rollback-for="Throwable"/>
+			<tx:method name="disable*" propagation="REQUIRED" rollback-for="Throwable"/>
+			<tx:method name="*" read-only="true" />
+		</tx:attributes> 
+	</tx:advice>
+	
+	<aop:config proxy-target-class="true">
+		<aop:pointcut id="dataSource.pointcut" expression="execution(* bingo..*Service.*(..))"/>
+		<aop:advisor advice-ref="dataSource.txAdvice" pointcut-ref="dataSource.pointcut"/>
+	</aop:config>
+</beans>

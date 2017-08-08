@@ -1,0 +1,77 @@
+﻿@charset "utf-8";
+/* tipsy插件 */
+@import url(tab/tab.css);
+
+/* 弹出窗插件 */
+.ui-dialog, .ui-dialog-wrapper{
+	padding:0;
+}
+.ui-widget-content{
+	position: relative;
+	zoom:1;
+}
+.ui-dialog .ui-dialog-titlebar {
+	position: absolute;
+	top:0;
+	right:0;
+	z-index:100;
+	width:100%;
+}
+.ui-dialog .ui-dialog-titlebar-close{
+	right:0.5em;
+	top:0.7em;
+	padding:0;
+}
+.ui-dialog .ui-dialog-titlebar{
+	border-bottom:0;
+	padding: 0px;
+}
+.ui-dialog .ui-dialog-content{
+	overflow: hidden;
+	padding: 0;
+}
+.ui-dialog .ui-dialog-buttonpane {
+	margin:0;
+}
+
+/* inputpro */
+.inputpro-img-span, .inputpro-img-span-bg{
+	margin-left:0;
+}
+
+/*layout*/
+.ui-layout{
+	height:100%;
+}
+.panel-header{
+	font-size:14px;
+}
+.layout-split-west {
+	border-right:5px solid #fff;
+}
+.layout-split-west .panel-header{
+	border:1px solid #ddd;
+}
+.layout-split-west .panel-body{
+	border-left:1px solid #ddd;
+	border-right:1px solid #ddd;
+}
+.layout-panel-center{
+	border-top:0;
+	border-left:0;
+}
+.layout .panel-header {
+	border-bottom:1px solid #ddd;
+	border-top:1px solid #ddd;
+}
+.ui-helper-reset{
+	border-top:0;
+	padding:10px;
+}
+.layout-split-west ,.layout-panel-center{
+	position:absolute;
+}
+
+
+/* tipsy插件 */
+@import url(tab/tab.css);

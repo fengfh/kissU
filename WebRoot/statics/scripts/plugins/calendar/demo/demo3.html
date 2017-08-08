@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Calendar Demos</title>
+	<link  href="../../../../themes/default/style.css" class="view-source" rel="stylesheet">
+	<script src="../../../../scripts/jquery.js" class="view-source"  type="text/javascript"></script>
+	<script src="../../../../scripts/common.js" class="view-source"  type="text/javascript"></script>
+	<script src="../../../../scripts/browserfix.js" class="view-source"  type="text/javascript" ></script>
+	
+	<script src="../../../../scripts/plugins/jquery.ui.js" class="view-source"  type="text/javascript" ></script>
+	
+	<script language="javascript" type="text/javascript" src="../WdatePicker.js" class="view-source"></script>
+	
+	<script src="../../demo.js"></script>
+	<link href="../../demo.css" rel="stylesheet">
+	<script class="view-source">
+	$(function(){
+		$("#content-year-month").calendar({isShowWeek:true,dateFmt:$('#calendar_format_yearmonth_id').val()});
+	});
+	</script>
+	
+</head>
+
+<body>
+	
+		<div>
+			定义年月返回格式：<input class="view-source" type="text" id="calendar_format_yearmonth_id" style="width:120px" value="yyyy-MM"/>（yyyy:年份,MM:月份）
+			<br/>
+			<h5><b>提示：</b>请先定义年月返回的格式，再点击日历文本框验证日历控件是否按设定的格式返回日期。</h5>
+			
+			日历文本框：<input class="view-source" type="text" id="content-year-month">
+			<br/><br/>
+			<div class='ui-state-highlight'> 
+				<pre>
+ <b>说明：</b>
+ 1.用户能方便的单独修改年份、月份； 
+ 2.开发人员能自定义年月的返回格式：允许以YYYYMM的格式返回、允许以YYYY+任意
+   分隔符+MM的格式返回
+				</pre>
+			</div>
+	</div>
+</body>
+</html>

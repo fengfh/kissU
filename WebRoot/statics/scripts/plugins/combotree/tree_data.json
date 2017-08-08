@@ -1,0 +1,36 @@
+{"returnCode":200,
+ "returnDesc":"success",
+ "error":"none",
+ "returnValue":
+		[
+           {
+            "id":"111",
+            "text":"异步1",
+            "hasChildren":"true",
+            "complete":"true",
+            "showCheck":"true",
+            "parentId":"root",
+            "childNodes":[
+	                 {
+	                   "id":"211",
+	                   "text":"异步1-1",
+	                   "hasChildren":"true",
+	                   "complete":"true",
+	                   "showCheck":"true",
+	                   "childNodes":
+	                      [
+	                         { "id":"youda11",
+	                           "text":"异步1-1-1",
+	                           "showCheck":"true" 
+	                         }
+	                      ]
+	                 },
+	                 {
+	                   "id":"311",
+	                   "text":"异步1-2",
+	                   "showCheck":"true"
+	                 }
+            ]
+          }
+		]
+}

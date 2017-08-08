@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Calendar Demos</title>
+	<link  href="../../../../themes/default/style.css" class="view-source" rel="stylesheet">
+	<script src="../../../../scripts/jquery.js" class="view-source"  type="text/javascript"></script>
+	<script src="../../../../scripts/common.js" class="view-source"  type="text/javascript"></script>
+	<script src="../../../../scripts/browserfix.js" class="view-source"  type="text/javascript" ></script>
+	
+	<script src="../../../../scripts/plugins/jquery.ui.js" class="view-source"  type="text/javascript" ></script>
+	
+	<script language="javascript" type="text/javascript" src="../WdatePicker.js" class="view-source"></script>
+	
+	<script src="../../demo.js"></script>
+	<link href="../../demo.css" rel="stylesheet">
+	
+	<script class="view-source">
+		$(function(){
+			$("#calendar").calendar({isShowWeek:true,dateFmt:$('#calendar_format_id').val()});
+		});
+	</script>
+	
+</head>
+
+<body>
+	
+		<div>
+			定义年月日返回格式：<input type="text" id="calendar_format_id" style="width:120px" value="yyyy-MM-dd" class="view-source"/>（yyyy:年份,MM:月份,dd:天数）
+			<br/><br/>
+			日历文本框：<input type="text" id="calendar" class="view-source">
+			<br/><br/>
+			<h5><b>提示：</b>请先定义年月日返回的格式，再点击日历文本框验证日历控件是否按设定的格式返回日期。</h5>
+	  </div>
+</body>
+</html>

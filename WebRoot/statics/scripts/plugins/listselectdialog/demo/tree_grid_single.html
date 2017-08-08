@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>llygrid demo</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="pragma" content="no-cache"/>
+	<meta http-equiv="cache-control" content="no-cache"/>
+  
+   <script src="../../../jquery.js" type="text/javascript" class="view-source"></script>
+   <script src="../../../common.js" type="text/javascript" class="view-source"></script>
+   <link   href="../../../../themes/mobile/style.css" type="text/css" rel="stylesheet" class="view-source" />
+   
+   <script src="../jquery.listselectdialog.js" type="text/javascript" class="view-source"></script>
+   <link   href="../jquery.listselectdialog.css" type="text/css" rel="stylesheet"  class="view-source"/>
+ <script src="../../dialog/jquery.dialog.js" type="text/javascript" class="view-source"></script>
+   <link   href="../../dialog/jquery.dialog.css" type="text/css" rel="stylesheet"  class="view-source"/>
+ 
+ 
+  <script src="../../demo.js"></script>
+	<link href="../../demo.css" rel="stylesheet">
+   <script type="text/javascript" class="view-source noparse">
+
+	$(function(){
+		var treeGridSelect = {
+				title:'用户选择页面',//页面显示标题
+				dataServiceUrl:dataServiceUrl,
+				defaults:[{value:'1',label:'广东省'},{value:'11',label:'广州市'}],//默认值
+				key:{value:'ID',label:'TEXT'},//对应value和label的key
+				multi:false,
+				grid:{
+					title:"用户选择",
+					params:{
+						sqlId:'grid.demo'
+					},
+					CommandName : 'java.page.command',
+					columns:[//显示列
+						{align:"center",key:"ID",label:"编号",query:true,width:"100"},
+						{align:"center",key:"TEXT",label:"名称",query:true,queryRender:function(){
+							return "<select><option value='1'>bingo.framework1</option><option value='2'>bingo.framework2</option></select>" ;
+						},width:"300"}
+					]
+				},
+				tree:{
+					title:"组织选择",
+					method : 'post',
+					asyn : true, //异步
+					rootId  : 'root',
+					rootText : '根节点',
+					gridKey:"id",
+					CommandName : 'java.tree.command',
+					params : {
+						daoBeanName:'dao',
+						sqlId : 'asyn.tree.demo',
+						childSqlId : 'asyn.tree.demo.child',
+						parentId : 'root',
+						testId:'1234'
+					}
+				}
+		} ;
+		
+		$(".tree-grid-s-select").listselectdialog( treeGridSelect,function(){
+			var args = jQuery.dialogReturnValue() ;
+			var value = args.value ;
+			var label = args.label ;
+			$(".tree-grid-s-select").val(label).attr("title",label) ;
+		}) ;
+
+
+   	});
+   </script>
+   
+   <style>
+   		*{
+   			font:12px "微软雅黑";
+   		}
+   </style>
+
+</head>
+<body>
+
+树列表单选选择:<input type="text" class="tree-grid-s-select" value=""/><br/><br/>
+
+</body>
+</html>

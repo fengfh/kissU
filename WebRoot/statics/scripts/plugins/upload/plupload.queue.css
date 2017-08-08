@@ -1,0 +1,410 @@
+/* 
+   Plupload
+------------------------------------------------------------------- */
+
+.plupload_button {
+	display: -moz-inline-box; 
+	display: inline-block;
+	font: normal 12px sans-serif;
+	text-decoration: none;
+    color: #42454a;
+    border: 1px solid #bababa;
+    padding: 4px 8px 3px 20px;
+	margin-right: 4px;
+    background: #f3f3f3 url('images/buttons.png') no-repeat 0 center;
+	outline: 0;
+
+    /* Optional rounded corners for browsers that support it */
+    /*-moz-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;*/
+}
+
+.plupload_button_clear {
+	display: -moz-inline-box; 
+	display: inline-block;
+	font: normal 12px sans-serif;
+	text-decoration: none;
+    color: #42454a;
+    border: 1px solid #bababa;
+    padding:2px 8px 1px 20px; 
+	margin:0px;
+    background: #f3f3f3 url('images/buttons.png') no-repeat 0 center;
+	margin-top:0px;
+}
+
+
+
+.plupload_button:hover {
+	color: #000;
+	text-decoration: none;
+}
+
+.plupload_disabled, a.plupload_disabled:hover {
+    color: #737373;
+    border-color: #c5c5c5;
+    background: #ededed url('images/buttons-disabled.png') no-repeat 0 center;
+	cursor: default;
+}
+
+.plupload_add {
+	background-position: -181px center;
+}
+
+.plupload_close {
+	 background: #f3f3f3 url(images/close.gif) no-repeat 0 center;
+}
+
+.plupload_wrapper {
+	font: normal 11px Verdana,sans-serif;
+	width: 100%;
+	margin:0px;padding:0px;
+	height:100%;
+	_height:26px;
+}
+
+.plupload_wrapper .plupload_container,.plupload_wrapper .plupload,.plupload_wrapper .plupload_content ,
+.plupload_wrapper .plupload_file_name,
+.plupload_wrapper .plupload_buttons,.plupload_wrapper .plupload_button,.plupload_wrapper .plupload_render_con  {
+	height:100%;
+	_height:26px;
+}
+
+
+.upload-dialog .plupload_wrapper .plupload_buttons,
+.upload-dialog .plupload_wrapper .plupload_button  {
+	height:16px;
+	padding-bottom:1px;
+	padding-top:1px;
+}
+
+
+.plupload_container input {
+	border: 1px solid #DDD;
+	font: normal 11px Verdana,sans-serif;
+	width: 98%;
+}
+
+.plupload_header {background: #2A2C2E url('images/backgrounds.gif') repeat-x;}
+.plupload_header_content {
+	background: url('images/backgrounds.gif') no-repeat 0 -317px;
+	min-height: 56px;
+	padding-left: 60px;
+	color: #FFF;
+}
+.plupload_header_title {
+	font: normal 18px sans-serif;
+	padding: 6px 0 3px;
+}
+.plupload_header_text {
+	font: normal 12px sans-serif;
+}
+
+.plupload_filelist {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.plupload_scroll .plupload_filelist {
+	height: 130px;
+	background: #F5F5F5;
+	overflow-y: auto;
+	margin:0px;padding:0px;
+}
+
+.plupload_filelist li {
+	padding: 3px 8px;
+	*padding: 3px 8px;
+	background: #F5F5F5 url('images/backgrounds.gif') repeat-x 0 -156px;
+	border-bottom: 1px solid #DDD;
+}
+
+.plupload_filelist_header, .plupload_filelist_footer {
+	background: #DFDFDF;
+	padding: 2px 8px;
+	color: #42454A;
+	height:25px;
+	line-height:25px;
+	vertical-align: middle;
+}
+
+
+
+.plupload_filelist_footer{
+	height:35px;
+	line-height:35px;
+	padding:5px 8px;
+}
+
+.plupload_filelist_clear{
+	background: none ;
+	padding: 1px 0px;
+	color: '';
+	height:15px;
+	line-height:15px;
+	vertical-align: middle;
+}
+
+.plupload_filelist_header {	
+	border-top: 1px solid #EEE;
+	border-bottom: 1px solid #CDCDCD;
+}
+
+.plupload_filelist_footer {border-top: 1px solid #FFF; height: 22px; line-height: 20px; vertical-align: middle;}
+.plupload_file_name {float: left; overflow: hidden}
+.plupload_file_status {color: #777;}
+.plupload_file_status span {color: #42454A;}
+.plupload_file_size, .plupload_file_status, .plupload_progress {
+	float: right;
+	width: 80px;
+}
+.plupload_file_size, .plupload_file_status {
+	text-align: right;
+	width:49px;
+}
+
+.plupload_file_action {
+	text-align: right;
+	width:20px;
+}
+
+.plupload_filelist .plupload_file_name {
+	/*width: 180px;*/
+	min-width:100px;
+	width:200px;
+	/*width:auto;*/
+	white-space:nowrap;
+	overflow:hidden;   
+	text-overflow:ellipsis;
+}
+
+.plupload_filelist li{
+	height:18px;
+	text-align: left;
+}
+
+.plupload_file_action {
+	float: right;
+	width: 16px;
+	height: 16px;
+	margin-left: 15px;
+}
+
+.plupload_file_action * {
+	display: none;
+	width: 16px;
+	height: 16px;
+}
+
+li.plupload_uploading {background: #ECF3DC url('images/backgrounds.gif') repeat-x 0 -238px;}
+li.plupload_done {color:#AAA}
+
+li.plupload_delete a {
+	background: url('images/delete.gif');
+}
+
+li.plupload_failed a {
+	background: url('images/error.gif');
+	cursor: default;
+}
+
+li.plupload_done a {
+	background: url('images/done.gif');
+	cursor: default;
+}
+
+.plupload_progress, .plupload_upload_status {
+	display: none;
+}
+.plupload_progress{
+	text-align: left;
+}
+
+.plupload_progress_container {
+	margin-top: 3px;
+	border: 1px solid #CCC;
+	background: #FFF;
+	padding: 1px;
+}
+.plupload_progress_bar {
+	width: 0px;
+	height: 7px;
+	background: #CDEB8B;
+}
+
+.plupload_scroll .plupload_filelist_header .plupload_file_action, .plupload_scroll .plupload_filelist_footer .plupload_file_action {
+	/*margin-right: 17px;*/
+}
+
+/* Floats */
+
+.plupload_clear,.plupload_clearer {clear: both;}
+.plupload_clearer, .plupload_progress_bar {
+	display: block;
+	font-size: 0;
+	line-height: 0;	
+}
+
+li.plupload_droptext {
+	background: transparent;
+	text-align: center;
+	vertical-align: middle;
+	border: 0;
+	line-height: 165px;
+}
+
+/**/
+.plupload_prog_content{
+	padding-left:20px;
+	/*width:100px;*/
+	/*display:inline-block;*/
+	height:20px;
+	float:left;
+	clear:left;
+	/*border:1px solid red;*/
+	font-size:11px;
+	padding-top:1px;
+	position:relative;
+	white-space:nowrap;
+	empty-cells: hide;
+	overflow:hidden;   
+	text-overflow:ellipsis;
+	/*padding-right:20px;*/
+	cursor: text;
+}
+
+
+.progress_delete_link{
+	position:absolute;
+	top:2px;
+	right:2px;
+	bottom:0px;
+	height:20px;
+}
+
+.plupload_mul_default_container{
+	
+}
+
+.plupload_multi_render_container{
+	display:inline-block;
+}
+
+.plupload_render_container{
+	/*width:50px;*/
+	border:1px solid #CCC;
+	height:18px;
+	_height:26px;
+	margin:0px;
+	padding:0px;
+	padding-top:-10px;
+	display:inline-block;/*Fix validator*/
+	*display:inline ;
+	display: inline-block; 
+	font-size: 13px; 
+	line-height: 18px; 
+	padding: 4px; 
+  	overflow:hidden;
+  	position:relative;
+  	background:none;
+  	filter:"";
+}
+
+
+
+.plupload_render_con{
+	display:inline-block;
+	/*width:54px;
+	height:20px;*/
+	float:right;
+	clear:right;
+	padding:0px;
+	margin:0px;
+	position:absolute;
+	width:54px;
+	height:26px;
+}
+
+.plupload_render_con .plupload_add{
+	margin-top : -2px;
+	margin-right:-1px;
+	border:none;
+}
+
+.plupload_render_con .plupload_buttons{
+	border-top:0px;
+	border-bottom:0px;
+	border-right:0px;
+}
+
+.upload-btn a{
+	width: 16px;
+	display: inline-block;
+	height: 16px;
+}
+
+.progress-error{
+	background: url('images/error.gif') no-repeat 0 center;
+}
+
+.progress-uploaded{
+	background: url('images/done.gif') no-repeat 0 center;
+}
+.progress-uploading{
+	background: url('images/upload.gif') no-repeat 0 center;
+}
+
+.plupload_row{
+	display:inline-block;
+	*display:inline;
+	width:150px;
+}
+
+.plupload_row_filename{
+	width:80px;
+	white-space:nowrap;
+	overflow:hidden;   
+	text-overflow:ellipsis;
+	padding-right:20px;
+	float:left;
+	clear:left;
+}
+
+.plupload_row_deleteimg{
+	width:20px;
+	height:20px;
+	vertical-align:middle;
+	margin-right:5px;
+	
+}
+
+.plupload_wrapper span.btn-text{
+	display:block;
+	white-space: nowrap;
+	width:20px;
+	height:100%;
+	line-height:18px;
+	padding:3px;
+	vertical-align: middle;
+	overflow:visible;
+}
+
+a.plupload_add{
+	
+}
+
+.upload-del,.upload-del-action{
+	background:url(images/delete.gif) ;
+	width:15px;
+	height:15px;
+	display:block;
+}
+
+.upload-download{
+	background:url(images/download.png);
+	width:15px;
+	height:15px;
+	display:block;
+}

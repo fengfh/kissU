@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Calendar Demos</title>
+	<link  href="../../../../themes/default/style.css" class="view-source" rel="stylesheet">
+	<script src="../../../../scripts/jquery.js" class="view-source"  type="text/javascript"></script>
+	<script src="../../../../scripts/common.js" class="view-source"  type="text/javascript"></script>
+	<script src="../../../../scripts/browserfix.js" class="view-source"  type="text/javascript" ></script>
+	
+	<script src="../../../../scripts/plugins/jquery.ui.js" class="view-source"  type="text/javascript" ></script>
+	
+	<script language="javascript" type="text/javascript" src="../WdatePicker.js" class="view-source"></script>
+		
+	<script src="../../demo.js"></script>
+	<link href="../../demo.css" rel="stylesheet">
+	<script class="view-source">
+		$(function() { 
+			$("#calendar_div").calendar({onpicked:function(dp){alert('你选择的日期是:'+dp.cal.getDateStr())}});
+		})
+		
+	</script>
+	
+</head>
+
+<body>
+	
+		<div id='content-default' class='demo'>
+		<div>
+				<div id="calendar_div" class="view-source"></div>
+			</div>
+		<br />
+	</div>
+	
+</body>
+</html>

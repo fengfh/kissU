@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Cache-Control" content="no-store"/>
+	<meta http-equiv="Pragma" content="no-cache"/>
+	<meta http-equiv="Expires" content="0"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+	<link type="text/css" rel="stylesheet" href="../../statics/themes/mobile/style.css" />
+	<script src="../../statics/scripts/jquery.js"></script>
+	<script src="../../statics/scripts/common.js"></script>
+	<script type="text/javascript" src="../../portal/scripts/plugin.js"></script>
+	<script src="../../statics/scripts/plugins/dialog/jquery.dialog.js"></script>
+</head>
+
+<body  style="width:99%;padding:0px;margin:0px;">
+	<a id="hiddenLink" style="display:none" href=""></a>
+	<center>
+		<div style="height:100px;"></div>
+		<div style=" border:solid 2px #a1c6de;width:450px; text-align: left;padding:20px;">
+			<table style="width: 100%;" id="mainTable">
+				<tr>
+					<td colspan="2" id="pluginHeader">
+						<div class="alert alert-info">
+							您当前可以<span id="pageName"></span>进行如下操作：
+						</div>
+					</td>
+				</tr>
+				<tr><td colspan="2">&nbsp;</td></tr>
+				<tr>
+					<td id="pluginLinks">				
+					</td>
+				</tr>
+			</table>
+		</div>
+		
+		<form action="" id="fixForward" style="display:none"></form>
+	</center>
+	<script type="text/javascript">
+
+		var contentMenu = window.top.Portal.config.getCurrentMenu() ;//当前编辑菜单
+		var portalCode  = window.top.Config.portalCode ;
+		var menuId   	= contentMenu.id ;	      //菜单ID
+		var menuName 	= contentMenu.title ;     //菜单名称
+		var pluginCode  = contentMenu.pluginCode ;//菜单插件对应code
+		var object_id   = contentMenu.objectId ;     //菜单插件对应值
+		
+		var url		    = contentMenu.url  ;	  //菜单URL
+		contentMenu.portalCode = portalCode ;
+	
+    	var plugin = new Plugin() ;
+    	plugin.add( contentMenu  ) ;
+    	//将插件对象引用添加到顶层窗口
+    	window.top.plugin = plugin ;
+
+    	plugin.render(window.top.Portal.services.getPageCreator()) ;
+    </script>
+</body>
+</html>

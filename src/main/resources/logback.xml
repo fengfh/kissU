@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration>
+<configuration scan="true" scanPeriod="1 seconds">
+	<!-- 控制台输出日志 -->  
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%-5level %d{yyyy-MM-dd HH:mm:ss.SSS} [%thread]  %logger{100}[line:%L] - %msg%n</pattern>
+		</encoder>
+	</appender>
+  
+	<!-- 文件输出日志 (文件大小策略进行文件输出，超过指定大小对文件备份)-->   
+	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">   
+			<level>ERROR</level>   
+			<OnMismatch>DENY</OnMismatch>
+			<OnMatch>ACCEPT</OnMatch>
+		</filter>
+		<File>logs/webapp.log</File>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>webapp.%d{yyyy-MM-dd}.log</FileNamePattern>
+		</rollingPolicy>
+		<maxHistory>90</maxHistory> <!-- keep 90 days -->
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{100}[line:%L] - %msg%n</Pattern>
+		</layout>
+	</appender>
+	
+	<logger name="bingo" level="DEBUG"/>
+	<logger name="org.apache" level="ERROR"/>
+	<logger name="org.springframework" level="ERROR"/>
+	<logger name="org.lightframework" level="ERROR"/>
+	<logger name="ch.qos.logback" level="ERROR"/>
+  
+	<root level="INFO">
+		<appender-ref ref="STDOUT" />
+	</root>
+</configuration>

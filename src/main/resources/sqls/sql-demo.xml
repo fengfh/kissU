@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>系统参数维护相关的sql</comment>
+	
+	<!-- 获取到所有有效的系统参数 -->
+    <entry key="demo.profile.getValidParams">
+    <![CDATA[
+        SELECT SP.GLOBAL,
+		       SPP.NAME,
+		       SPP.VALUE
+		FROM   SYS_PROFILE           SP,
+		       SYS_PROFILE_PARAMETER SPP
+		WHERE  SP.ID = SPP.PROFILE_ID
+		AND    ((SP.GLOBAL = 0 AND SP.ACTIVATE = 1) OR
+		      (SP.GLOBAL = 1 AND SP.ACTIVATE = 1))
+		ORDER  BY SP.GLOBAL DESC
+    ]]>
+    </entry>
+
+	<!--根据userId获取用户信息，包括用户组织信息-->
+	<entry key="demo.profile.getProfiles">
+	<![CDATA[
+		SELECT SP.ID,
+		       SP.NAME,
+		       SP.DESCRIPTION,
+		       (CASE WHEN SP.ACTIVATE = 1 THEN '是' else '否' END) ACTIVATE ,
+		       (CASE WHEN SP.GLOBAL = 1 THEN '是' else '否' END) GLOBAL
+		FROM   SYS_PROFILE SP
+		WHERE 1=1
+		{? AND SP.NAME = #NAME#}
+		{? AND    SP.ACTIVATE IN ($activate$)}
+		{? AND    SP.GLOBAL IN ($global$)}
+		{? AND    SP.ID <> #profileId#}
+	]]>
+	</entry>
+	
+	<!--根据userId获取用户信息，包括用户组织信息-->
+	<entry key="demo.profile.getProfileParams">
+	<![CDATA[
+		SELECT ID,
+		       PROFILE_ID,
+		       NAME,
+		       VALUE,
+		       DESCRIPTION
+		FROM   SYS_PROFILE_PARAMETER
+		WHERE PROFILE_ID = #profileId#
+	]]>
+	</entry>
+	
+	<!-- 判断环境名称是否存在 -->
+	<entry key="demo.profile.existProfileByName">
+		<![CDATA[
+			SELECT COUNT(*) FROM SYS_PROFILE WHERE NAME = ? 
+		]]>
+	</entry>
+	
+	<!-- 判断环境名称是否存在（检查修改时） -->
+	<entry key="demo.profile.existProfileByNameForEdit">
+		<![CDATA[
+			SELECT COUNT(*) FROM SYS_PROFILE WHERE NAME = ? AND ID <> ?
+		]]>
+	</entry>
+	
+	<!-- 判断参数名称是否存在 -->
+	<entry key="demo.profile.existParameterByName">
+		<![CDATA[
+			SELECT COUNT(*) FROM SYS_PROFILE_PARAMETER WHERE NAME = ? AND PROFILE_ID = ?
+		]]
+	</entry>
+	
+	<!-- 判断参数名称是否存在（检查修改时） -->
+	<entry key="demo.profile.existParameterByNameForEdit">
+		<![CDATA[
+			SELECT COUNT(*) FROM SYS_PROFILE_PARAMETER WHERE NAME = ? AND ID <> ? AND PROFILE_ID = ?
+		]]>
+	</entry>
+	
+	<!-- 使非特定profile的非公共配置不激活-->
+	<entry key="demo.profile.inactivateProfile">
+	<![CDATA[
+		UPDATE SYS_PROFILE SP
+		SET    SP.ACTIVATE = 0
+		WHERE  SP.ID <> ?
+		AND    SP.GLOBAL = 0
+	]]>
+	</entry>
+	
+	<!-- 使特定profile的配置激活-->
+	<entry key="demo.profile.activateProfile">
+	<![CDATA[
+		UPDATE SYS_PROFILE SP
+		SET    SP.ACTIVATE = 1
+		WHERE  SP.ID = ?
+	]]>
+	</entry>
+	
+	<!-- 使特定公共profile的配置失效-->
+	<entry key="demo.profile.inactivateGlobalProfile">
+	<![CDATA[
+		UPDATE SYS_PROFILE SP
+		SET    SP.ACTIVATE = 0
+		WHERE  SP.ID = ?
+	]]>
+	</entry>
+	
+	<!-- 删除目标profile中与源头profile重复的参数-->
+	<entry key="demo.profile.cleanDestinationProfile">
+	<![CDATA[
+		DELETE FROM SYS_PROFILE_PARAMETER
+		WHERE  PROFILE_ID = ? AND NAME IN (SELECT NAME FROM
+			(SELECT NAME FROM SYS_PROFILE_PARAMETER SPP WHERE PROFILE_ID = ?) TMP)
+	]]>
+	</entry>
+</properties>

@@ -1,0 +1,329 @@
+.ie .bbit-tree .bbit-tree-bwrap {
+}
+
+div.bbit-tree{
+	/*border:none;background:none;*/
+	border:none;
+}
+
+/*bootstrap*/
+.bbit-tree .bbit-tree-node .bbit-tree-node-el:hover{
+	text-decoration: none;
+	background-color: #EEE;
+	color:#212121;
+}
+
+
+
+.bbit-tree .bbit-tree-node .active{
+   color: #ffffff;
+   background-color: #0088cc;
+}
+
+.bbit-tree .bbit-tree-node .active a{
+	color:#ffffff;
+}
+/*bootstrap*/
+
+.bbit-tree ul {
+	padding-right: 0px; padding-left: 0px; padding-bottom: 0px; margin: 0px; padding-top: 0px; list-style-type: none
+}
+.bbit-tree li {
+	padding-right: 0px; padding-left: 0px; padding-bottom: 0px; margin: 0px; padding-top: 0px; list-style-type: none;
+}
+.bbit-tree-body {
+	font-size: 12px
+}
+.bbit-tree-icon {
+	border-right: 0px; padding-right: 0px; border-top: 0px; padding-left: 0px; padding-bottom: 0px; margin: 0px; vertical-align: top; border-left: 0px; width: 16px; padding-top: 0px; border-bottom: 0px; background-repeat: no-repeat; height: 18px
+}
+.bbit-tree-ec-icon {
+	border-right: 0px; padding-right: 0px; border-top: 0px; padding-left: 0px; padding-bottom: 0px; margin: 0px; vertical-align: top; border-left: 0px; width: 16px; padding-top: 0px; border-bottom: 0px; background-repeat: no-repeat; height: 18px
+}
+.bbit-tree-node-cb {
+	border-right: 0px; padding-right: 0px; border-top: 0px; padding-left: 0px; padding-bottom: 0px; margin: 0px; vertical-align: top; border-left: 0px; width: 16px; padding-top: 0px; border-bottom: 0px; background-repeat: no-repeat; height: 16px;
+	/*vertical-align: middle;*/
+}
+.bbit-tree-elbow-line {
+	border-right: 0px; padding-right: 0px; border-top: 0px; padding-left: 0px; padding-bottom: 0px; margin: 0px; vertical-align: top; border-left: 0px; width: 16px; padding-top: 0px; border-bottom: 0px; background-repeat: no-repeat; height: 18px
+}
+.bbit-tree-elbow {
+	border-right: 0px; padding-right: 0px; border-top: 0px; padding-left: 0px; padding-bottom: 0px; margin: 0px; vertical-align: top; border-left: 0px; width: 16px; padding-top: 0px; border-bottom: 0px; background-repeat: no-repeat; height: 18px
+}
+.bbit-tree-elbow-end {
+	border-right: 0px; padding-right: 0px; border-top: 0px; padding-left: 0px; padding-bottom: 0px; margin: 0px; vertical-align: top; border-left: 0px; width: 16px; padding-top: 0px; border-bottom: 0px; background-repeat: no-repeat; height: 18px
+}
+.bbit-tree-elbow-plus {
+	border-right: 0px; padding-right: 0px; border-top: 0px; padding-left: 0px; padding-bottom: 0px; margin: 0px; vertical-align: top; border-left: 0px; width: 16px; padding-top: 0px; border-bottom: 0px; background-repeat: no-repeat; height: 18px
+}
+.bbit-tree-elbow-minus {
+	border-right: 0px; padding-right: 0px; border-top: 0px; padding-left: 0px; padding-bottom: 0px; margin: 0px; vertical-align: top; border-left: 0px; width: 16px; padding-top: 0px; border-bottom: 0px; background-repeat: no-repeat; height: 18px
+}
+.bbit-tree-elbow-end-plus {
+	border-right: 0px; padding-right: 0px; border-top: 0px; padding-left: 0px; padding-bottom: 0px; margin: 0px; vertical-align: top; border-left: 0px; width: 16px; padding-top: 0px; border-bottom: 0px; background-repeat: no-repeat; height: 18px
+}
+.bbit-tree-elbow-end-minus {
+	border-right: 0px; padding-right: 0px; border-top: 0px; padding-left: 0px; padding-bottom: 0px; margin: 0px; vertical-align: top; border-left: 0px; width: 16px; padding-top: 0px; border-bottom: 0px; background-repeat: no-repeat; height: 18px
+}
+.bbit-tree-node-cb {
+	height: 16px
+}
+
+.bbit-tree-node-collapsed .bbit-tree-node-icon {
+	border-right: 0px; padding-right: 0px; background-position: center 50%; border-top: 0px; padding-left: 0px; padding-bottom: 0px; margin: 0px; vertical-align: top; border-left: 0px; width: 16px; padding-top: 0px; border-bottom: 0px; background-repeat: no-repeat; height: 16px
+}
+.bbit-tree-node-expanded .bbit-tree-node-icon {
+	border-right: 0px; padding-right: 0px; background-position: center 50%; border-top: 0px; padding-left: 0px; padding-bottom: 0px; margin: 0px; vertical-align: top; border-left: 0px; width: 16px; padding-top: 0px; border-bottom: 0px; background-repeat: no-repeat; height: 16px
+}
+.bbit-tree-node-leaf .bbit-tree-node-icon {
+	border-right: 0px; padding-right: 0px; background-position: center 50%; border-top: 0px; padding-left: 0px; padding-bottom: 0px; margin: 0px; vertical-align: top; border-left: 0px; width: 16px; padding-top: 0px; border-bottom: 0px; background-repeat: no-repeat; height: 16px
+}
+
+.ie .bbit-tree-node-indent img {
+	vertical-align: middle! important
+}
+.ie .bbit-tree-node-icon {
+	vertical-align: middle! important
+}
+.ie .bbit-tree-ec-icon {
+	vertical-align: middle! important
+}
+.bbit-tree-noicon .bbit-tree-node-icon {
+	width: 0px; height: 0px
+}
+.bbit-tree-no-lines .bbit-tree-elbow {
+	background: none transparent scroll repeat 0% 0%
+}
+.bbit-tree-no-lines .bbit-tree-elbow-end {
+	background: none transparent scroll repeat 0% 0%
+}
+.bbit-tree-no-lines .bbit-tree-elbow-line {
+	background: none transparent scroll repeat 0% 0%
+}
+.bbit-tree-arrows .bbit-tree-elbow {
+	background: none transparent scroll repeat 0% 0%
+}
+.bbit-tree-arrows .bbit-tree-elbow-plus {
+	background: no-repeat 0px 0px
+}
+.bbit-tree-arrows .bbit-tree-elbow-minus {
+	background: no-repeat -16px 0px
+}
+.bbit-tree-arrows .bbit-tree-elbow-end {
+	background: none transparent scroll repeat 0% 0%
+}
+.bbit-tree-arrows .bbit-tree-elbow-end-plus {
+	background: no-repeat 0px 0px
+}
+.bbit-tree-arrows .bbit-tree-elbow-end-minus {
+	background: no-repeat -16px 0px
+}
+.bbit-tree-arrows .bbit-tree-elbow-line {
+	background: none transparent scroll repeat 0% 0%
+}
+.bbit-tree-arrows .bbit-tree-ec-over .bbit-tree-elbow-plus {
+	background-position: -32px 0px
+}
+.bbit-tree-arrows .bbit-tree-ec-over .bbit-tree-elbow-minus {
+	background-position: -48px 0px
+}
+.bbit-tree-arrows .bbit-tree-ec-over .bbit-tree-elbow-end-plus {
+	background-position: -32px 0px
+}
+.bbit-tree-arrows .bbit-tree-ec-over .bbit-tree-elbow-end-minus {
+	background-position: -48px 0px
+}
+.bbit-tree-elbow-plus {
+	cursor: pointer
+}
+.bbit-tree-elbow-minus {
+	cursor: pointer
+}
+.bbit-tree-elbow-end-plus {
+	cursor: pointer
+}
+.bbit-tree-elbow-end-minus {
+	cursor: pointer
+}
+.ie ul.bbit-tree-node-ct {
+	font-size: 0px; line-height: 0; zoom: 1
+}
+.bbit-tree-node {
+	white-space: nowrap
+}
+.bbit-tree-node-el {
+	cursor: default; line-height: 18px;
+}
+
+.bbit-tree-node-el a{
+	zoom:1;
+}
+
+
+.bbit-tree-node a {
+	text-decoration: none; khtml-user-select: none; moz-user-select: none; webkit-user-select: ignore; kthml-user-focus: normal; moz-user-focus: normal; moz-outline: 0 none; outline: 0 none
+}
+.bbit-tree-node a span {
+	padding-right: 3px; padding-left: 2px; padding-bottom: 1px;/* padding-top: 10px;*/ text-decoration: none
+}
+.bbit-tree-node .bbit-tree-node-disabled .bbit-tree-node-icon {
+	filter: alpha(opacity=50); moz-opacity: 0.5; opacity: .5
+}
+.bbit-tree-node .bbit-tree-node-inline-icon {
+	background: none transparent scroll repeat 0% 0%
+}
+.bbit-tree-node a:hover {
+	text-decoration: none
+}
+.bbit-tree-root {
+	zoom: 1
+}
+.bbit-tree-node-expanded .bbit-tree-node-icon {
+	/*background-image: url(images/tree/s.gif)*/
+}
+.bbit-tree-node-leaf .bbit-tree-node-icon {
+	/*background-image: url(images/tree/s.gif)*/
+}
+.bbit-tree-node-collapsed .bbit-tree-node-icon {
+	/*background-image: url(images/tree/s.gif)*/
+}
+.bbit-tree-node-loading .bbit-tree-node-icon {
+	/*background-image: url(images/tree/s.gif)*/ ! important
+}
+.bbit-tree-node .bbit-tree-node-inline-icon {
+	background-image: none
+}
+.bbit-tree-lines .bbit-tree-elbow {
+	background-image: url(images/elbow.gif)
+}
+.bbit-tree-lines .bbit-tree-elbow-plus {
+	background-image: url(images/elbow-plus.gif)
+}
+.bbit-tree-lines .bbit-tree-elbow-minus {
+	background-image: url(images/elbow-minus.gif)
+}
+.bbit-tree-lines .bbit-tree-elbow-end {
+	background-image: url(images/elbow-end.gif)
+}
+.bbit-tree-lines .bbit-tree-elbow-end-plus {
+	background-image: url(images/elbow-end-plus.gif)
+}
+.bbit-tree-lines .bbit-tree-elbow-end-minus {
+	background-image: url(images/elbow-end-minus.gif)
+}
+.bbit-tree-lines .bbit-tree-elbow-line {
+	background-image: url(images/elbow-line.gif)
+}
+.bbit-tree-no-lines .bbit-tree-elbow-plus {
+	background-image: url(images/elbow-plus-nl.gif)
+}
+.bbit-tree-no-lines .bbit-tree-elbow-minus {
+	background-image: url(images/elbow-minus-nl.gif)
+}
+.bbit-tree-no-lines .bbit-tree-elbow-end-plus {
+	background-image: url(images/elbow-end-plus-nl.gif)
+}
+.bbit-tree-no-lines .bbit-tree-elbow-end-minus {
+	background-image: url(images/elbow-end-minus-nl.gif)
+}
+.bbit-tree-arrows .bbit-tree-elbow-plus {
+	background-image: url(images/arrows.gif)
+}
+.bbit-tree-arrows .bbit-tree-elbow-minus {
+	background-image: url(images/arrows.gif)
+}
+.bbit-tree-arrows .bbit-tree-elbow-end-plus {
+	background-image: url(images/arrows.gif)
+}
+.bbit-tree-arrows .bbit-tree-elbow-end-minus {
+	background-image: url(images/arrows.gif)
+}
+/*
+.bbit-tree-node-loading a span {
+	color: #444444;
+	font-style: italic;
+}
+*/
+.ui-state-highlight, .ui-widget-content .ui-state-highlight{
+	border:none;
+	/*background: none;*/
+}
+
+.ui-state-highlight a span{
+	font-style: italic;
+}
+
+.bbit-tree-node {
+	font-size: 12px;
+}
+
+.bbit-tree-node a {
+}
+
+.bbit-tree-node a span {
+}
+
+.bbit-tree-node .bbit-tree-node-disabled a span {
+	color: gray! important
+}
+.bbit-tree-node .bbit-tree-node-over {
+	/*background-color: #eee*/
+	border:none;
+}
+.bbit-tree-node .bbit-tree-selected {
+	/*background-color: #d9e8fb*/
+	border:none;
+}
+
+.bbit-tree-node .bbit-tree-checkbox0{
+	background-image: url(images/checkbox_0.gif);
+}
+
+.bbit-tree-node .bbit-tree-checkbox1{
+	background-image: url(images/checkbox_1.gif);
+}
+
+.bbit-tree-node .bbit-tree-checkbox2{
+	background-image: url(images/checkbox_2.gif);
+}
+
+.bbit-tree-root{
+	background-image: url(images/root.gif);
+	/*display:inline;*/
+	background-repeat: no-repeat;
+}
+
+.bbit-tree-folderopen{
+	background-image: url(images/folder-open.gif)
+}
+
+.bbit-tree-leaf{
+	background-image: url(images/leaf.gif)
+}
+
+.bbit-tree-folder{
+	background-image: url(images/folder.gif)
+}
+
+.bbit-tree-loading{
+	background-image: url(images/loading.gif);
+	
+}
+
+.bbit-tree-blank{
+	background-image: url(images/s.gif) ;
+	/*border:1px solid red;*/
+	width:16px;
+	height:16px;
+	float:left;
+}
+
+.bbit-tree-ec-icon,.bbit-tree-node-icon,.bbit-tree-node-cb{
+	width:16px;
+	height:16px;
+	float:left;
+}
+
+.bbit-tree-node .ui-state-disabled{
+	
+}

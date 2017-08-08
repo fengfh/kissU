@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0042)http://jscs.cloudapp.net/ControlsSample/CM -->
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <TITLE></TITLE>
+    <LINK href="../jquery.contextmenu.css" rel="stylesheet" type="text/css"  class="view-source"/>
+		<link  href="../../../../themes/default/style.css" class="view-source" rel="stylesheet">
+		<script src="../../../../scripts/jquery.js"  class="view-source" type="text/javascript"></script>
+		<script src="../../../../scripts/common.js"  class="view-source" type="text/javascript"></script>
+		<script src="../../../../scripts/browserfix.js"  class="view-source" type="text/javascript" ></script>
+		<script src="../../../../scripts/plugins/jquery.json.js" type="text/javascript"></script>
+		
+		<SCRIPT src="../jquery.contextmenu.js" type="text/javascript" class="view-source"></SCRIPT> 
+	
+	<script src="../../demo.js"></script>
+	<link href="../../demo.css" rel="stylesheet">	
+	
+<SCRIPT type="text/javascript" class="view-source noparse">
+     function menuAction(){
+     	alert("( nodeId = " + this.data.nodeId + " ) " + " ( menu which you have hit is : " + this.data.text + " )");
+     }
+     
+     function openPage(e,jqueryObject){
+     	var nodeId = jqueryObject.get(0).getAttribute("nodeId");
+     	var nodeType = jqueryObject.get(0).getAttribute("nodeType");
+     	var menuItems = [];
+     	
+     	if(nodeType == 'application'){
+      		menuItems.push({ text: "新建应用系统", icon: "images/icon_assign_role.gif", alias: "create_application", action: menuAction, nodeId:nodeId});
+         	menuItems.push({ text: "修改应用系统", icon: "images/icon_edit.gif", alias: "edit_application", action: menuAction, nodeId:nodeId});
+     		menuItems.push({ text: "删除应用系统", icon: "images/icon_del.gif", alias: "delete_application", action: menuAction, nodeId:nodeId});
+    	}
+        else if(nodeType == 'module'){
+    		menuItems.push({ text: "新建子模块", icon: "images/icon_assign_role.gif", alias: "assign_role", action: menuAction, nodeId:nodeId});
+         	menuItems.push({ text: "修改模块", icon: "images/icon_edit.gif", alias: "edit", action: menuAction, nodeId:nodeId});
+     		menuItems.push({ text: "删除模块", icon: "images/icon_del.gif", alias: "delete", action: menuAction, nodeId:nodeId});
+     		menuItems.push({ text: "新建功能", icon: "images/ico_create.gif", alias: "delete", action: menuAction, nodeId:nodeId});
+    	} 
+    	else if(nodeType == 'page'){
+         	menuItems.push({ text: "修改功能", icon: "images/icon_edit.gif", alias: "edit", action: menuAction, nodeId:nodeId});
+     		menuItems.push({ text: "删除功能", icon: "images/icon_del.gif", alias: "delete", action: menuAction, nodeId:nodeId});
+    	}
+   	 
+    	var option = { width: 150, 
+    	       items:menuItems
+        };
+                   
+    	jqueryObject.contextmenu(option);
+    	jqueryObject.contextmenu().show(e);
+     }
+        
+    $(function(){
+         //限定某个区域不能使用右键菜单
+    	 $("#divId").bind("contextmenu", function (){return false;}) ;
+    	
+    	 $('.treenode').bind("contextmenu",function(e){
+    	 	  openPage(e,$(this));
+    	 });
+
+    	 
+    });
+</SCRIPT>
+</HEAD>
+	<BODY>
+		<div style="padding: 20px" id="divId">
+			<ul>
+				<li><div><a href="javascript:void(0);" class="treenode" nodeId="id-1" style="border:solid 1px #ffccee;" nodeType="application">应用系统</a></div>
+					<ul>
+						<li><a href="javascript:void(0);" class="treenode" nodeId="id-11" nodeType="module">系统管理</a></li>
+							<ul>
+								<li class="view-source"><a href="javascript:void(0);"  class="treenode" nodeId="id-111" nodeType="page">用户管理</a></li>
+								<li><a href="javascript:void(0);"  class="treenode" nodeId="id-112" nodeType="page">角色管理</a></li>
+							</ul>
+						<li><a href="javascript:void(0);" class="treenode" nodeId="id-12" nodeType="module">组件管理</a></li>
+						<li><a href="javascript:void(0);" class="treenode" nodeId="id-13" nodeType="module">指标管理</a></li>
+					</ul>
+				</li>
+				
+			</ul>
+		</div>
+		
+		<div class="row-fluid">
+      		<pre code-target=".autocomplete_demo1" style="margin-bottom: 9px;"></pre>
+      		<script type="code-pretty" class="autocomplete_demo1">
+HTML:
+	<li><a href="javascript:void(0);"  class="treenode" nodeId="id-111" nodeType="page">用户管理</a></li>
+
+脚本：
+//限定某个区域不能使用右键菜单
+$("#divId").bind("contextmenu", function (){return false;}) ;
+$('.treenode').bind("contextmenu",function(e){
+   openPage(e,$(this));
+});
+
+function menuAction(){
+	alert("( nodeId = " + this.data.nodeId + " ) " + " ( menu which you have hit is : " + this.data.text + " )");
+}
+
+function openPage(e,jqueryObject){
+	var nodeId = jqueryObject.get(0).getAttribute("nodeId");
+	var nodeType = jqueryObject.get(0).getAttribute("nodeType");
+	var menuItems = [];
+	
+	if(nodeType == 'application'){
+ 	menuItems.push({ text: "新建应用系统", icon: "images/icon_assign_role.gif", alias: "create_application", action: menuAction, nodeId:nodeId});
+    menuItems.push({ text: "修改应用系统", icon: "images/icon_edit.gif", alias: "edit_application", action: menuAction, nodeId:nodeId});
+	menuItems.push({ text: "删除应用系统", icon: "images/icon_del.gif", alias: "delete_application", action: menuAction, nodeId:nodeId});
+}
+   else if(nodeType == 'module'){
+	menuItems.push({ text: "新建子模块", icon: "images/icon_assign_role.gif", alias: "assign_role", action: menuAction, nodeId:nodeId});
+    menuItems.push({ text: "修改模块", icon: "images/icon_edit.gif", alias: "edit", action: menuAction, nodeId:nodeId});
+	menuItems.push({ text: "删除模块", icon: "images/icon_del.gif", alias: "delete", action: menuAction, nodeId:nodeId});
+	menuItems.push({ text: "新建功能", icon: "images/ico_create.gif", alias: "delete", action: menuAction, nodeId:nodeId});
+} 
+else if(nodeType == 'page'){
+    menuItems.push({ text: "修改功能", icon: "images/icon_edit.gif", alias: "edit", action: menuAction, nodeId:nodeId});
+	menuItems.push({ text: "删除功能", icon: "images/icon_del.gif", alias: "delete", action: menuAction, nodeId:nodeId});
+}
+
+var option = { width: 150, 
+       items:menuItems
+   };
+              
+jqueryObject.contextmenu(option);
+jqueryObject.contextmenu().show(e);
+}
+					
+	      	</script>
+      	</div>
+	</BODY>
+</HTML>

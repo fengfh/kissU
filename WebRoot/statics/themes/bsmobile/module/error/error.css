@@ -1,0 +1,22 @@
+@charset "utf-8";
+
+.wrapper-error{
+	position:relative;
+	margin:100px auto;
+	width:420px;
+	height:230px;
+	background: url(images/bgErrorC.gif) no-repeat;
+}
+.error-img{
+	height:92px;
+	background: url(images/bgErrorT.gif) no-repeat top left;
+}
+.error-info{
+	padding-left:100px;
+}
+.error-info p{
+	line-height:24px;
+	font-size:12px;
+	color:#555;
+	margin-top:15px;
+}

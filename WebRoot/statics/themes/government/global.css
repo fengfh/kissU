@@ -1,0 +1,157 @@
+@charset "utf-8";
+
+/* 全局 字体大小 颜色 链接
+----------------------------------------------------- */
+html {	
+	_overflow-x:hidden;
+}
+body {
+	background-color:#fff;
+	color:#174b73;
+	font-size:12px;
+	font-family:Verdana, Microsoft YaHei, Simsun, Arial Unicode MS, Mingliu, Arial, Helvetica;
+	line-height:18px;
+}
+a:link{
+	color:#08C;
+}
+a:hover{
+	color:#005580;
+	cursor:pointer;
+}
+a:active{
+	color:#333;
+}
+
+
+
+/* input select textarea 边框
+----------------------------------------------------- */
+input[type="text"], input[type="password"], .ui-autocomplete-input, textarea, .uneditable-input {
+	border:1px solid #ccc;
+	border-radius:3px;
+	padding:4px;
+}
+
+
+
+/* 布局
+----------------------------------------------------- */
+.container-body {
+	overflow:auto;
+}
+.container-popup {
+	padding:0;
+}
+.container-body .container-fluid {
+	padding:0;
+}
+.container-popup .container-fluid {
+	padding:0;
+}
+
+
+
+/* panel
+----------------------------------------------------- */
+.panel {
+	clear:both;
+	overflow: hidden;
+	margin-bottom:10px;
+}
+.panel .panel-head {
+	position:relative;
+	bottom:0;
+	right:0;
+	font-size:14px;
+	height: 26px;
+	line-height:26px;
+	padding:0 10px;
+}
+.panel .panel-head h2{
+	font-size:14px;
+	height: 26px;
+	line-height: 26px;
+	_line-height: 1;
+}
+.panel .panel-content{
+	padding: 10px;
+}
+.panel .panel-foot ,.panel-foot {
+	padding:0 10px;
+	border-top:1px solid #bcd6ed;
+	background: url(images/content_bg.png) 0 -150px repeat-x;
+	overflow:hidden;
+	text-align: right;
+}
+
+
+
+/* page-title
+----------------------------------------------------- */
+.page-title{
+	background:url(images/crumb.jpg) repeat-x;
+	border-bottom: 1px solid #6593CF;
+	height:26px;
+	padding:0 10px;
+}
+.page-title h2{
+	height:26px;
+	line-height:26px;
+	font-size:14px;
+}
+
+
+
+/* table
+----------------------------------------------------- */
+.table-bordered {
+	border: 0;
+}
+.table-bordered th, .table-bordered td {
+	border-left: 0;
+}
+.table thead tr th {
+	background: #BAD8FF url(images/dg_headerstyle.gif) right center no-repeat;
+	border-bottom: 1px solid #6593CF;
+	text-align: center;
+	color: #1C568A;
+}
+.table th, .table td {
+	border-top: 0;
+	border-bottom: 1px solid #C7DCF2;
+}
+.table-striped tbody tr:nth-child(odd) td, .table-striped tbody tr:nth-child(odd) th {
+	background-color: #EFF5FC;
+}
+.table tbody tr:hover td,
+.table tbody tr:hover th{
+  background-color: #e5eeff;
+}
+/* form-table */
+.form-table th {
+	background: #BAD8FF;
+	border-bottom: 1px solid #fff;
+}
+
+
+
+/* search-panel
+----------------------------------------------------- */
+.search-panel .panel-head {
+	display:none;
+}
+
+
+/* form-panel
+----------------------------------------------------- */
+.form-panel .panel-head {
+	display:none;
+}
+
+
+/* apply-panel
+----------------------------------------------------- */
+.apply-panel .panel-head {
+	display:none;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" " http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>jQuery EasyUI</title>
+	<link  href="../jquery.layout.css" type="text/css" rel="stylesheet" class="view-source"/>
+	<link  href="../../../../themes/default/style.css" class="view-source" rel="stylesheet">
+	<script src="../../../../scripts/jquery.js"  class="view-source" type="text/javascript"></script>
+	<script src="../../../../scripts/common.js"  class="view-source" type="text/javascript"></script>
+	<script src="../../../../scripts/browserfix.js"  class="view-source" type="text/javascript" ></script>
+	<script src="../../../../scripts/plugins/jquery.json.js" type="text/javascript"></script>
+	
+	<script type="text/javascript" src="../jquery.layout.js" class="view-source"></script>
+	
+	<script src="../../demo.js"></script>
+	<link href="../../demo.css" rel="stylesheet">
+	
+	<script class="view-source noparse">
+$(function(){
+	var p = $('body').layout().getPanel('west').panel({
+		onCollapse:function(){
+			alert('collapse');
+		},
+		onExpand:function(){
+			alert('expand');
+		}
+	});
+	
+	setTimeout(function(){
+		$('body').layout().collapse('east');
+	},0);
+});
+	</script>
+</head>
+<body class="ui-layout">
+	<div region="north" border="true" style="height:60px;">north region</div>
+	<div region="west" split="true" title="West" style="width:150px;padding:10px;">west content</div>
+	<div region="east" split="true" title="East" style="width:100px;padding:10px;">east region</div>
+	<div region="south" border="true"  style="height:50px;">south region</div>
+	<div region="center" border="true" title="Main Title" class="vs-container">
+
+      		<script type="code-pretty" class="view-source noparse inner-code">
+<body class="ui-layout">
+	<div region="north" border="true" style="height:60px;">north region</div>
+	<div region="west" split="true" title="West" style="width:150px;padding:10px;">west content</div>
+	<div region="east" split="true" title="East" style="width:100px;padding:10px;">east region</div>
+	<div region="south" border="true"  style="height:50px;">south region</div>
+	<div region="center" border="true" title="Main Title"></div>
+</body>
+
+      		</script>
+	
+	</div>
+</body>
+</html>

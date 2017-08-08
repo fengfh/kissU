@@ -1,0 +1,183 @@
+@charset "utf-8";
+
+/* 全局 字体大小 颜色 链接
+----------------------------------------------------- */
+html {
+	_overflow-x:hidden;
+}
+body {
+	background-color:#fff;
+	font-size:12px;
+	color:#333;
+	font-family:Verdana, Microsoft YaHei, Simsun, Arial Unicode MS, Mingliu, Arial, Helvetica;
+	line-height:18px;
+	zoom: 1;
+}
+a:link{
+	color: #0088cc;
+	text-decoration: none;
+	cursor:pointer;
+}
+a:hover {
+	color: #005580;
+	text-decoration: underline;
+}
+a:active {
+	color: #0088cc;
+}
+
+
+
+/* 布局
+----------------------------------------------------- */
+.container-body {	
+	background:#fff url(images/content_bg.png) 0 -150px repeat-x;
+	overflow:auto;
+}
+.container-popup {
+	background:#fff url(images/content_bg.png) 0 -150px repeat-x;
+}
+.container-body .container-fluid,
+.container-popup .container-fluid  {
+	padding:0;
+}
+
+
+
+/* 面板 
+-----------------------------------------------------*/
+.panel {
+	clear:both;
+	overflow: hidden;
+	margin-bottom:10px;
+}
+.panel .panel-head {
+	position:relative;
+	bottom:0;
+	right:0;
+	font-size:14px;
+	height: 30px;
+	line-height:30px;
+	padding:0 10px;
+}
+.panel .panel-head h2{
+	font-size:14px;
+	height: 30px;
+	line-height: 30px;
+}
+.panel .panel-content{
+	padding: 10px;
+}
+.panel .panel-foot ,.panel-foot {
+	padding:0 10px;
+	border-top:1px solid #bcd6ed;
+	background: url(images/content_bg.png) 0 -150px repeat-x;
+	overflow:hidden;
+	text-align: right;
+}
+
+
+
+/* panel-header
+----------------------------------------------------- */
+.page-header{
+	padding:0 10px;
+	border-bottom:0;
+}
+
+
+
+/* panel-title
+----------------------------------------------------- */
+.page-title {
+	height:30px;
+	background: url(images/page-title.jpg) repeat-x;
+	line-height: 30px;
+	padding: 0 10px;
+	font-size: 14px;
+	color: #074E81;	
+}
+.page-title .row-fluid {
+	_width:98%;
+}
+.page-title h2 {	
+	font-size: 14px;
+	line-height:30px;
+}
+.page-title .pull-right {	
+    _margin-top:6px;
+    _line-height:1;
+}
+
+
+
+/* table 
+----------------------------------------------------- */
+.table thead tr th {
+	background-color: #DFEAFB;
+	color: #1C568A;
+}
+.table th, .table td {
+	border-bottom: 1px solid #A8CFEB;
+}
+.table-bordered{
+	border: 1px solid #A8CFEB;
+}
+.table-bordered th, .table-bordered td {
+	border-left: 1px solid #A8CFEB;
+}
+.table-striped tbody tr:nth-child(odd) td, .table-striped tbody tr:nth-child(odd) th {
+	background-color: #F1F6FF;
+}
+.table tbody tr:hover td, .table tbody tr:hover th {
+	background-color: #E5EEFF;
+}
+
+/* form-table */
+.form-table th {
+	background-color: #F1F6FF;
+	border-bottom: 1px solid #fff;
+}
+
+
+
+/* search-panel
+----------------------------------------------------- */
+.search-panel .panel-head {
+	display:none;
+}
+
+
+/* form-panel
+----------------------------------------------------- */
+.form-panel .panel-head {
+	display:none;
+}
+
+
+/* apply-panel
+----------------------------------------------------- */
+.apply-panel .panel-head {
+	display:none;
+}
+
+
+
+/* master-page场景
+----------------------------------------------------- */
+.master-page {}
+
+
+
+/* itemdetail-page场景
+----------------------------------------------------- */
+.itemdetail-page {}
+
+
+
+/* login-page场景
+----------------------------------------------------- */
+.login-page {}
+
+
+

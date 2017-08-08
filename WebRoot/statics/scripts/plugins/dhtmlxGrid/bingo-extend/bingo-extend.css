@@ -1,0 +1,140 @@
+/*
+* 操作菜单的样式 
+*/
+.dg_tools_menu {
+	position: absolute;
+	border-left: solid 1px #f0f0f0;
+	border-top: soild 1px #f0f0f0;
+	border-bottom: solid 1px #696969;
+	border-right: solid 1px #696969;
+	padding: 4px;
+	width: 140px;
+	background: url(images/opt_menu/background.gif) repeat-y left top;
+}
+
+.dg_opt_menu {
+    padding-right: 2px;
+}
+
+.dg_tools_menu ul li {
+	height: 24px;
+	line-height: 24px;
+	color: #F6F6F6;
+}
+
+.dg_tools_menu ul li img {
+	margin-right: 12px;
+	margin-left: 0px;
+	height: 16px;
+	width: 16px;
+	margin-bottom: -2px;
+}
+
+.dg_tools_menu ul li a:link,.dg_tools_menu ul li a:visited {
+	text-decoration: none;
+	color: #333;
+	display: inline-block;
+	width: 100%;
+	height: 24px;
+}
+
+.dg_tools_menu ul li a:hover {
+	background: #fee1a5;
+	display: inline-block;
+	width: 100%;
+	height: 24px;
+}
+
+/*pagerstyle css*/
+.grid_pagerstyle {
+	text-align: right;
+	background: #f1f6ff;
+}
+
+.grid_pagerstyle .pageinfo {
+	padding-top: 2px;
+	padding-left: 3px;
+	color: #3a6683;
+	text-align: right;
+}
+
+.grid_pagerstyle .pagebtn {
+	display: inline;
+	padding-right: 2px;
+	color: #3a6683;
+	
+	
+}
+
+.grid_pagerstyle a {
+	background: url(images/paging_bar/linkbtn_left.gif) no-repeat left top;
+	height: 20px;
+	padding: 0px 0px 0px 3px;
+	text-decoration: none;
+	display: inline-block;
+	margin-bottom: 0px;
+	margin-top:3px;
+	
+	
+}
+
+.grid_pagerstyle a span {
+	background: url(images/paging_bar/linkbtn_right.gif) no-repeat right top;
+	height: 20px;
+	line-height:20px;
+	display: inline-block;
+	color: #3F5687;
+	padding: 0px 5px 0px 2px;
+	text-align: center;
+	cursor: hand;
+	white-space: nowrap;
+	WORD-BREAK: keep-all;
+}
+
+.grid_pagerstyle a:hover {
+	background-position: 0% -20px;
+	text-decoration: none;
+}
+
+.grid_pagerstyle a:hover span {
+	background-position: 100% -20px;
+	color: #333;
+}
+
+.grid_pagerstyle a.current {
+	background-position: 0% -40px;
+	text-decoration: none;
+}
+
+.grid_pagerstyle a.current span {
+	background-position: 100% -40px;
+	color: #ea3b3b;
+}
+
+.grid_pagerstyle input {
+	width: 30px;
+	height: 18px;
+	font-size: 12px;
+	border: solid 1px #aacfe9;
+	padding: 0px;
+	margin-left: 2px;
+	margin-right: 2px;
+}
+
+.grid_pagerstyle select {
+	width: 60px;
+	height: 20px;
+	font-size: 12px;
+	border: solid 1px #aacfe9;
+	padding: 0px;
+	margin-left: 2px;
+	margin-right: 2px;
+}
+
+.grid_pagerstyle .btn_go {
+	margin-bottom: -3px;
+}
+
+.grid_row_hover{
+	background-color: #BDDFF8;
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	
+	<script src="../../../scripts/jquery.js"></script>
+	<script src="../../../scripts/jquery.utils.js"></script>
+	<script src="../../scripts/plugin.js"></script>
+	
+	
+</head>
+
+<body  style="width:99%;" >
+		<script type="text/javascript">
+		var params = {
+				code 	: window.location.href.getQueryString("code") ,
+				pageid : window.location.href.getQueryString("pageid"),
+				url		: window.location.href.getQueryString("url")
+		} ;
+		var plugin = new Plugin() ;//window.top.plugin || window.opener.top.plugin ;
+		try{
+			plugin.callback( params ) ;
+		}catch(e){}
+	</script>
+</body>
+</html>

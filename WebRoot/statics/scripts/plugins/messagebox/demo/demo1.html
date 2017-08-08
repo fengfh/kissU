@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ <meta charset="UTF-8" />
+<title></title>
+		
+		<link href="../jquery.messagebox.css" class="view-source" rel="stylesheet" type="text/css" media="screen" class="view-source"/>
+		<link  href="../../../../themes/default/style.css" class="view-source" rel="stylesheet">
+		<script src="../../../../scripts/jquery.js"  class="view-source" type="text/javascript"></script>
+		<script src="../../../../scripts/common.js"  class="view-source" type="text/javascript"></script>
+		<script src="../../../../scripts/browserfix.js"  class="view-source" type="text/javascript" ></script>
+		<script src="../../../../scripts/plugins/jquery.json.js" type="text/javascript"></script>
+		
+		<script src="../../../../scripts/plugins/jquery.ui.js" type="text/javascript" ></script>
+		
+		<!-- Core files -->
+		<script src="../jquery.messagebox.js" class="view-source"  type="text/javascript" class="view-source"></script>
+		
+		<script src="../../demo.js"></script>
+		<link href="../../demo.css" rel="stylesheet">
+		
+		<!-- Example script -->
+<script type="text/javascript"  class="view-source">
+$(document).ready( function() {
+	$("#info_button").click( function() {
+		$.messageBox.info({message:'This is a custom info box'});
+	});
+	
+	$("#warning_button").click( function() {
+		$.messageBox.warning({message:'This is a custom info box'});
+	});
+	
+	$("#error_button").click( function() {
+		$.messageBox.error({message:'This is a custom info box'});
+	});
+	
+	$("#success_button").click( function() {
+		$.messageBox.success({message:'This is a custom info box'});
+	});
+	
+	$("#confirm_button").click( function() {
+		$.messageBox.confirm({message:'This is a custom info box',callback:function(result){alert("您选择的结果:" + result);}});
+	});
+	
+	$("#prompt_button").click( function() {
+		$.messageBox.prompt({message:'This is a custom info box',callback:function(result){alert("您刚才输入的信息：" + result);}});
+	});
+	
+	$("#showId").click( function() {
+		$.messageBox.show({type:$("#typeId").val(),message:'This is a custom info box'});
+	});
+});
+</script>
+		
+	</head>
+	
+	<body>
+				<b>展示不同类型的提示框：</b><br/>
+				<button id="info_button" type="button" class="btn" >Show Info</button>
+		
+				<button id="warning_button" type="button" class="btn">Show Warning</button>
+		
+				<button id="error_button" type="button" class="btn">Show Error</button>
+		
+				<button id="success_button" type="button" class="btn" >Show Success</button>
+		
+				<button id="confirm_button" type="button" class="btn" >Show Confirm</button>
+		
+				<button id="prompt_button" type="button" class="btn" >Show Prompt</button>
+				
+				<br/><br/><br/>
+				<b>根据选择的提示框类型展示相应类型的提示框：</b><br/>
+				<select id="typeId">
+					<option value="info">info</option>
+					<option value="warning">warning</option>
+					<option value="error">error</option>
+					<option value="success">success</option>
+					<option value="confirm">confirm</option>
+					<option value="prompt">prompt</option>
+				</select>
+				
+				<button type="button" value="" class="btn"  id="showId">show</button>
+				
+</body>
+</html>

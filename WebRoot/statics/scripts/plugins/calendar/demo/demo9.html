@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Calendar Demos</title>
+	<link  href="../../../../themes/default/style.css" class="view-source" rel="stylesheet">
+	<script src="../../../../scripts/jquery.js" class="view-source"  type="text/javascript"></script>
+	<script src="../../../../scripts/common.js" class="view-source"  type="text/javascript"></script>
+	<script src="../../../../scripts/browserfix.js" class="view-source"  type="text/javascript" ></script>
+	
+	<script src="../../../../scripts/plugins/jquery.ui.js" class="view-source"  type="text/javascript" ></script>
+	
+	<script language="javascript" type="text/javascript" src="../WdatePicker.js" class="view-source" ></script>
+	
+	<script src="../../demo.js"></script>
+	<link href="../../demo.css" rel="stylesheet">
+	
+
+<script class="view-source noparse" >
+function cDayFunc4Changing(){
+	$("#content").show().html($("#content").html() + "<br/>触发dchanging事件<br/>" + cFunc('d'));
+}
+function cMonthFunc4Changing(){
+	$("#content").show().html($("#content").html() + "<br/>触发Mchanging事件<br/>" + cFunc('M'));
+}
+function cYearFunc4Changing(){
+	$("#content").show().html($("#content").html() + "<br/>触发ychanging事件<br/>" + cFunc('y'));
+}
+
+function cDayFunc4Changed(){
+	$("#content").show().html($("#content").html() + "<br/>触发dchanged事件<br/>" + cFunc('d'));
+}
+function cMonthFunc4Changed(){
+	$("#content").show().html($("#content").html() + "<br/>触发Mchanged事件<br/>" + cFunc('M'));
+}
+function cYearFunc4Changed(){
+	$("#content").show().html($("#content").html() + "<br/>触发ychanged事件<br/>" + cFunc('y'));
+}
+
+function cFunc(who){
+	var str,p,c = $dp.cal;
+	if(who=='y'){
+		str='年份';
+		p='y';
+	}else if(who=='M'){
+		str='月份';
+		p='M';
+	}else if(who=='d'){
+		str='日期';
+		p='d';
+	}
+	return str+'发生改变了!\n$dp.cal.date.'+p+'='+c.date[p]+'\n$dp.cal.newdate.'+p+'='+c.newdate[p];
+}
+</script>	
+	
+</head>
+
+<body>
+	
+		<div id='content-default' class='demo'>
+				<div id="calendar_div">
+				<input type="text" id="date" class="Wdate"/>
+				<script class="view-source noparse" >
+$(function(){
+	$("#date").calendar({
+	  onpicking:function(dp){
+	  	  $("#content").html($("#content").html() + "<br/>触发onpicking事件<br/>日期框原来的值为:" + dp.cal.getDateStr() + ', 要用新选择的值:' + dp.cal.getNewDateStr());
+	  },
+	  onpicked:function(){
+	     $("#content").html($("#content").html() + "<br/>触发onpicked事件<br/>已选择的日期为：" + this.value);
+	   },
+	   onclearing:function(){
+	   	  $("#content").html($("#content").html() + "<br/>触发onclearing事件<br/>日期框的值为:" + this.value);
+	   },
+	   oncleared:function(dp){
+	   	   $("#content").html($("#content").html() + "<br/>触发oncleared事件<br/>当前日期所选择的月份为:" + dp.cal.date.M);
+	   },
+	   dchanging:cDayFunc4Changing, 
+	   Mchanging:cMonthFunc4Changing,
+			   ychanging:cYearFunc4Changing, 
+			   dchanged:cDayFunc4Changed, 
+			   Mchanged:cMonthFunc4Changed, 
+			   ychanged:cYearFunc4Changed
+	})
+});
+
+function clearResult(){
+	$("#content").html(" ").hide();
+}
+				</script>
+<br/><br/>
+ <b>事件触发结果打印：</b><input type="button" value="清除结果" onclick="clearResult()"/>
+<div id="content" class='alert' style="display:none">...</div>
+</div>
+		</div>
+		
+		
+</body>
+</html>

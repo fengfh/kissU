@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+ <title>Farbtastic</title>
+ <meta charset="UTF-8" />
+	<link  href="../jquery.blockui.css" class="view-source" type="text/css" rel="stylesheet" />
+	<link  href="../../../../themes/default/style.css" class="view-source"  rel="stylesheet">
+	<script src="../../../../scripts/jquery.js" class="view-source"  type="text/javascript"></script>
+	<script src="../../../../scripts/common.js" class="view-source"  type="text/javascript"></script>
+	<script src="../../../../scripts/browserfix.js" class="view-source"  type="text/javascript" ></script>
+	
+	<script type="text/javascript" class="view-source"  src="../jquery.blockui.js"></script>
+	
+	<script src="../../demo.js"></script>
+	<link href="../../demo.css" rel="stylesheet">
+	
+ <script type="text/javascript" class="view-source" > 
+
+    $(document).ready(function() { 
+        $('#pageDemo41').click(function() { 
+        	$('#postmessage4').block(); 
+        	$("#pageDemo41").attr("disabled",true);
+        	$("#pageDemo42").attr("disabled",false);
+        });
+        
+        $('#pageDemo42').click(function() { 
+        	$('#postmessage4').unblock();
+        	$("#pageDemo42").attr("disabled",true);
+        	$("#pageDemo41").attr("disabled",false);
+        });
+    }); 
+ 
+</script> 
+ 
+ <body>
+<div id='content-api' class='demo view-source noparse'>
+	<h1></h1>
+	<input id="pageDemo41" class="btn" type="submit" value="开启Div区域的遮罩" />
+  	<input id="pageDemo42"  class="btn" type="submit" value="关闭Div区域的遮罩" />
+  		 
+  	<br /><br />
+  	<div style="width:440px;height:240px;border:1px solid red" id="postmessage4"></div>
+</div>
+  
+</body>
+</html>

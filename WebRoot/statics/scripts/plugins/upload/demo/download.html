@@ -1,0 +1,26 @@
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+<title>Plupload - Queue widget example</title>
+<script type="text/javascript" src="../../../scripts/jquery.js"></script>
+<script type="text/javascript" src="../../../scripts/jquery.utils.js"></script>
+
+<script type="text/javascript" src="../../demos.js"></script>
+<script>
+	$(function() {
+
+		$('#download').click(function(){
+			$.file.download("E:/bingo-celipse-jee-3.5.2_20100819.rar","中文名称.rar") ;
+			//注意下载文件地址必须是绝对地址
+		}) ;
+		
+	});
+</script>
+
+
+</head>
+<body>
+	<button id=download>download</button>
+</body>
+</html>

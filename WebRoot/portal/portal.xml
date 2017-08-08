@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+	<config>
+		<rest>
+			<getBaseInfo>/dataservice?CommandName=spring:portal.PortalService.getPortalBaseInfo</getBaseInfo>
+			<getMenus>/dataservice?CommandName=spring:portal.PortalService.getPortalSiteMap</getMenus>
+			<getShortcuts>/dataservice?CommandName=spring:portal.PortalService.getPortalShortcutKey</getShortcuts>
+			<getLayouts>/dataservice?CommandName=spring:portal.PortalService.getPortalLayout</getLayouts>
+			<saveMenu>/dataservice?CommandName=spring:portal.PortalService.saveSiteMap</saveMenu>
+			<deleteMenu>/dataservice?CommandName=spring:portal.PortalService.deleteSiteMap</deleteMenu>
+			<savePortal>/dataservice?CommandName=spring:portal.PortalService.savePortal</savePortal>
+			<orderMenus>/dataservice?CommandName=spring:portal.PortalService.saveSiteMapOrder</orderMenus>
+			<clearCache>/dataservice?CommandName=spring:portal.PortalService.clearSiteMapCache</clearCache>
+		</rest>
+		<adapter>
+			<![CDATA[
+				function( response ){
+					//process response
+					var object = "" ;
+					eval( 'object = '+response) ;
+					return object.returnValue ;
+				}
+			]]>
+		</adapter>
+		<!--加载模块-->
+		<load>
+			<!--{code,title,footer,theme,layoutId}-->
+			<getBaseInfo>rest</getBaseInfo>
+			<!--[{menuId,name,thumbnail,target,url},]-->
+			<getShortcuts>rest</getShortcuts>
+			<!--[{id,pid,pluginCode,target,url}]-->
+			<getMenus>rest</getMenus>
+			<!--[{layoutId,name,thumbnail,url,description}]-->
+			<getLayouts>rest</getLayouts>
+			<!--[{code,title,description,img,target,configUrl,options}]-->
+			<getPlugins>xml</getPlugins>
+		</load>
+	</config>
+	
+	<baseinfo>
+		<code>default</code>
+		<title>bingo.frameworkbingo.framework管理系统</title>
+		<footer>bingo.frameworkbingo.framework公司</footer>
+		<theme>default</theme>
+		<layoutId>default</layoutId>
+	</baseinfo>
+	
+	<shortcuts>
+		<shortcut>
+			<id>mnuBrowse</id>
+			<name>浏览</name>
+			<thumbnail>~/portal/layouts/default/images/edit_portal.gif</thumbnail>
+			<target></target>
+			<url>
+			<![CDATA[
+			~/?
+			]]>
+			</url>
+		</shortcut>
+		<shortcut>
+			<id>mnuDesign</id>
+			<name>设计</name>
+			<thumbnail>~/portal/layouts/default/images/btn_hd_support.gif</thumbnail>
+			<target></target>
+			<url>
+			<![CDATA[
+			~/?config=true
+			]]>
+			</url>
+		</shortcut>
+		<shortcut>
+			<id>mnuLogout</id>
+			<name>退出</name>
+			<thumbnail>~/portal/layouts/default/images/btn_hd_exit.gif</thumbnail>
+			<target></target>
+			<url>~/login/logout.jsp</url>
+		</shortcut>
+		<shortcut>
+			<id>mnuHelper</id>
+			<name>帮助</name>
+			<thumbnail>~/portal/layouts/default/images/btn_hd_help.gif</thumbnail>
+			<target></target>
+			<url></url>
+		</shortcut>
+	</shortcuts>
+	
+	<!-- 门户导航菜单 -->
+	<!--
+	<menus>
+		<menu id="1" title="首页" pluginCode="url" target="" url="http://www.g.cn" >
+			<menu id="12"  pluginCode="url" title="DataService示例1"  url="~/portal/test.html">
+				<menu id="13"  pluginCode="url" title="DataService示例2"  url="~/portal/test.html"/>
+				<menu id="14"  pluginCode="url" title="DataService示例3"  url="~/portal/test.html"/>
+			</menu>
+			<menu id="15"  pluginCode="url" title="DataService示例4"  url="~/portal/test.html"/>
+		</menu>
+		
+		<menu id="3" title="系统管理" target="" url="~/">
+			<menu id="4" title="示例" url="~/demo.html"/>
+		</menu>
+	</menus>
+	-->
+	
+	<layouts>
+		<layout>
+			<layoutId>default</layoutId>
+			<name>默认框架</name>
+			<thumbnail>portal/layouts/default/thumbnail.jpg</thumbnail>
+			<url>portal/layouts/default/index.jsp</url>
+			<description>移动默认主题</description>
+		</layout>
+		<!--
+		<layout>
+			<layoutId>iaas</layoutId>
+			<name>云运营平台</name>
+			<thumbnail>portal/layouts/iaas/thumbnail.png</thumbnail>
+			<url>portal/layouts/iaas/index.html</url>
+			<description>云运营平台主题</description>
+		</layout>
+		<layout>
+			<layoutId>mobile</layoutId>
+			<name>四川移动主题</name>
+			<thumbnail>portal/layouts/mobile/thumbnail.png</thumbnail>
+			<url>portal/layouts/mobile/index.jsp</url>
+			<description>四川移动主题</description>
+		</layout>
+		<layout>
+			<layoutId>iaas</layoutId>
+			<name>webos主题</name>
+			<thumbnail>portal/layouts/webos/thumbnail.png</thumbnail>
+			<url>portal/layouts/webos/index.jsp</url>
+			<description>webos主题</description>
+		</layout>
+		-->
+	</layouts>
+	
+	<plugins>
+		<plugin>
+			<code>url</code>
+			<title>URL链接外部页面</title>
+			<description></description>
+			<img></img>
+			<target>div</target>
+			<!--  路径以/开始，自动补上上下文 -->
+			<configUrl>~/portal/plugins/url/config.html</configUrl>
+			<options>{Width:300,Height:200,Title:'URL链接外部页面'}</options>
+		</plugin>
+		<plugin>
+			<code>funciton</code>
+			<title>链接到业务功能页面</title>
+			<description></description>
+			<img></img>
+			<target>div</target>
+			<!--  路径以/开始，自动补上上下文 -->
+			<configUrl>~/portal/plugins/function/config.jsp</configUrl>
+			<options>{Width:500,Height:420,Title:'链接到业务功能页面'}</options>
+		</plugin>
+		<!--
+		<plugin>
+			<code>wiki</code>
+			<title>链接到WIKI页面</title>
+			<description></description>
+			<img></img>
+			<target>div</target>
+			<configUrl>~/portal/plugins/wiki/config.html</configUrl>
+			<options>{Width:350,Height:200,Title:'链接到wiki页面'}</options>
+		</plugin>
+		-->
+	</plugins>
+</configuration>

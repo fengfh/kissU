@@ -1,0 +1,56 @@
+<<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+<title>Plupload - Queue widget example</title>
+		<link  href="../../../../themes/default/style.css" rel="stylesheet">
+	<script src="../../../../scripts/jquery.js" type="text/javascript"></script>
+	<script src="../../../../scripts/common.js" type="text/javascript"></script>
+	<script src="../../../../scripts/browserfix.js" type="text/javascript" ></script>
+	<script src="../../../../scripts/plugins/jquery.json.js" type="text/javascript"></script>
+	
+	<script type="text/javascript" src="../../dialog/ui.dialog.js"></script>
+	<link type="text/css" href="../../dialog/ui.dialog.css" rel="stylesheet" />
+	
+	<link rel="stylesheet" href="../plupload.queue.css" type="text/css" media="screen" />
+	<script type="text/javascript" src="../plupload.js"></script>
+	<script type="text/javascript" src="../jquery.plupload.queue.js"></script>
+	<script type="text/javascript" src="../plupload.flash.js"></script>
+<script>
+	$(function() {
+
+		$('#upload').upload( {
+			url : 'http://{host}:{port}/bingo-ui-demo/component/upload.do',//~/ui/upload web.xml配置servlet
+			max_file_size : '1mb',
+			filters : [//文件类型过滤
+				{title : "图片文件", extensions : "jpg,gif,png"}				
+			],
+			render_container:"",
+			render:null,
+			onAllComplete:function(resp){//文件上传完之后回调函数
+				var filePath = resp[0].filePath;
+				var fileName=resp[0].fileName;
+				$('#preView').attr('src',Global.contextPath+'/download?filepath='+filePath).show();
+			},
+			delAction:function(fileId,file){//删除已上传文件回调，true表示成功删除
+				$('#preView').attr('src',"");
+	   			return true;
+	 		}
+		} ) ;
+	});
+</script>
+
+
+
+</head>
+<body>
+          单文件上传（文件类型过滤：jpg,gif,png）：
+	<input type="text" name="upload" id="upload" style="margin-right: 10px;top:0px;position:relative;"/>
+	<div> &nbsp;</div>
+	<div style="width: 413px;height:210px;">
+		<img name="preView" 
+					style="width: 403px;height:200px;" src="" id="preView" title="图片预览" alt="图片预览"/>
+		
+	</div>
+</body>
+</html>

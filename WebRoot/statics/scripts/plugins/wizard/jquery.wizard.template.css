@@ -1,0 +1,116 @@
+.wizard-flow {
+	font-size: 9pt;
+	color: #333;
+	background-image: url(images/flow_bg.gif);
+	background-position: right top;
+	background-repeat: no-repeat;
+	height: 60px;
+	background-color: white;
+}
+
+.wizard-flow-header {
+	background-image: url(images/flow_header.gif);
+	width: 50px;
+	height: 50px;
+	float: left;
+}
+
+.wizard-flow-title {
+	float: left;
+	width: 180px;
+	padding: 7px 10px;
+	text-indent: 0.2em;
+	font-size: 12pt;
+	padding-top: 15px;
+	font-weight:bold;
+}
+
+.wizard-flow-items ul {
+	list-style: none;
+}
+
+.wizard-flow-items ul li {
+	list-style: none;
+	float: left;
+}
+
+.wizard-flow-items ul li img {
+	margin-top: -10px; *
+	margin-top: 0px;
+	cursor: pointer;
+}
+
+.wizard-flow-items ul li div {
+	text-align: center;
+}
+
+.wizard-control {
+	padding: 10px 0px;
+	text-align: right;
+	margin-left: 0px;
+	float: right;
+	width: 60%;
+}
+
+.wizard-message {
+	padding: 10px 0px;
+	float: left;
+	width: 30%;
+}
+
+.wizard-control .btn {
+	margin-left: 5px;
+}
+
+.wizard-control-bar {
+	padding: 0px 10px;
+}
+
+.wizard-control-bar .alert {
+	padding: 5px 3px;
+	margin: 0px;
+	margin-top: 10px;
+}
+
+.wizard-step-node{
+	margin-top: -10px; *
+	margin-top: 0px;
+	cursor: pointer;
+	width: 106px;
+	height:35px;
+}
+
+/* node $$ '','','' status*/
+.wizard-first-step{
+	background-image: url(images/flow_1.gif) ;
+	background-repeat: no-repeat;
+}
+.wizard-first-step-actived{
+	background-image: url(images/flow_3.gif) ;
+	background-repeat: no-repeat;
+}
+
+.wizard-step{
+	background-image: url(images/flow_5.gif) ;
+	background-repeat: no-repeat;
+}
+.wizard-step-actived{
+	background-image: url(images/flow_9.gif) ;
+	background-repeat: no-repeat;
+}
+.wizard-step-visited{
+	background-image: url(images/flow_2.gif) ;
+	background-repeat: no-repeat;
+}
+.wizard-last-step{
+	background-image: url(images/flow_6.gif) ;
+	background-repeat: no-repeat;
+}
+.wizard-last-step-actived{
+	background-image: url(images/flow_7.gif) ;
+	background-repeat: no-repeat;
+}
+.wizard-last-step-visited{
+	background-image: url(images/flow_8.gif) ;
+	background-repeat: no-repeat;
+}

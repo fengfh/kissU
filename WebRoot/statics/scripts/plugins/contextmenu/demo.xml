@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Root>
+	<!--  分类 -->
+	<category>
+		<demo name="HTML声明式" url="demo/base_menu.html"/>
+		<demo name="列表操作列" url="demo/list_menu.html"/>
+		<demo name="树的右键菜单" url="demo/tree_menu.html"/>
+		<demo name="菜单操作" url="demo/operation_menu.html"/>
+		<demo name="绑定触发事件" url="demo/out_event_menu.html"/>
+		<demo name="自动计算位置" url="demo/auto_position_menu.html"/>
+		<demo name="多级菜单" url="demo/complex_menu.html"/>
+	</category>
+
+</Root>

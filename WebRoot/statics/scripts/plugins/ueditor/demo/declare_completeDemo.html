@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=8">
+    <title>完整demo</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <link  href="../../../../themes/default/style.css" rel="stylesheet" class="view-source">
+	<script src="../../../../scripts/jquery.js" type="text/javascript" class="view-source"></script>
+	<script src="../../../../scripts/common.js" type="text/javascript" class="view-source"></script>
+	<script src="../../../../scripts/browserfix.js" type="text/javascript"  class="view-source"></script>
+	<script src="../../../../scripts/plugins/jquery.json.js" type="text/javascript" class="view-source"></script>
+	
+    <script type="text/javascript" charset="utf-8" src="../editor_config.js" class="view-source"></script>
+    <script type="text/javascript" charset="utf-8" src="../editor_all_min.js" class="view-source"></script>
+    <link rel="stylesheet" type="text/css" href="../themes/ueditor/ueditor.css" class="view-source"/>
+    
+    <script src="../../demo.js"></script>
+	<link href="../../demo.css" rel="stylesheet">
+    <style type="text/css">
+        .clear{
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+
+<textarea id="editorForTextarea" style="width:100%;" data-widget="ueditor" data-options="{}"></textarea>
+
+<div class="clear"></div>
+<div id="btns"   class="view-source noparse">
+    <input type="button" value="获得内容" onclick="getContent()">
+    <input type="button" value="写入内容" onclick="setContent()">
+    <input type="button" value="获得纯文本" onclick="getContentTxt()">
+    <input type="button" value="获得带格式的纯文本" onclick="getPlainTxt()">
+    <input type="button" value="判断是否有内容" onclick="hasContent()">
+    <input type="button" value="使编辑器获得焦点" onclick="setFocus()">
+    <input type="button" value="获得当前选中的文本" onclick="getText()" />
+    <input type="button" value="删除编辑器" onclick="deleteEditor()" />
+    <input id="enable" type="button" value="可以编辑" onclick="setEnabled()" />
+    <input type="button" value="不可编辑" onclick="setDisabled()" />
+    <input type="button" value="隐藏编辑器" onclick="$('#editorForTextarea').ueditor().setHide()" />
+    <input type="button" value="显示编辑器" onclick="$('#editorForTextarea').ueditor().setShow()" />
+    <!--<input type="button" value="插入html代码" onclick="$('#editorForTextarea').ueditor().execCommand('inserthtml','sadfsadfsadf')" />-->
+</div>
+</body>
+<script type="text/javascript" class="view-source noparse">
+	////<textarea id="editorForTextarea" style="width:100%;" data-widget="ueditor" data-options="{}">< /textarea>
+    function getContent(){
+        var arr = [];
+        arr.push("使用editor.getContent()方法可以获得编辑器的内容");
+        arr.push("内容为：");
+        arr.push( $("#editorForTextarea").ueditor().getContent() );
+        alert(arr.join("\n"));
+    }
+    function getPlainTxt(){
+        var arr = [];
+        arr.push("使用editor.getPlainTxt()方法可以获得编辑器的带格式的纯文本内容");
+        arr.push("内容为：");
+        arr.push($("#editorForTextarea").ueditor().getPlainTxt());
+        alert(arr.join('\n'))
+    }
+	function setContent(){
+	    var arr = [];
+	    arr.push("使用editor.setContent('欢迎使用ueditor')方法可以设置编辑器的内容");
+	    $("#editorForTextarea").ueditor().setContent('欢迎使用ueditor');
+	    alert(arr.join("\n"));
+	}
+	function setDisabled(){
+		$("#editorForTextarea").ueditor().setDisabled();
+	}
+	
+	function setEnabled(){
+		$("#editorForTextarea").ueditor().setEnabled();
+	}
+	
+	function getText(){
+	    //当你点击按钮时编辑区域已经失去了焦点，如果直接用getText将不会得到内容，所以要在选回来，然后取得内容
+	    var range = $("#editorForTextarea").ueditor().selection.getRange();
+	    range.select();
+	    var txt = $("#editorForTextarea").ueditor().selection.getText();
+	}
+	
+	function getContentTxt(){
+	    var arr = [];
+	    arr.push("使用editor.getContentTxt()方法可以获得编辑器的纯文本内容");
+	    arr.push("编辑器的纯文本内容为：");
+	    arr.push($("#editorForTextarea").ueditor().getContentTxt());
+	    alert(arr.join("\n"));
+	}
+	function hasContent(){
+	    var arr = [];
+	    arr.push("使用editor.hasContents()方法判断编辑器里是否有内容");
+	    arr.push("判断结果为：");
+	    arr.push($("#editorForTextarea").ueditor().hasContents());
+	    alert(arr.join("\n"));
+	}
+	function setFocus(){
+		$("#editorForTextarea").ueditor().focus();
+	}
+	function deleteEditor(){
+	    $("#editorForTextarea").ueditor().destroy();
+	}
+	
+</script>
+</html>

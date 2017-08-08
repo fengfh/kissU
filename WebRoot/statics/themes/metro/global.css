@@ -1,0 +1,165 @@
+@charset "utf-8";
+
+/* 全局 字体大小 颜色 链接 
+----------------------------------------------------- */
+html {
+	_overflow-x:hidden;
+}
+body {
+	color:#174b73;
+	font-size:12px;
+	font-family:Verdana, Microsoft YaHei, Simsun, Arial Unicode MS, Mingliu, Arial, Helvetica;
+	line-height:18px;
+	zoom: 1;
+}
+a {
+	color: #0088cc;
+	text-decoration: none;
+	cursor:pointer;
+}
+a:hover {
+	color: #005580;
+	text-decoration: underline;
+}
+
+
+
+/* input select textarea 边框
+----------------------------------------------------- */
+input[type="text"], input[type="password"], .ui-autocomplete-input, textarea, .uneditable-input {
+	border:1px solid #ccc;
+	border-radius:3px;
+	padding:4px;
+}
+
+
+
+/* 布局 
+----------------------------------------------------- */
+.container-body {	
+	background:#fff url(images/content_bg.png) 0 -150px repeat-x;
+	overflow:auto;
+}
+.container-popup {
+	background:#fff url(images/content_bg.png) 0 -150px repeat-x;
+}
+.container-body .container-fluid,
+.container-popup .container-fluid  {
+	padding:0;
+}
+
+
+
+/* page-header 
+----------------------------------------------------- */
+.page-header{
+	padding:0 10px;
+	border-bottom:0;
+}
+
+
+
+/* page-title 
+----------------------------------------------------- */
+.page-title {
+	height:30px;
+	background: url(images/page-title.jpg) repeat-x;
+	line-height: 30px;
+	padding: 0 10px;
+	font-size: 14px;
+	color: #074E81;	
+}
+.page-title .row-fluid {
+	_width:98%;
+}
+.page-title h2 {	
+	font-size: 14px;
+	line-height:30px;
+}
+
+
+
+/* 面板
+----------------------------------------------------- */
+.panel {
+	clear:both;
+	overflow: hidden;
+	margin-bottom:10px;
+}
+.panel .panel-head {
+	position:relative;
+	bottom:0;
+	right:0;
+	font-size:14px;
+	height: 26px;
+	line-height:26px;
+	padding:0 10px;
+}
+.panel .panel-head h2{
+	font-size:14px;
+	height: 26px;
+	line-height: 26px;
+}
+.panel .panel-head .pull-right{
+    _margin-top:4px;
+    _line-height:1;
+}
+.panel .panel-head ,.panel .panel-head .first {
+	color:#333;
+}
+.panel .panel-content{
+	padding: 10px;
+	position:relative;
+}
+.panel .panel-foot ,.panel-foot {
+	padding:0 10px;
+	border-top:1px solid #bcd6ed;
+	background: url(images/content_bg.png) 0 -150px repeat-x;
+	overflow:hidden;
+	text-align: right;
+}
+
+
+
+/* search-panel
+----------------------------------------------------- */
+.search-panel .panel-head {
+	display:none;
+}
+
+
+
+/* apply-panel
+----------------------------------------------------- */
+.apply-panel .panel-head {
+	display:none;
+}
+
+
+
+/* form-panel
+----------------------------------------------------- */
+.form-panel .panel-head {
+	display:none;
+}
+
+
+
+/* master-page场景 
+----------------------------------------------------- */
+.master-page {}
+
+
+
+/* itemdetail-page场景 
+----------------------------------------------------- */
+.itemdetail-page {}
+
+
+
+/* login-page场景 
+----------------------------------------------------- */
+.login-page {}
+
+
+

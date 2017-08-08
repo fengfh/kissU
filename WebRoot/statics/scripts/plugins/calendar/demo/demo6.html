@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Calendar Demos</title>
+	<link  href="../../../../themes/default/style.css" class="view-source" rel="stylesheet">
+	<script src="../../../../scripts/jquery.js" class="view-source"  type="text/javascript"></script>
+	<script src="../../../../scripts/common.js" class="view-source"  type="text/javascript"></script>
+	<script src="../../../../scripts/browserfix.js" class="view-source"  type="text/javascript" ></script>
+	
+	<script src="../../../../scripts/plugins/jquery.ui.js" class="view-source"  type="text/javascript" ></script>
+	
+	<script language="javascript" type="text/javascript" class="view-source" src="../WdatePicker.js"></script>
+	
+	<script src="../../demo.js"></script>
+	<link href="../../demo.css" rel="stylesheet">
+	
+	<script class="view-source">
+		$(function(){
+			$("#calendar1").calendar();
+			$("#calendar2").calendar();
+		});
+	</script>
+	
+</head>
+
+<body>
+	<div id='content-default' class='demo'>
+		<h5><b>提示：</b>日历控件显示时，能自动根据绑定的输入域在窗口中的位置，自动计算合适的显示位置，避免日历选择框被所在窗口遮住。</h5>
+			
+			<div>
+				日历文本框(上)：<input class="Wdate" type="text" id="calendar1">
+				<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+				
+				日历文本框(下)：<input class="Wdate" type="text" id="calendar2">
+			</div>
+	</div>
+</body>
+</html>

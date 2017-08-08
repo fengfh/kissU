@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>Portal sql文件</comment>
+	<!-- 根据层级和父ID获取菜单 -->
+	<entry key="portal.plugin.function.list">
+	<![CDATA[
+	   SELECT SP.ID AS ID,
+              SP.NAME AS NAME,
+              CASE
+                WHEN SP.PARENT IS NULL THEN
+                 'root'
+                ELSE
+                 SP.PARENT
+              END AS PARENT_ID,
+              SP.TYPE AS TYPE,
+              CASE
+                WHEN SP.TYPE = 'Module' THEN
+                 'false'
+                ELSE
+                 'true'
+              END AS CANCHECK,
+              CASE
+                WHEN SP.TYPE = 'Module' THEN
+                 '/statics/images/icon_module.gif'
+                ELSE
+                 '/statics/images/icon_page.gif'
+              END AS ICON_PATH
+       FROM   SEC_PERMISSION SP
+       WHERE  SP.TYPE IN ('Module', 'Page')
+	]]>
+	</entry>
+</properties>

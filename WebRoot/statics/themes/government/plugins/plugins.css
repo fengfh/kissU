@@ -1,0 +1,107 @@
+﻿@charset "utf-8";
+/* tipsy插件 */
+@import url(tab/tab.css);
+
+/* 弹出窗插件 */
+.ui-widget-content{
+	position: relative;
+	zoom:1;
+	padding:0;
+}
+.ui-dialog .ui-dialog-titlebar {
+	position: absolute;
+	top:0;
+	right:0;
+	z-index:100;
+	width:100%;
+}
+.ui-dialog .ui-dialog-titlebar-close{
+	right:0.5em;
+	top:0.7em;
+	padding:0;
+}
+.ui-dialog .ui-dialog-titlebar{
+	border-bottom:0;
+	padding: 0px;
+}
+.ui-dialog .ui-dialog-content{
+	overflow:hidden;
+	padding: 0;
+}
+.ui-dialog .ui-dialog-buttonpane {
+	margin:0;
+}
+iframe{
+	padding:0;
+	margin:0;
+	border:0;
+}
+
+/* inputpro */
+.inputpro-img-span, .inputpro-img-span-bg{
+	margin-left:0;
+}
+
+/*layout*/
+.ui-layout{
+	height:100%;
+}
+.layout .panel-header{
+	font-size:14px;
+	border:1px solid #6593cf;
+}
+.layout .ui-widget-header{
+	background:url(../images/crumb.jpg) repeat-x;
+	border:1px solid #6593cf;
+}
+.layout .panel-body{
+	border:1px solid #6593cf;
+}
+
+/*layout 中间内容*/
+.layout-panel-center .ui-widget-header{
+	
+}
+.layout-panel-center .panel-body{
+	border-top:0;
+}
+
+/* layout西部内容 */
+.layout-split-east{
+	position:absolute;
+}
+.layout-split-east .ui-widget-header{
+	border-top:0;
+	border-bottom:0;
+}
+.layout-split-east .panel-body{
+	border-bottom:0;
+	background:#bcd9fe;
+}
+.layout-split-east{
+	border-left-color:#fff;
+}
+
+.layout-split-west {
+	border-right:5px solid #fff;
+	border-top:none;
+}
+.layout-split-west .panel-header{
+	border:1px solid #6593cf;
+	border-bottom:0;
+}
+.layout-split-west .panel-body{
+	border-right:1px solid #6593cf;
+}
+
+.ui-helper-reset{
+	border-top:0;
+	padding:10px;
+}
+.layout-split-west ,.layout-panel-center{
+	position:absolute;
+}
+
+
+/* tipsy插件 */
+@import url(tab/tab.css);

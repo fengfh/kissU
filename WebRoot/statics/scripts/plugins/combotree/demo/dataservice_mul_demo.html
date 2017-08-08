@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>下拉树控件</title>
+	
+	<link  href="../../../../themes/default/style.css" rel="stylesheet" class="view-source">
+	<script src="../../../../scripts/jquery.js" type="text/javascript" class="view-source"></script>
+	<script src="../../../../scripts/common.js" type="text/javascript" class="view-source"></script>
+	<script src="../../../../scripts/browserfix.js" type="text/javascript"  class="view-source"></script>
+	<script src="../../../../scripts/plugins/jquery.json.js" type="text/javascript"></script>
+	
+	<script src="../../../../scripts/plugins/jquery.ui.js" type="text/javascript" class="view-source" ></script>
+	
+	<link	href="../../tree/jquery.tree.css"  rel="stylesheet" type="text/css" class="view-source">
+	<script src="../../tree/jquery.tree.js" type="text/javascript" class="view-source"></script>
+	
+	<link	href="../jquery.combotree.css"  rel="stylesheet" type="text/css" class="view-source">
+	<script src="../jquery.combotree.js" type="text/javascript" class="view-source"></script>
+	
+	<script src="../../demo.js"></script>
+	<link href="../../demo.css" rel="stylesheet">
+	
+<script  class="view-source noparse">
+/*
+	combotree.demo:
+	   	select id as ID , text as TEXT , pid as PARENT_ID from tree
+	combotree.demo.reload:
+		select id as ID , text as TEXT , pid as PARENT_ID from tree where id like '2%'
+ */
+
+$(function(){
+	$('#cc').comboTree({
+		CommandName : 'java.tree.command',
+		showCheck:true,
+		params : {
+			daoBeanName:'dao',
+		 	sqlId : 'combotree.demo'
+	    },
+	    aa:'aa'
+	}) ;
+	
+	$('#getValue').click( function(){
+		var obj = $('#cc').comboTree().getValue();
+		$('.value').show().removeClass('ui-helper-hidden').html( jQuery.json.encode(obj) ) ;
+	} ) ;
+	
+	$('#setValue').click( function(){
+		$('#cc').comboTree().setValue({
+			id:2,
+			text:'File1'
+		});
+	} ) ;
+	
+	$('#reload').click( function(){
+		$('#cc').comboTree().reload({
+			params : {
+			 	sqlId : 'combotree.demo.reload'
+		    }
+		});
+	} ) ;
+}) ;
+</script>
+	
+</head>
+
+<body>
+	<form id="demoForm" action="#"  class="form-inline row-fluid " >
+
+			<div class="row-fluid view-source control-group">
+				<div class="span5">
+	      			<a href='javascript:' id='getValue' class="btn">getValue</a> &nbsp;&nbsp;
+					<a href='javascript:' id='setValue' class="btn">setValue</a> &nbsp;&nbsp;
+					<a href='javascript:' id='reload' class="btn">reload</a>     &nbsp;&nbsp;
+				</div>
+				<div class="span6">
+	      			<div class="value alert" style="display:none;"></div>
+				</div>
+	      	</div>
+	      	
+	      	<div class="row-fluid control-group">
+      			<label class="control-label" for="agreement1">动态数据源：</label>
+	            <div class="controls" class="view-source">
+	             	<select id="cc" class="easyui-combotree view-source" style="width:200px;" defaultValue="1,11,111"></select>
+	            </div>
+	      	</div>
+
+	  </form>
+	
+</body>
+</html>

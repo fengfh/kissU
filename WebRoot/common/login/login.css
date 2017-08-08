@@ -1,0 +1,21 @@
+/*windowlogon_style/20070316  */
+
+
+body{margin:0 0 0 0;font-size:9pt;color:#333;}
+table,form{font-size:9pt;color:#333;}
+
+.lgn_fim_mg
+{
+	background:url(images/lgn_fim_mg.jpg) no-repeat;
+	width:560px;height:300px;
+	text-align:right;
+	padding-top:100px;
+	padding-right:30px;
+}
+
+.lgn_fim_l{width:90px;height:25px;text-align:right;}
+.lgn_fim_m{padding:2px 2px 2px 90px;}
+.lgn_fim_r{padding-left:4px;text-align:left;}
+
+.lgn_btn_mg{padding-left:94px;}
+.lgn_btn{padding-top:20px;}

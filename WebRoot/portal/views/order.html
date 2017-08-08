@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Cache-Control" content="no-store"/>
+	<meta http-equiv="Pragma" content="no-cache"/>
+	<meta http-equiv="Expires" content="0"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	
+	<link type="text/css" rel="stylesheet" href="../../statics/themes/mobile/style.css" />
+	<link type="text/css" rel="stylesheet" href="../../portal/scripts/ordertree/order.tree.css" />
+	
+	<script src="../../statics/scripts/jquery.js"></script>
+	<script src="../../statics/scripts/common.js"></script>
+	<script src="../../statics/scripts/plugins/dialog/jquery.dialog.js"></script>
+	
+
+    
+    <script type="text/javascript" src="../../portal/scripts/portal_rest_services.js"></script>
+    <script type="text/javascript" src="../../portal/scripts/ordertree/jquery.order.tree.js"></script>
+    
+    <script type="text/javascript">
+    	var args  = jQuery.dialogAraguments() ;
+
+    	var fieldMap 		=  {id:'id',name:'title',parentId:'pid'} ; //字段映射
+    	var rootDisplayName =  '菜单排序' ; //根节点显示名称
+    	var rootId	 		=  '' ;
+    	var desc	 		=  '' ;//args.desc ;
+    	var title 	 		=  '' ;//args.title ;
+    	
+    	var nodeMap = {} ;
+    	
+		function TreeCreate(){
+			if(!nodes || nodes.length<=0 ) return ;
+
+			//创建更节点
+			var html = [] ;
+			html.push('<ul class="simpleTree"><li id="'+rootId+'" class="root">') ;
+			html.push('<span>'+rootDisplayName+'</span><ul>') ;
+		
+			//获取父节点
+			for( var i=0 ;i<nodes.length ;i++){
+				var node = nodes[i] ;
+				html.push( createChildNodes(node,node.childs , true) ) ;
+			}
+			html.push('</ul></li></ul>');
+			
+			return html.join('') ;
+		}
+		
+		function createChildNodes(node,childnode , isroot){
+			if( isroot && node.pid ){
+				return ; 
+			}
+
+			var html = [] ;
+			html.push('<li class="close" id="'+node[fieldMap.id]+'"><span>'+node[fieldMap.name]+'</span>') ;
+			
+			if(childnode){
+				html.push('<ul>');
+				for( var i=0 ;i<childnode.length ;i++){
+					var _node = childnode[i] ;
+					html.push(  createChildNodes(_node,_node.childs)  )  ;
+				}
+				html.push('</ul>');
+			}
+			html.push('</li>');
+			return html.join('') ;
+		}
+    	
+    	var simpleTreeCollection;
+		jQuery(document).ready(function(){
+
+			var menus = args.menus ;
+			nodes = menus ;
+			window.document.title = title ;
+
+			jQuery('.container').html( TreeCreate() ) ;
+		
+			simpleTreeCollection = jQuery('.simpleTree').orderTree({
+				autoclose: false,
+				afterClick:function(node){
+				},
+				afterDblClick:function(node){
+				},
+				afterMove:function(dd, ds, pos){
+				 },
+				afterAjax:function(){
+				},
+				animate:false
+				,docToFolderConvert:true
+			});	
+
+		});
+
+		var isModify = false ;
+		function getResult(){
+			var temp = [] ;
+			var lis = jQuery('.root').find('li');
+			for( var i=0 ;i<lis.length ;i++ ){
+				var li = lis[i] ;
+				var id = li.id ;
+				if(!id) continue ;
+				//获取父节点ID
+				var parentId = jQuery('#'+id).parent().parent().attr('id')||"" ;
+
+				temp.push( parentId+"|"+id) ;
+			}
+
+			//保存菜单排序结果
+			var _result = temp.join(',') ;
+
+			Portal.services.order( _result ) ;
+			window.top.location.reload(true);
+			closeWin() ;
+		}
+		
+		function closeWin(){
+			window.top.Portal.config.dialog.close() ;
+		}
+    </script>
+</head>
+<body>
+	<div style="padding:5px;margin-top:25px;">
+		<div style="border: 1px solid #fad42e; background: #fbec88 ;padding:5px;">
+			您可以通过拖动菜单来调整菜单显示顺序
+		</div>
+
+		<!--页面标题结束-->
+		<div class="container" id="treeDiv"
+				style="padding: 5px; overflow-y: auto;height:325px; border: 1px solid #c5dbec;margin-top:5px;width:97%;">
+		</div>
+		<div class="footbtn" style="position:absolute;bottom:10px;left:0px;text-align:right;width:100%;">
+			<a href="#" id="confirmBtn" onclick="getResult()" class="combtn btn btn-primary" >确定</a>
+			<a href="#" id="closeButton"  onclick="closeWin()" class="combtn btn">关闭</a>
+			
+		</div>
+	</div>
+</body>
+</html>

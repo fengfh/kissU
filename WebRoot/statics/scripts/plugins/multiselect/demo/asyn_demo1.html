@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>MultiSelect Demos</title>
+	
+		<link  href="../jquery.multiselect.css" rel="stylesheet" type="text/css"  class="view-source"/>	
+	<link  href="../../../../themes/default/style.css" class="view-source" rel="stylesheet">
+		<script src="../../../../scripts/jquery.js" class="view-source"  type="text/javascript"></script>
+		<script src="../../../../scripts/common.js" class="view-source"  type="text/javascript"></script>
+		<script src="../../../../scripts/browserfix.js" class="view-source"  type="text/javascript" ></script>
+		<script src="../../../../scripts/plugins/jquery.json.js" class="view-source"  type="text/javascript"></script>
+		
+		<script src="../../../../scripts/plugins/jquery.ui.js" class="view-source"  type="text/javascript" ></script>
+		
+		<script src="../jquery.multiselect.js" type="text/javascript" class="view-source"></script>
+		
+		<script src="../../demo.js"></script>
+		<link href="../../demo.css" rel="stylesheet">
+		
+<script class="view-source noparse">
+//初始化事件
+$(function() {
+	jQuery("#multiSelect").multiSelect({ 
+		oneOrMoreSelected: '*' ,
+		CommandName : 'sqlid:multiselect.demo',
+		params : {
+			daoBeanName:'dao'
+	    }
+	}) ;
+	
+	$('#getValue').click( function(){
+		var obj = jQuery("#multiSelect").multiSelect().getValue()  ;
+		$('.value').removeClass('ui-helper-hidden').html( jQuery.json.encode(obj) ) ;
+	} ) ;
+
+	$('#reload').click( function(){
+		 jQuery("#multiSelect").multiSelect().reload({
+				CommandName:'sqlid:multiselect.demo.reload'
+		 })  ;
+	} ) ;
+}) ;
+</script>
+	
+</head>
+
+<body>
+
+	
+	<div class=''>
+		<div>
+			<a href='javascript:' id='getValue'>getValue</a> &nbsp;&nbsp;
+			<a href='javascript:' id='reload'>reload</a> &nbsp;&nbsp;
+			<br/><br/>
+			<span class='ui-state-highlight value ui-helper-hidden'></span>
+		</div>
+		<br />
+		<select multiple="multiple" id="multiSelect" name="multiSelect" default-value="133828179063711" style="display:none;">
+		</select>
+		
+	</div>
+</body>
+</html>

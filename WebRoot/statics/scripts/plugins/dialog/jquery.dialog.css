@@ -1,0 +1,54 @@
+.ui-dialog div.ui-dialog-content {
+	padding:0px;
+}
+
+.ui-dialog .ui-dialog-titlebar-close {
+	right: 1em;
+	top: 0.7em;
+	padding: 0;
+}
+
+
+
+
+.ui-dialog .ui-dialog-titlebar-max {
+position: absolute;
+right: .3em;
+top: 50%;
+width: 19px;
+margin: -10px 0 0 0;
+padding: 1px;
+height: 18px;
+font-size: 20px;
+font-weight: bold;
+line-height: 13.5px;
+text-shadow: 0 1px 0 white;
+filter: alpha(opacity=25);
+-khtml-opacity: 0.25;
+-moz-opacity: 0.25;
+opacity: 0.25;
+}
+
+.ui-dialog .ui-dialog-titlebar-max {
+	right: 2.2em;
+	top: 0.7em;
+	padding: 0;
+}
+
+.ui-dialog .ui-dialog-titlebar-hover{
+	filter: alpha(opacity=100);
+	-khtml-opacity: 1;
+	-moz-opacity: 1;
+	opacity: 1;
+}
+
+.ui-dialog .ui-dialog-titlebar-max span {
+	display: block;
+	margin: 1px;
+	text-indent: 9999px;
+	width:16px;
+	height:16px;
+	line-height:13px;
+	margin-left:3px;
+}
+

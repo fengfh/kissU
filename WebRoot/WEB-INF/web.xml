@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee   http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<!-- Spring 上下文加载监听器 -->
+	<display-name>bingo-security-console</display-name>
+	<!-- Spring 配置文件位置 -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath*:spring/*.xml</param-value>
+	</context-param>
+	
+	<!-- Spring 配置文件的加载器 -->
+	<listener>
+		<listener-class>
+			org.springframework.web.context.ContextLoaderListener
+		</listener-class>
+	</listener>
+	
+	<filter>
+		<filter-name>applicationFilter</filter-name>
+		<filter-class>bingo.common.core.servlets.ApplicationFilter</filter-class>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>applicationFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<!-- 编码过滤器 -->
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>
+			org.springframework.web.filter.CharacterEncodingFilter
+		</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<!-- 安全过滤器 -->
+	<filter>
+		<filter-name>DelegateSecurityFilter</filter-name>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+		<init-param>
+			<param-name>targetBeanName</param-name>
+			<param-value>securityFilter</param-value>
+		</init-param>
+		<init-param>
+			<param-name>targetFilterLifecycle</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>DelegateSecurityFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	  
+	<!-- MVC过滤器 -->
+	<filter>
+		<filter-name>LightMvc-Filter</filter-name>
+		<filter-class>org.lightframework.mvc.MvcFilter</filter-class>
+		<init-param>
+			<param-name>package</param-name>     
+			<param-value>bingo.modules.securityConsole</param-value> 
+		</init-param>
+		<init-param>
+			<param-name>gzipPattern</param-name>     
+			<param-value>^.*(.*.js|.*.css)$</param-value> 
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>LightMvc-Filter</filter-name>
+		<url-pattern>/*</url-pattern>
+		<dispatcher>REQUEST</dispatcher>  
+		<dispatcher>FORWARD</dispatcher>
+	</filter-mapping>
+	
+	<!--针对响应头的filter-->
+	<filter>
+		<filter-name>ResponseHeaderFilter</filter-name>
+		<filter-class>bingo.web.filter.ResponseHeaderFilter</filter-class>
+		<init-param>
+			<param-name>Cache-Control</param-name>
+			<param-value>No-cache</param-value>
+		</init-param>
+		<init-param>
+			<param-name>Pragma</param-name>
+			<param-value>No-cache</param-value>
+		</init-param>
+		<init-param>
+			<param-name>Expires</param-name>
+			<param-value>0</param-value>
+		</init-param>
+		<init-param>
+			<param-name>P3P</param-name>
+			<param-value>CP="CURa ADMa DEVa PSAo PSDo OUR BUS UNI PUR INT DEM STA PRE COM NAV OTC NOI DSP COR"</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>ResponseHeaderFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<!--
+	<filter>
+		<filter-name>JsoCacheFilter</filter-name>
+		<filter-class>bingo.web.jso.JsoCacheFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>JsoCacheFilter</filter-name>
+		<url-pattern>*.js</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>JsoCacheFilter</filter-name>
+		<url-pattern>*.css</url-pattern>
+	</filter-mapping>
+	-->
+	
+	<servlet>
+		<servlet-name>jso</servlet-name>
+		<servlet-class>bingo.web.jso.JsoServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>jso</servlet-name>
+		<url-pattern>/jso/*</url-pattern>
+	</servlet-mapping>
+	
+	<!-- SSO单点登录配置(通过代理)-->
+	<servlet>
+		<servlet-name>openid</servlet-name>
+		<servlet-class>bingo.integration.spring.DelegatingServletProxy</servlet-class>
+		<init-param>
+			<param-name>targetBeanName</param-name>
+			<param-value>ssoServlet</param-value>
+		</init-param>
+		<init-param>
+			<param-name>private_key</param-name>
+			<param-value>
+				MIIBSwIBADCCASwGByqGSM44BAEwggEfAoGBAP1/U4EddRIpUt9KnC7s5Of2EbdSPO9EAMMeP4C2
+				USZpRV1AIlH7WT2NWPq/xfW6MPbLm1Vs14E7gB00b/JmYLdrmVClpJ+f6AR7ECLCT7up1/63xhv4
+				O1fnxqimFQ8E+4P208UewwI1VBNaFpEy9nXzrith1yrv8iIDGZ3RSAHHAhUAl2BQjxUjC8yykrmC
+				ouuEC/BYHPUCgYEA9+GghdabPd7LvKtcNrhXuXmUr7v6OuqC+VdMCz0HgmdRWVeOutRZT+ZxBxCB
+				gLRJFnEj6EwoFhO3zwkyjMim4TwWeotUfI0o4KOuHiuzpnWRbqN/C/ohNWLx+2J6ASQ7zKTxvqhR
+				kImog9/hWuWfBpKLZl6Ae1UlZAFMO/7PSSoEFgIUNpcitiP8w+8h3jb+DlOa0jxdB9o=				
+			</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>openid</servlet-name>
+		<url-pattern>/openid/*</url-pattern>
+	</servlet-mapping>
+
+	<!-- 配置Grid必须的Servlet -->
+	<servlet>
+		<servlet-name>GridServlet</servlet-name>
+		<servlet-class>bingo.ui.grid.GridServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>GridServlet</servlet-name>
+		<url-pattern>/grid/*</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Session 超时时间,单位为分钟 -->
+	<session-config>
+		<session-timeout>30</session-timeout>
+	</session-config>
+
+	<!-- 比较友好的常见错误页面 -->
+	<error-page>
+		<error-code>403</error-code>
+		<location>/common/error/403.jsp</location>
+	</error-page>
+
+	<error-page>
+		<error-code>404</error-code>
+		<location>/common/error/404.jsp</location>
+	</error-page>
+
+	<error-page>
+		<error-code>500</error-code>
+		<location>/common/error/500.jsp</location>
+	</error-page>
+
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+	
+	<mime-mapping>
+		<extension>xml</extension>
+		<mime-type>text/xml</mime-type>
+	</mime-mapping>
+
+</web-app>

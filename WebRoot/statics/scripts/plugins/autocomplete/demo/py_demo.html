@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Autocomplete Demos</title>
+	<link  href="../jquery.ui.autocomplete.css" class="view-source" type="text/css" rel="stylesheet" />
+	<link  href="../../../../themes/default/style.css" class="view-source"  rel="stylesheet">
+	<script src="../../../../scripts/jquery.js" class="view-source"  type="text/javascript"></script>
+	<script src="../../../../scripts/common.js" class="view-source"  type="text/javascript"></script>
+	<script src="../../../../scripts/browserfix.js" class="view-source"  type="text/javascript" ></script>
+	
+	<script src="../../../../scripts/plugins/jquery.bgiframe.js" class="view-source" type="text/javascript" ></script>
+	<script src="../../../../scripts/plugins/jquery.ui.js" class="view-source" type="text/javascript" ></script>
+	<script src="../../../../scripts/plugins/jquery.json.js" type="text/javascript" ></script>
+	
+	<script src="../jquery.ui.autocomplete.js" class="view-source" type="text/javascript"></script>
+	
+	<link  href="../../../../scripts/plugins/google-code-prettify/prettify.css" rel="stylesheet">
+	<script src="../../../../scripts/plugins/google-code-prettify/prettify.js"></script>
+	
+	<script src="../../demo.js"></script>
+	<link href="../../demo.css" rel="stylesheet">
+
+	<script class="view-source">
+		$( function(){
+			$('#getValue').click(function(){
+				$('.alert').html( jQuery.json.encode($('select').comboBox().getValue()) ).show() ;
+			}) ;
+		} ) ;
+	</script>
+</head>
+
+<body>
+	<form id="demoForm" action="#"  class="form-inline row-fluid container" >
+	
+		<div class="row-fluid control-group">
+			<div class="span1">
+      			<a href='javascript:' id='getValue'  class="btn">getValue</a>
+	      	</div>
+	      	
+	      	<div class="span4">
+	      		<div class='value  alert' style="display:none;"></div>
+			</div>
+		</div>	
+      	<div class="row-fluid control-group">
+     			<label class="control-label" for="agreement1">拼音首字母：</label>
+            <div class="controls">
+             	<select id="static_combo" data-widget="combobox" class="view-source">
+					<option value="hn">湖南</option>
+				       <option value="hb" selected>湖北</option>
+				       <option value="jx">江西</option>
+				       <option value="sc">四川</option>
+				       <option value="gd">广东</option>
+				       <option value="gx">广西</option>
+				</select>
+            </div>
+      	</div>
+	</form>
+</body>
+</html>

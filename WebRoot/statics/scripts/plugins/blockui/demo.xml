@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Root>
+	<!--  分类 -->
+	<category>
+		<demo name="遮罩整个页面" url="demo/demo1.html"/>
+		<demo name="遮罩某个容器" url="demo/demo2.html"/>
+		<demo name="定制遮罩层信息" url="demo/demo3.html"/>
+		<demo name="限时关闭遮罩层" url="demo/demo4.html"/>
+		<demo name="API开启和关闭遮罩层" url="demo/demo5.html"/>
+		<demo name="支持事件" url="demo/demo6.html"/>
+	</category>
+
+</Root>

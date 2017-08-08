@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:util="http://www.springframework.org/schema/util"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+
+    <util:list id="mvc-plugins">
+    	<bean class="org.lightframework.mvc.plugin.mapping.FilterMappingPlugin">
+    		
+    		<property name="includesPattern">
+    			<value>^.*(/jso.*)$</value>
+    		</property>
+    		
+    		<property name="excludesPattern">
+    			<value>
+    			^.*(.*.js|.*.css|.*.gif|.*.png|.*.jsp|.*.html)$
+    			</value>
+    		</property>
+    		
+    		<property name="cachePattern">
+    			<value>^.*(.*.js|.*.css|.*.gif|.*.png|.*.html)$</value>
+    		</property>
+    		<!-- 
+    		<property name="expires" value=""></property>
+    		-->
+    	</bean>
+    	
+        <bean class="org.lightframework.mvc.plugin.spring.SpringPlugin"/>        
+    </util:list>
+
+    <bean class="org.lightframework.mvc.plugin.spring.PluginRegistry" init-method="register"
+          p:plugins-ref="mvc-plugins"/>
+    
+    <!-- 
+                method      path            action 
+                *           /upload         upload.method
+     -->
+     <!-- .. -->
+    <bean class="org.lightframework.mvc.plugin.spring.RouteTable" init-method="register">
+        <property name="routes">
+            <value>
+            *     /                              home.index 
+			*     /index.do                      home.index
+			*     /{ActionOrController}.do  	 {ActionOrController}.index,home.{ActionOrController}
+			*     /{controller*}/{action}.do     {controller}.{action}
+			*     /jso/*     					 jso.index
+            </value>
+        </property>    
+    </bean>   
+</beans>

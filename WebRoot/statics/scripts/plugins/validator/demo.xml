@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Root>
+	<!--  分类 -->
+	<category>
+		<demo name="支持多种数据验证规则" url="demo/demo1.html"/>
+		<demo name="支持多种校验提示" url="demo/demo2.html"/>
+        <demo name="支持自定义函数校验" url="demo/demo3.html"/>
+        <demo name="支持自定义错误信息" url="demo/demo4.html"/>
+	</category>
+</Root>

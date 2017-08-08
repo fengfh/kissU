@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+/*登陆页面*/
+.wrapper-login{	}
+.login{}
+.login-form{
+    margin-top:20px;
+}
+.login-form  .errormsg{
+	height:20px;
+	line-height:20px;
+	margin-left:125px;
+	color:red;
+	margin-bottom:10px
+}
+.login-form  .input-group{
+	margin-bottom:20px;
+}
+.login-form  .input-group label{
+	display:inline-block;
+	width:120px;
+	text-align:right;
+}
+.login-form  .input-group input{
+	width:240px;
+}
+.login-form  .input-group button{
+	margin-right:20px;
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ <meta charset="UTF-8" />
+<title></title>
+		
+		<link href="../jquery.messagebox.css" class="view-source" rel="stylesheet" type="text/css" media="screen" class="view-source"/>
+		<link  href="../../../../themes/default/style.css" class="view-source" rel="stylesheet">
+		<script src="../../../../scripts/jquery.js"  class="view-source" type="text/javascript"></script>
+		<script src="../../../../scripts/common.js"  class="view-source" type="text/javascript"></script>
+		<script src="../../../../scripts/browserfix.js"  class="view-source" type="text/javascript" ></script>
+		<script src="../../../../scripts/plugins/jquery.json.js" type="text/javascript"></script>
+		
+		<script src="../../../../scripts/plugins/jquery.ui.js" type="text/javascript" ></script>
+		
+		<!-- Core files -->
+		<script src="../jquery.messagebox.js" class="view-source"  type="text/javascript" class="view-source"></script>
+		
+		<script src="../../demo.js"></script>
+		<link href="../../demo.css" rel="stylesheet">
+		
+		<!-- Example script -->
+<script type="text/javascript" class="view-source noparse">
+
+$(document).ready( function() {
+	
+	$("#info_button").click( function() {
+		$.messageBox.info({
+		   message:$("#msgId").val(),
+		   title:$("#titleId").val(),
+		   okButton:$("#okButton").val()
+		});
+	});
+	
+	$("#warning_button").click( function() {
+		$.messageBox.warning({
+		   message:$("#msgId").val(),
+		   title:$("#titleId").val(),
+		   okButton:$("#okButton").val()
+		});
+	});
+	
+	$("#error_button").click( function() {
+		$.messageBox.error({
+		   message:$("#msgId").val(),
+		   title:$("#titleId").val(),
+		   okButton:$("#okButton").val()
+		});
+	});
+	
+	$("#success_button").click( function() {
+		$.messageBox.success({
+		   message:$("#msgId").val(),
+		   title:$("#titleId").val(),
+		   okButton:$("#okButton").val()
+		});
+	});
+	
+	$("#confirm_button").click( function() {
+		$.messageBox.confirm({ 
+		   message:$("#msgId").val(),
+		   title:$("#titleId").val(),
+		   okButton:$("#okButton").val(),
+		   cancelButton:$("#cancelButton").val(),
+		   callback:function(result){alert("result:" + result);}
+		});
+	});
+	
+	$("#prompt_button").click( function() {
+		$.messageBox.prompt({
+		   message:$("#msgId").val(),
+		   title:$("#titleId").val(),
+		   okButton:$("#okButton").val(),
+		   cancelButton:$("#cancelButton").val()
+		});
+	});
+});
+</script>
+		
+	</head>
+	
+	<body>
+				<b>请在下面设置提示的相关内容,，然后点击下面的按钮：</b><br/><br/>
+				<table>
+					<tr>
+						<td>提示标题：</td><td><input type="text" id="titleId" style="width:400px" value="提示标题"/></td>
+					</tr>
+					<tr>
+						<td>提示内容：</td><td><textarea style="width:400px" rows="6" id="msgId">This is a custom info box</textarea></td>
+					</tr>
+					<tr>
+						<td>OK按钮：</td><td><input type="text" id="okButton" style="width:400px" value="OK" maxlength="6"/></td>
+					</tr>
+					<tr>
+						<td>Cancel按钮：</td><td><input type="text" id="cancelButton" style="width:400px" maxlength="6" value="Cancel"/></td>
+					</tr>
+				</table>
+				<br/><br/>
+				<button id="info_button" class="btn"  type="button" >Show Info</button>
+		
+				<button id="warning_button" class="btn"  type="button">Show Warning</button>
+		
+				<button id="error_button" class="btn"  type="button">Show Error</button>
+		
+				<button id="success_button" class="btn"  type="button">Show Success</button><br/><br/>
+		
+				<button id="confirm_button" class="btn"  type="button">Show Confirm</button>
+		
+				<button id="prompt_button" class="btn"  type="button">Show Prompt</button>
+
+</body>
+</html>

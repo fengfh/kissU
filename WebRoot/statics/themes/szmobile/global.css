@@ -1,0 +1,162 @@
+@charset "utf-8";
+
+/* 全局 字体大小 颜色 链接
+----------------------------------------------------- */
+html {	
+	_overflow-x:hidden;
+}
+body {
+	background-color:#fff;
+	font-size:12px;
+	color:#6e6e6e;
+	font-family:Verdana, Microsoft YaHei, Simsun, Arial Unicode MS, Mingliu, Arial, Helvetica;
+	line-height:18px;
+}
+a:link{
+	color:#198bc6;
+	cursor:pointer;
+}
+a:hover {
+	color: #005580;
+	text-decoration: underline;
+}
+a:active {
+	color: #0088cc;
+}
+
+
+
+/* 布局
+----------------------------------------------------- */
+.container-body {
+}
+.container-popup {
+	padding:0;
+}
+.container-body .container-fluid {
+	padding:10px;
+}
+.container-popup .container-fluid {
+	padding:0;
+}
+
+
+
+/* 左导航链接颜色
+-----------------------------------------------------*/
+#sidebar ul li a{
+	color:#198BC6;
+} 
+
+
+
+/* 主导航链接颜色
+-----------------------------------------------------*/
+.navbar .nav li a{
+	color:#fff;
+}
+.navbar .nav li a:hover{
+	color:#fff;
+}
+.navbar .nav .active a, .navbar .nav .active a:hover{
+	color:#444;
+}
+
+
+
+/* page-header
+----------------------------------------------------- */
+.page-title{
+	height:30px;
+	line-height:30px;
+	background-color:#f0f4fd;
+	border-bottom:1px solid #dce5e9;
+	font-size:14px;
+	position:relative;
+	overflow:hidden;
+	margin:0;
+	padding:0 10px;
+}
+.page-title h2{
+	height:30px;
+	line-height:30px;
+	font-size:14px;
+}
+
+
+
+/* panel 样式
+----------------------------------------------------- */
+.panel{
+	margin-bottom:10px;
+	*height:100%;
+}
+.panel .container-fluid {
+	padding:0;
+}
+.panel .panel-head{
+	position: relative;
+	height: 30px;
+	line-height: 30px;
+	padding: 0 5px;
+	overflow:hidden;
+}
+.panel .panel-head h2{
+	font-size:12px;
+	height:30px;
+	line-height:30px;
+	color:#6e6e6e;
+}
+.panel .panel-content {
+	padding:5px;
+	overflow:hidden;
+}
+.panel .panel-foot, .panel-foot {
+	overflow: hidden;
+	text-align: right;
+}
+
+
+
+/* table 样式
+----------------------------------------------------- */
+.table-striped thead th {
+	background-color: #DFEAFB;
+}
+.table tbody th, .table tbody td {
+	border-bottom: 1px solid #a8cfeb;
+}
+.table-striped tbody tr{
+	background-color:#f1f6ff;
+}
+.table-striped tbody tr:nth-child(odd) td,
+.table-striped tbody tr:nth-child(odd) th {
+  background-color: #fff;
+}
+.table tbody tr:hover td,
+.table tbody tr:hover th {
+  background-color: #f1f6ff;
+}
+
+
+/* search-panel
+----------------------------------------------------- */
+.search-panel .panel-head {
+	display:none;
+}
+
+
+/* form-panel
+----------------------------------------------------- */
+.form-panel .panel-head {
+	display:none;
+}
+
+
+/* apply-panel
+----------------------------------------------------- */
+.apply-panel .panel-head {
+	display:none;
+}
+
+

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Tab Demos</title>
+	
+	
+<link  href="../jquery.ui.tabs.css" rel="stylesheet" type="text/css"  class="view-source"/>
+	<link  href="../../../../themes/default/style.css" rel="stylesheet" class="view-source">
+	<script src="../../../../scripts/jquery.js" type="text/javascript" class="view-source"></script>
+	<script src="../../../../scripts/common.js" type="text/javascript" class="view-source"></script>
+	<script src="../../../../scripts/browserfix.js" type="text/javascript"  class="view-source"></script>
+	<script src="../../../../scripts/plugins/jquery.json.js" type="text/javascript" class="view-source"></script>
+	
+	<script src="../../../../scripts/plugins/jquery.ui.js" type="text/javascript" ></script>
+		
+	<script src="../jquery.ui.tabs.js" type="text/javascript" class="view-source"></script>
+	<script src="../../demo.js"></script>
+	<link href="../../demo.css" rel="stylesheet">
+	
+	
+<script  class="view-source noparse">
+	$( function(){
+		var $tabs = $('#tabs-below').tabs({
+			closable:true,
+			tabs:[
+				{label:'tab1',iframe:true,url:"http://www.g.cn",id:'123'},
+				{label:'tab2',iframe:true,url:"http://www.g.cn",id:'124'}
+			],
+			add: function(event, ui) {
+				//callback
+			},
+			height:'150px',
+			select: function(event, ui) { 
+				//alert(ui.panel.id);
+			}
+		});
+
+		//添加tab也控制区域
+		var $tab_title_input = $('#tab-title'), $tab_content_input = $('#tab-content');
+		var tab_counter = 3 ;
+		
+		$('#add').click( function(){
+			var tab_content = $tab_content_input.val() || 'Tab '+tab_counter+' content.';
+			var tab_title = $tab_title_input.val() || 'Tab '+tab_counter;
+			$('#tabs-below').tabs().add({
+				label:tab_title,
+				panel:tab_content
+			});
+			tab_counter++;
+		} ) ;
+	} );
+	</script>
+</head>
+
+<body>
+	
+	tab标题：<input type='text' id='tab-title'> 
+	tab内容：<input type='text' id='tab-content'> &nbsp;&nbsp;&nbsp;  <a href="javascript:void(0)" class="btn" id='add'>创建tab</a>
+	<br /><br />
+
+	<div id="tabs-below" class="view-source">
+	</div>
+
+		
+</body>
+</html>

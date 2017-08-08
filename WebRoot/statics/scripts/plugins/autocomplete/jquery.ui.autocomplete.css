@@ -1,0 +1,13 @@
+.autocomplete-active-item{
+   _color: #ffffff;
+   _background-color: #0088cc;
+}
+
+.combobox .btn .ui-icon{
+	text-indent:0px;
+}
+
+ul.ui-autocomplete{
+	position:absolute;
+	text-align:left;
+}

@@ -1,0 +1,17 @@
+{ 
+ "returnCode":200, 
+ "returnDesc":"success", 
+ "error":"",
+ "returnStatus":"",
+ "returnValue":  
+ {  
+   "OutParams":{},   
+   "Rows":
+    [     
+       {"name":"hunan","text":"湖南"},
+       {"name":"hubei","text":"湖北"}
+   ],  
+   "AffectedRows":-1,   
+   "ColumnNames":[]  
+ }
+}

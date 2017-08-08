@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>llygrid demo</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="pragma" content="no-cache"/>
+	<meta http-equiv="cache-control" content="no-cache"/>
+  
+   <script src="../../../jquery.js" type="text/javascript" class="view-source"></script>
+   <script src="../../../common.js" type="text/javascript" class="view-source"></script>
+   <link   href="../../../../themes/mobile/style.css" type="text/css" rel="stylesheet" class="view-source" />
+   <script src="../../dialog/jquery.dialog.js" type="text/javascript" class="view-source"></script>
+   <link   href="../../dialog/jquery.dialog.css" type="text/css" rel="stylesheet"  class="view-source"/>
+  
+   <script src="../jquery.listselectdialog.js" type="text/javascript" class="view-source"></script>
+   <link   href="../jquery.listselectdialog.css" type="text/css" rel="stylesheet"  class="view-source"/>
+  <script src="../../demo.js"></script>
+	<link href="../../demo.css" rel="stylesheet">
+   <script type="text/javascript" class="view-source noparse">
+
+	$(function(){
+		var treeGridSelect = {
+				dataServiceUrl:dataServiceUrl,
+				title:'用户选择页面',//页面显示标题
+				//1
+				valueField:".value-field",
+				labelField:".label-field",
+				//2
+				//defaults:[{value:'1',label:'广东省'},{value:'11',label:'广州市'}],//默认值
+				//3
+				defaults:function(){
+					return [{value:'1',label:'广东省'},{value:'11',label:'广州市'}];
+				},
+				key:{value:'ID',label:'TEXT'},//对应value和label的key
+				multi:true,
+				grid:{
+					title:"用户选择",
+					params:{
+						sqlId:'grid.demo'
+					},
+					CommandName : 'java.page.command',
+					columns:[//显示列
+						{align:"center",key:"ID",label:"编号",query:true,width:"30%"},
+						{align:"center",key:"TEXT",label:"名称",query:true,width:"30%"}
+					]
+				},
+				tree:{
+					title:"组织选择",
+					rootText : '区域组织',
+					gridKey:"id",
+					CommandName : 'java.tree.command',
+					params : {
+						daoBeanName:'dao',
+						sqlId : 'asyn.tree.demo',
+						childSqlId : 'asyn.tree.demo.child',
+						parentId : 'root',
+						testId:'1234'
+					}
+				}
+		} ;
+		
+		$(".tree-grid-m-select").listselectdialog( treeGridSelect /*,function(){
+			var args = jQuery.dialogReturnValue() ;
+			var value = args.value ;
+			var label = args.label ;
+			$(".tree-grid-m-select").val(label).attr("title",label) ;
+		}*/) ;
+
+   	});
+   </script>
+   
+   <style>
+   		*{
+   			font:12px "微软雅黑";
+   		}
+   </style>
+
+</head>
+<body>
+
+<iframe src="tree_grid_multi.html?sfd" style="width:500px;height:300px;"/>
+
+<br/><br/>
+
+</body>
+</html>

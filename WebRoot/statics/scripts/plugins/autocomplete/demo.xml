@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Root>
+	<!--  分类 -->
+	<category>
+		<demo name="HTML声明式" url="demo/declarative.html"/>
+		<demo name="静态数据源(脚本调用)" url="demo/static_demo.html"/>
+		<demo name="cookie数据源" url="demo/cookie_demo.html"/>
+		<demo name="ajax数据源" url="demo/ajax_demo.html"/>
+		<demo name="可录入也可下拉" url="demo/combo_demo.html"/>
+		<demo name="拼音首字母查询" url="demo/py_demo.html"/>
+	</category>
+
+</Root>

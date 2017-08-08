@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>llygrid demo</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="pragma" content="no-cache"/>
+	<meta http-equiv="cache-control" content="no-cache"/>
+  
+   <script src="../../../jquery.js" type="text/javascript" class="view-source"></script>
+   <script src="../../../common.js" type="text/javascript" class="view-source"></script>
+    <script src="../../../plugins/jquery.json.js" type="text/javascript"></script>
+   <link   href="../../../../themes/mobile/style.css" type="text/css" rel="stylesheet"  class="view-source"/>
+   
+   <script src="../jquery.listselectdialog.js" type="text/javascript" class="view-source"></script>
+   <link   href="../jquery.listselectdialog.css" type="text/css" rel="stylesheet"  class="view-source"/>
+   
+   <script src="../../dialog/jquery.dialog.js" type="text/javascript" class="view-source"></script>
+   <link   href="../../dialog/jquery.dialog.css" type="text/css" rel="stylesheet"  class="view-source"/>
+  <script src="../../demo.js"></script>
+	<link href="../../demo.css" rel="stylesheet">
+   <script type="text/javascript" class="view-source noparse">
+
+   function QueryRender(column){
+	    var key   = column.key ;
+		return "<select name='"+key+"'><option>自定义查询条件</option></select>" ;
+   }
+
+	$(function(){
+
+		var gridSelect = {
+				dataServiceUrl:dataServiceUrl,
+				title:'用户选择页面',//页面显示标题
+				//{value:'黎明,123,黎明1',label:'黎明11,12311,黎明111',split:','}
+				//[{value:''}]
+				defaults:[{value:'1',label:'广东省'},{value:'11',label:'广州市'}],//默认值
+				key:{value:'ID',label:'TEXT'},//对应value和label的key
+				multi:false,
+				grid:{
+					title:"用户选择",
+					params:{
+						sqlId:'grid.demo'
+					},
+					CommandName : 'java.page.command',
+					pagesize:10,
+					columns:[//显示列
+						{align:"center",key:"ID",label:"编号",width:"100",query:true,queryRender:"QueryRender"},
+						{align:"center",key:"TEXT",label:"地市",query:true,
+							queryRender:{type:'select',styleClass:'span2',
+								json:[{val:'',label:'自定义查询条件'},{val:'key1',label:'label1'},{val:'key2',label:'label2'}]}
+							,sort:true,width:"100"},
+						{align:"center",key:"DESC",label:"备注",width:"200"}
+					]
+				}
+		   } ;
+		   
+		$(".grid-s-select").listselectdialog( gridSelect,function(){
+			var args = jQuery.dialogReturnValue() ;
+			var value = args.value ;
+			var label = args.label ;
+			$(".grid-s-select").val(label).attr("title",label) ;
+		}) ;
+   	});
+   </script>
+   
+   <style>
+   		*{
+   			font:12px "微软雅黑";
+   		}
+   </style>
+
+</head>
+<body>
+
+
+	列表单选:<input type="text" class="grid-s-select" value=""/><br/><br/>
+
+</body>
+</html>

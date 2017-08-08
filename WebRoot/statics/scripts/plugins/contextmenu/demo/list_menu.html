@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+<HEAD>
+		<META http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	    <TITLE></TITLE>
+	   <LINK href="../jquery.contextmenu.css" rel="stylesheet" type="text/css" class="view-source noparse"/>
+		<link  href="../../../../themes/default/style.css" class="view-source" rel="stylesheet">
+		<script src="../../../../scripts/jquery.js"  class="view-source" type="text/javascript"></script>
+		<script src="../../../../scripts/common.js"  class="view-source" type="text/javascript"></script>
+		<script src="../../../../scripts/browserfix.js"  class="view-source" type="text/javascript" ></script>
+		<script src="../../../../scripts/plugins/jquery.json.js" type="text/javascript"></script>
+		
+		<SCRIPT src="../jquery.contextmenu.js" type="text/javascript" class="view-source noparse"></SCRIPT> 
+		
+	
+	<script src="../../demo.js"></script>
+	<link href="../../demo.css" rel="stylesheet">
+	    
+    
+<SCRIPT type="text/javascript" class="view-source noparse">
+     function editUser(){
+     	alert("edit user( userId = " + this.data.userId + ")");
+     }
+     
+     function deleteUser(){
+     	alert("delete user( userId = " + this.data.userId + ")");
+     }
+     
+     function assignRole(){
+     	alert("assign role for user( userId = " + this.data.userId + ")");
+     }
+     
+     function assignAuth(){
+     	alert("assign auth for user( userId = " + this.data.userId + ")");
+     }
+     
+     function openContextMenu(e,jq){
+     	//标注：使用jqueryObject的attr方法获取属性的值有问题（获取不到）。
+     	var accountType = jq.attr("account_type");
+     	var userId      = jq.attr("user_id");
+     	
+     	var menuItems  = [];
+     	
+     	if(accountType == 'local'){
+     	  menuItems.push({ text: "修改用户", icon: "images/icon_edit.gif", alias: "edit", action: editUser, userId : userId });
+     	  menuItems.push({ text: "删除用户", icon: "images/icon_del.gif", alias: "delete", action: deleteUser, userId : userId });
+     	  menuItems.push({ type: "splitLine" });
+     	}
+    	menuItems.push({ text: "分配角色", icon: "images/icon_assign_role.gif", alias: "assign_role", action: assignRole, userId : userId });
+    	menuItems.push({ text: "分配权限", icon: "images/icon_assign_auth.gif", alias: "assign_auth", action: assignAuth, userId : userId });
+    	 
+        var option = { 
+      		width: 150, 
+  	        items:menuItems
+        };
+        jq.contextmenu(option);
+        jq.contextmenu().show(e);
+     }
+        
+    $(function(){
+    	 $('.operation').mouseover( function(e){
+    	 	 openContextMenu(e,$(this));
+    	 } ) ;
+    });
+  </SCRIPT>
+</HEAD>
+	<BODY>
+		<div>
+			<table  class="table table-bordered" width="100%">
+				<tr>
+					<td align="center" style="vertical-align: middle;">操作</td>
+					<td align="center">用户名</td>
+					<td align="center">登录账号</td>
+					<td align="center">账号类型</td>
+				</tr>
+				<tr>
+					<td align="center" class="view-source"><img src="images/icon_set.gif" user_id="security_admin" style="cursor: pointer;" class="operation" account_type="local" /></td>
+					<td>超级管理员</td>
+					<td>security_admin</td>
+					<td>本地账号</td>
+				</tr>
+				<tr>
+					<td align="center"><img src="images/icon_set.gif" style="cursor: pointer;" class="operation"  accout_type="local" user_id="zhangsan"/></td>
+					<td>张三</td>
+					<td>zhangsan</td>
+					<td>本地账号</td>
+				</tr>
+				   
+			</table>
+		</div>
+		   
+	</BODY>
+</HTML>

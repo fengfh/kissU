@@ -1,0 +1,61 @@
+<!DOCTYPE HTML >
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title></title>
+    
+    <link  href="../../../../themes/default/style.css" rel="stylesheet" class="view-source">
+	<script src="../../../../scripts/jquery.js" type="text/javascript" class="view-source"></script>
+	<script src="../../../../scripts/common.js" type="text/javascript" class="view-source"></script>
+	<script src="../../../../scripts/browserfix.js" type="text/javascript"  class="view-source"></script>
+	<script src="../../../../scripts/plugins/jquery.json.js" type="text/javascript" class="view-source"></script>
+
+    <script type="text/javascript" charset="utf-8" src="../editor_config.js"></script>
+   <script type="text/javascript" charset="utf-8" src="../editor_all_min.js" class="view-source"></script>
+    
+    <link rel="stylesheet" type="text/css" href="../themes/ueditor/ueditor.css" class="view-source"/>
+    
+    <script src="../../demo.js"></script>
+	<link href="../../demo.css" rel="stylesheet">
+    <style type="text/css">
+        #editor {
+            border: 1px solid #CCC;
+            width: 1000px
+        }
+        #editor_toolbar_box {
+            background: #F0F0EE;
+            padding: 2px;
+        }
+        #editor_iframe_holder {
+            border-top: 1px solid #CCC;
+            border-bottom: 1px solid #CCC;
+        }
+    </style>
+</head>
+<body>
+<script type="text/plain" id="editorId" style="width:100%;" ></script>
+<script type="text/javascript" class="view-source noparse">
+   //<script type="text/plain" id="editorId" style="width:100%;" >< /script>
+   
+    var option = {
+		initialContent : '请输入sql', // 初始化编辑器的内容
+		minFrameHeight : 200, // 初始化编辑器最小高度
+		toolbars : [['fullscreen', "undo", "redo", 'forecolor', 'RowSpacing', 'FontFamily',
+				'FontSize', 'searchreplace', 'cleardoc', 'date',
+				'spechars', 'highlightcode']],
+		autoClearinitialContent : true ,
+		// autoHeightEnabled:false 高度自动
+		elementPathEnabled : true
+	};
+
+	var editor = new UE.ui.Editor(option);
+	editor.render("editorId");
+
+	editor.addListener("click", function (t, e){
+		//alert("点击编辑器触发事件");
+	});
+
+    
+</script>
+</body>
+</html>

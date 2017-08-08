@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Root>
+	<!--  分类 -->
+	<category>
+		<demo name="iframe示例" url="demo/base_demo.html"/>
+		<demo name="DIV示例" url="demo/page_demo.html"/>
+	</category>
+
+</Root>

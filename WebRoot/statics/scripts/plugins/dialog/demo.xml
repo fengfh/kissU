@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Root>
+	<!--  分类 -->
+	<category>
+		<demo name="窗口示例" url="demo/base.html"/>
+		<!--
+		<demo name="所有实例" url="demo/demo-all.html"/>
+		-->
+	</category>
+
+</Root>

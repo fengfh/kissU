@@ -1,0 +1,125 @@
+<!--_LayoutBlock-->
+    <!--页面引用的样式 Start-->
+
+    <!--页面引用的样式  End-->
+<div class="container-popup" >
+    <div class="container-fluid">
+        <!-- form-content 场景 -->
+<div class="form-content">
+    <form method="post" id="userform" action="/SecurityConsole/User/Edit/7ab30d68-9ece-47c2-9203-0418ec151b79" class="form-horizontal"  data-widget="ajaxform,validator"  data-options="{ajaxformSuccess:userFormSuccess}">
+    <div class="page-title">
+        <h2>
+            用户资料</h2>
+    </div>
+    <!-- 表单panel -->
+    <div class="panel form-panel" style="width:auto;">
+        <div class="panel-head">
+            <div class="row-fluid">
+                <div class="span6 first">
+                    用户资料
+                </div>
+                <div class="span6">
+                </div>
+            </div>
+            <a href="#" class="toggle"></a>
+        </div>
+        <div class="panel-content" style="overflow:hidden;overflow-y:hidden;">
+            <table class="form-table col4-fluid" style="width:500px;">
+                <tr>
+                    <th>
+                        <label class="control-label" for="Name">
+                            用户名称 :
+                        </label>
+                    </th>
+                    <td>
+                        <input   id="Name" name="Name" type="text" value="方占宇1"  class="input-large"/>
+                    </td>
+                    <th>
+                        <label class="control-label" for="OrgName">
+                            组织名称:
+                        </label>
+                    </th>
+                    <td>
+                        <div class="input-append">
+                            <input class="include-span input-span-uneditable input-medium" id="OrgName" name="OrgName"
+                                       readonly="readonly" size="16" type="text" value="行政部"/>
+                            <a href="/SecurityConsole/Common/SelectOrg" data-widget="dialog" data-options="{iframe:false, callback:SelectOrgCallback}" class="add-on btn">
+                                选择</a>
+                        </div>
+                        <input type="hidden" name="OrgId" id="OrgId" value="e688141a-5191-452a-a3c7-172e5b711669"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <label class="control-label" for="LoginId">
+                            登录帐号:
+                        </label>
+                    </th>
+                    <td>
+                        <input  id="LoginId" name="LoginId" type="text" value="fangzhanyu"  class="input-large"/>
+                    </td>
+                    <th>
+                        <label class="control-label" for="SexName">
+                            性别:
+                        </label>
+                    </th>
+                    <td>
+                        <select id="Sex" name="Sex" class="input-large">
+                             
+                            <option value="M"  >男</option>
+                             
+                            <option value="U"  >未知</option>
+                             
+                            <option value="F"  >女</option>
+                            
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <label class="control-label" for="Email">
+                            邮箱地址:
+                        </label>
+                    </th>
+                    <td>
+                        <input  id="Email" name="Email" type="text" value="fangzhanyu@orient.net"  class="input-large"/>
+                    </td>
+                    <th>
+                        <label class="control-label" for="MobilePhone">
+                            手机号码:
+                        </label>
+                    </th>
+                    <td>
+                        <input  id="MobilePhone" name="MobilePhone" type="text" value="13651285036"  class="input-large"/>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="panel-foot">
+            <div class="form-actions col4-fluid">
+                <button type="submit" class="btn">
+                    提&nbsp;交</button>
+                <button type="reset" class="btn">
+                    重&nbsp;置</button>
+            </div>
+        </div>
+        <!-- panel 内容结束 -->
+    </div>
+    <input type="hidden" name="Id" value="7ab30d68-9ece-47c2-9203-0418ec151b79"/>
+    <!--表单验证信息-->
+    <input disabled="disabled" name="__ValidatorRules" type="hidden" value="[{&#39;FieldName&#39;:&#39;LoginId&#39;,&#39;ValidationRules&#39;:[{&#39;ErrorMessage&#39;:&#39;登录帐号 字段是必需的。&#39;,&#39;ValidationParameters&#39;:{},&#39;ValidationType&#39;:&#39;required&#39;}]},{&#39;FieldName&#39;:&#39;Email&#39;,&#39;ValidationRules&#39;:[{&#39;ErrorMessage&#39;:&#39;邮箱地址 字段是必需的。&#39;,&#39;ValidationParameters&#39;:{},&#39;ValidationType&#39;:&#39;required&#39;}]},{&#39;FieldName&#39;:&#39;Name&#39;,&#39;ValidationRules&#39;:[{&#39;ErrorMessage&#39;:&#39;用户名称  字段是必需的。&#39;,&#39;ValidationParameters&#39;:{},&#39;ValidationType&#39;:&#39;required&#39;}]},{&#39;FieldName&#39;:&#39;Sex&#39;,&#39;ValidationRules&#39;:[{&#39;ErrorMessage&#39;:&#39;性别不允许为空。&#39;,&#39;ValidationParameters&#39;:{},&#39;ValidationType&#39;:&#39;required&#39;},{&#39;ErrorMessage&#39;:&#39;性别选择错误。&#39;,&#39;ValidationParameters&#39;:{&#39;pattern&#39;:&#39;[M|F|U]&#39;},&#39;ValidationType&#39;:&#39;regex&#39;}]}]"></input>
+    </form>
+</div>
+
+
+
+    </div>
+</div>
+
+ <!--页面引用的脚本 Start--> 
+
+    <script>
+      
+
+    </script>
+    <!--页面引用的脚本  End-->

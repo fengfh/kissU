@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>列表选择页面</title>
+	<base target="_self"></base>
+	<link  href="../../../scripts/plugins/layout/jquery.layout.css" type="text/css" rel="stylesheet"/>
+	<link  href="../../../scripts/plugins/grid/jquery.llygrid.css" type="text/css" rel="stylesheet"/>
+	<link  href="../../../scripts/plugins/tree/jquery.tree.css" type="text/css" rel="stylesheet"/>
+	<link  href="../../../themes/mobile/style.css" class="view-source" rel="stylesheet">
+	<link  href="jquery.twoselectdialog.template.css" class="view-source" rel="stylesheet">
+	
+	<script src="../../../scripts/jquery.js"  class="view-source" type="text/javascript"></script>
+	<script src="../../../scripts/plugins/jquery.json.js"  class="view-source" type="text/javascript"></script>
+	<script src="../../../scripts/common.js"  class="view-source" type="text/javascript"></script>
+	<script src="../../../scripts/browserfix.js"  class="view-source" type="text/javascript" ></script>
+	<script src="../../../scripts/plugins/jquery.json.js" type="text/javascript"></script>
+	
+	<script type="text/javascript" src="../../../scripts/plugins/layout/jquery.layout.js"></script>
+	<script type="text/javascript" src="../../../scripts/plugins/tree/jquery.tree.js"></script>
+	<script type="text/javascript" src="../../../scripts/plugins/grid/jquery.llygrid.js"></script>
+	<script type="text/javascript" src="../../../scripts/plugins/dialog/jquery.dialog.js"></script>
+	<script type="text/javascript" src="jquery.twoselectdialog.template.js"></script>
+	
+	<style>
+		
+	</style>
+</head>
+
+<body class=" container-popup">
+<!-- iframe start -->
+	<div class="page-title">
+		<h2></h2>
+	</div>
+	
+	<div class="container-fluid">
+		<!-- panel内容开始 -->
+		<div class="panel form-panel">
+			<div class="panel-head">
+				<div class="row-fluid">
+					<div class="span6 first">	
+					</div>
+					<div class="span6">
+					</div>
+				</div>
+				<a href="#" class="toggle"></a>
+			</div>
+			
+			<div class="panel-content">
+					<div class="ui-layout" style="width:100%;height:100%;">
+						<div id="content" region="center" class="grid-layout" title="列表选择">
+							<div class="panel search-panel">
+								<div class="panel-head">
+									<div class="row-fluid">
+										<div class="span6 first">
+											<i class="icon-list-alt"></i>查询条件
+										</div>
+										<div class="span6">
+										</div>
+									</div>
+									<a href="#" class="toggle"></a>
+								</div>
+								<div class="panel-content">
+									<div class="toolbar">
+										<form class="form-inline" id="select-searchform" action="" data-widget="validator,grid-search" data-options="{gridId:'select-user-list'}">
+										</form>
+									</div>
+								</div>
+							</div>
+							<div class="row-fluid">
+								<div class="span5 first">
+									<select multiple="multiple" class="left-select" style="width:98%;height:300px;margin:2px;">
+									</select>
+								</div>
+								<div class="span2">
+									<div class="btn-groups">
+										<button class="btn toLeft">&nbsp;<i class="icon-chevron-right "></i>&nbsp;</button>
+										<button class="btn toLeftAll">&nbsp;<i class="icon-forward "></i>&nbsp;</button>
+										<br/>
+										<button class="btn toRight">&nbsp;<i class="icon-chevron-left "></i>&nbsp;</button>
+										<button class="btn  toRightAll">&nbsp;<i class=" icon-backward "></i>&nbsp;</button>
+										
+									</div>
+								</div>
+								<div class="span5">
+									
+									<select multiple="multiple" class="right-select" style="width:98%;height:300px;margin:2px;"></select>
+								</div>
+							</div>
+							
+						</div>			
+		</div>
+
+		</div>
+		<!-- panel 内容结束 -->	
+					
+			<div class="panel-foot">
+				<div class="form-actions">
+					<button class="btn btn-primary confirm-btn">确定</button>
+				   <button class="btn close-btn">关闭</button>
+				</div>
+			</div>
+	</div>
+</body>
+
+</html>

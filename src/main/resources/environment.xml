@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<environment xmlns="http://schemas.bingosoft.net/javaframework/environment">
+	<!-- 
+		安全上下文环境变量提供者，把登录用户的所有属性作为环境变量，可以通过User.{PropName}来访问。
+		如：User.Id,User.Name
+		-->
+	<provider prefix="User" type="bingo.security.SecurityEnvironment" />
+	
+	<provider type="bingo.environment.EnvironmentProvider">
+		<variable name="GUID" type="bingo.environment.variable.UUIDVariable"/>
+	</provider>
+	
+	<provider prefix="Profile" type="bingo.integration.environment.SystemParamsEnvironmentProvider" />
+</environment>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Root>
+	<!--  分类 -->
+	<category>
+		<demo name="下拉多选" url="demo/demo1.html"/>
+		<demo name="异步获取数据" url="demo/asyn_demo1.html"/>
+		<!--
+		<demo name="异步获取数据" url="demo/asyn_demo1.html"/>
+		
+		<demo name="声明式标签" url="demo/declarative.html"/>
+		-->
+	</category>
+
+</Root>

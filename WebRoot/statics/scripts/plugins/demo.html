@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>UI控件</title>
+    <meta http-equiv="pragma" content="no-cache"/>
+	<meta http-equiv="cache-control" content="no-cache"/>
+  
+    <link  href="../../themes/default/style.css" rel="stylesheet">
+	<script src="../../scripts/jquery.js" type="text/javascript"></script>
+	<script src="../../scripts/common.js" type="text/javascript"></script>
+	<script src="../../scripts/browserfix.js" type="text/javascript" ></script>
+  	<script>
+  		var demoIndex = true ;
+  	</script>
+    <link  href="demo.css" rel="stylesheet" />
+    <script src="demo.js" type="text/javascript" ></script>
+	<style>
+		.version_forward{
+			display:none;
+		}
+	</style>
+	
+	<script>
+	 	$(function(){
+			$(".nav li a").click(function(){
+				$(".subnav .active").removeClass("active") ;
+				$(this).parents("li").addClass("active");
+				var pluginName = $.trim( $(this).text() ) ;
+
+				var uiDemo = loadControlConfig(pluginName+'/demo.xml') ;
+
+				var html = [] ;
+				
+				html.push("<h2><span style='padding-left:2px'>控件示例</span></h2>") ;
+				
+				if(uiDemo.categorys){
+					for( var i = 0;i < uiDemo.categorys.length;i ++ ){
+						var category = uiDemo.categorys[i];
+						
+						if(category.name != null){
+							html.push("<ul class='dropdown-menu'><li><b><<"+category.name+"</b></li></ul>") ;
+						}
+						
+						html.push("<ul class='dropdown-menu demo-menu'>");
+						
+						for( var j = 0;j < category.demos.length;j ++ ){
+							var demo = category.demos[j];
+							html.push('<li url=' + demo.url + ' name=' + demo.name + '><a href="javascript:void(0);"><font style="padding-left: 4px">'+demo.name+'</font></a></li>') ;
+						}
+						html.push("</ul>") ;
+					}
+				}
+				
+				$('#submenu').html( html.join('') ) ;
+				
+				$('#submenu  li').click(
+					function(){
+						$('#submenu  li').removeClass("active");
+						var me = $(this) ;
+						me.addClass("active");
+						viewUIComponentDetail( me.attr('url'),me.attr('name'),pluginName ) ;
+						$('#submenu .navigation li,.submenu h3').removeClass('current current-h3') ;
+						me.addClass('current') ;
+						
+						return false ;
+					}
+				) ;
+				
+				$('#submenu li').first().click() ;
+				return false ;
+			}).first().click() ;
+		}) ;
+
+	 	function viewUIComponentDetail(url,demo_title,pluginName){
+	 		  $(".demo_iframe")[0].height = "800px";
+	 		  $(".demo_iframe").attr("src",pluginName+"/"+url) ;
+			  $('#demo_title').get(0).innerHTML = "<h2>示例：" + demo_title + "</h2>";
+			  $('#pagesource_div').hide();
+			  $('#viewsourceId').show() ;
+			  $('#hidesourceId').hide() ;
+		  }
+
+		  function autoHeight(el){
+			  el.height=iFrame1.document.body.scrollHeight ;
+		  }
+	</script>
+
+</head>
+<body>
+		<div class="subnav">
+        <ul class="nav nav-pills">
+          <li class="li-first"><a href="#">wizard</a></li>
+          <li><a href="#">listselectdialog</a></li>
+          <li><a href="#">inputpro</a></li>
+          <li><a href="#">cascadeselect</a></li>
+          <li><a href="#">dialog</a></li>
+          <li><a href="#">grid</a></li>
+          <li><a href="#">combotree</a></li>
+          <li><a href="#">layout</a></li>
+          <li><a href="#">calendar</a></li>
+          <li><a href="#">upload</a></li>
+          
+          <li><a href="#">contextmenu</a></li>
+          <li><a href="#">messagebox</a></li>
+          <li><a href="#">tree</a></li>
+          <li><a href="#">validator</a></li>
+          <li><a href="#">autocomplete</a></li>
+          <li><a href="#">blockui</a></li>
+          <li><a href="#">tab</a></li>
+          <li><a href="#">ueditor</a></li>
+          <li class="li-last"><li><a href="#">multiselect</a></li></li>
+        </ul>
+      </div>
+      
+      <div class="row-fluid" style="width:100%">
+      		<div class="span10 row-span-first" >
+      			<div style="padding:10px;">
+	      			<div id="demo_title" style="margin: 10px"></div>
+					<iframe src=""   id="iFrame1" name="iFrame1"  onload="autoHeight(this)"  width="100%" frameborder="0" scrolling="no" class="demo_iframe demo-content"></iframe>
+					<div class="demo-source" style="margin: 10px"></div>
+				</div>
+      		</div>
+      		<div class="span2">
+      			<div id="submenu"></div>
+	       </div>
+      </div>
+      
+</body>
+</html>

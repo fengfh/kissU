@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Root>
+	<!--  分类 -->
+	<category>
+		<demo name="普通列表" url="demo/demo.html"/>
+		<demo name="数据服务列表" url="demo/dataservice-demo.html"/>
+		<demo name="多表头" url="demo/demo-grouphead.html"/>
+	</category>
+
+</Root>

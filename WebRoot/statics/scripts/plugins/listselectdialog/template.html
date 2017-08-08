@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" " http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>列表选择页面</title>
+	<base target="_self"></base>
+	<link  href="../../../scripts/plugins/layout/jquery.layout.css" type="text/css" rel="stylesheet"/>
+	<link  href="../../../scripts/plugins/grid/jquery.llygrid.css" type="text/css" rel="stylesheet"/>
+	<link  href="../../../scripts/plugins/tree/jquery.tree.css" type="text/css" rel="stylesheet"/>
+	<link  href="../../../themes/mobile/style.css" class="view-source" rel="stylesheet">
+	
+	<script src="../../../scripts/jquery.js"  class="view-source" type="text/javascript"></script>
+	<script src="../../../scripts/plugins/jquery.json.js"  class="view-source" type="text/javascript"></script>
+	<script src="../../../scripts/common.js"  class="view-source" type="text/javascript"></script>
+	<script src="../../../scripts/browserfix.js"  class="view-source" type="text/javascript" ></script>
+	<script src="../../../scripts/plugins/jquery.json.js" type="text/javascript"></script>
+	
+	<script type="text/javascript" src="../../../scripts/plugins/layout/jquery.layout.js"></script>
+	<script type="text/javascript" src="../../../scripts/plugins/tree/jquery.tree.js"></script>
+	<script type="text/javascript" src="../../../scripts/plugins/grid/jquery.llygrid.js"></script>
+	<script type="text/javascript" src="../../../scripts/plugins/dialog/jquery.dialog.js"></script>
+	<script type="text/javascript" src="jquery.listselectdialog.template.js"></script>
+	
+	<style>
+		.selected-container{
+			width:100%;
+			height:98px;
+			border:1px solid #CCC;
+			overflow:auto;
+			margin-bottom:2px;
+			padding:0px;
+		}
+		
+		.selected-container ul{
+			list-style: none;
+			display:block;
+			width:100%;
+			padding:0px;
+			margin:0px;
+		}
+		
+		.selected-container ul li{
+			float:left;
+			margin-right:3px;
+			cursor:pointer;
+		}
+		
+		.selected-container ul li.alert{
+			margin:2px 3px;
+			padding:2px 5px;
+		}
+		
+		body{
+			margin:1px;
+			padding:0px;
+		}
+		
+		.toolbar-container{
+			text-align:right;
+			padding-right:10px;
+		}
+		
+		div.search-panel .panel-content{
+			padding:0px;
+		}
+		
+		div.search-panel .panel-content button{
+			margin-left:3px;
+		}
+
+		div.layout-body{
+			overflow:hidden;
+		}
+	</style>
+</head>
+<body>
+	<div class="ui-layout" style="width:100%;height:100%;">
+	    <div region="west" split="true" title="树选择" class="tree-layout" style="width:150px;">
+	        <div class="tree-container"></div>
+	    </div>
+	    <div id="content" region="center" class="grid-layout" title="列表选择" style="padding:5px;">
+	    	<div class="panel search-panel">
+                <div class="panel-head">
+                    <div class="row-fluid">
+                        <div class="span6 first">
+                            <i class="icon-list-alt"></i>查询条件
+                        </div>
+                        <div class="span6">
+                        </div>
+                    </div>
+                    <a href="#" class="toggle"></a>
+                </div>
+                <div class="panel-content">
+                    <div class="toolbar">
+                        <form class="form-inline" id="select-searchform" action="" data-widget="validator,grid-search" data-options="{gridId:'select-user-list'}">
+                       	</form>
+                    </div>
+                </div>
+            </div>
+			<div class="grid-container"></div>
+	    </div>
+	    <div id="south" region="south"   title="" style="padding:5px;height:150px;overflow:hidden;">
+			<div class="selected-container">
+				<ul>
+				</ul>
+			</div>
+			<div class="toolbar-container">
+				<button class="btn btn-primary confirm-btn">确定</button>
+				<button class="btn close-btn">关闭</button>
+				<button class="btn clear-btn">清空全部</button>
+			</div>
+	    </div>
+	</div>
+
+</body>
+</html>
